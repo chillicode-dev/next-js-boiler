@@ -156,13 +156,87 @@ const loader = <LoaderIcon width={48} height={48} />;
 Обращаем внимание, что здесь хранятся только файлы реализации классов, а не их экземпляры.
 
 ### /components/
-В процессе написания ✏
+Здесь хранятся reusable React-компоненты. 
+Каждый компонент должен находится в отдельной папке, в формате:
+```
+./ComponentName
+ ├─index.js // Файл экспорта компонента
+ ├─ComponentName.js // Файл самого компонента
+ ├─ComponentName.test.js // Файл тестов
+ ├─InternalComponent.js // Если есть внутренний компонент, который используется только в контексте текущего
+ ├─InternalComponent.test.js // Тесты внутреннего компонента
+ └─style.scss // Единый файл стилей
+```
+
+После прогона снэпшот-тестами также сгенерируется папка `__snapshots__` со снимками:
+```
+./ComponentName
+ ├─...
+ ├─__snapshots__/
+ │ └─ComponentName.test.js.snap
+ └─....
+```
+
+Файл экспорта оформляется в следующем виде:
+```javascript
+export {default} from './ComponentName';
+```
+
+Дабы не создавать каждый раз такую структуру руками, можно использовать cli-утилиту [Templateman](https://www.npmjs.com/package/templateman),
+которая сама создает базовую структуру для каждого компонента.
+
 ### /hocs/
-В процессе написания ✏
+Папка с [компонентами высшего порядка](https://reactjs.org/docs/higher-order-components.html).
+
+Каждый компонент хранится в отдельном файле, все вместе они экспортируются из `index.js`. Пример:
+```
+./hocs
+ ├─...
+ ├─index.js
+ ├─withReduxStore.js
+ ├─withBreakpoints.js
+ └─....
+```
+
+В будущем stateful-компоненты (классы) оборачиваются в виде ES7-декораторов, например:
+```javascript
+import {withBreakpoints} from 'hocs';
+
+@withBreakpoints
+class MyComponent extends React.PureComponent {}
+
+export default MyComponent;
+```
+
+Stateless-компоненты (функции) в виде экспорта обернутых в функцию компонентов:
+```javascript
+import {withBreakpoints} from 'hocs';
+
+const MyComponent = () => <div>MyComponent</div>;
+
+export default withBreakpoints(MyComponent);
+```
+
 ### /pages/
-В процессе написания ✏
+Папка со страницами сайта Next.js.
+
+Ссылки для ознакомления:
+- [Quick start](https://nextjs.org/docs#quick-start)
+- [Dynamic Routing](https://nextjs.org/docs#dynamic-routing)
+- [Routing](https://nextjs.org/docs#routing)
+- [Custom _app](https://nextjs.org/docs#routing)
+- [Custom _document](https://nextjs.org/docs#custom-document)
+- [Custom _error page](https://nextjs.orgdocs#custom-error-handling)
+
+Каждая страница должна представлять собой простой компонент, внутри которого лежат уникальные секции страница из папки `/sections/`.
+По возможности стоит максимально избегать сложной логики внутри этих файлов и пытаться экстрактить их в отдельные утилиты и компоненты.
+
 ### /public/
-В процессе написания ✏
+Папка для хранения статики и доступных из корня сайта по URL после `/`.
+Здесь следует хранить к примеру `favicon.ico`, `robots.txt`, `manifest.json` и прочие SEO-файлы.
+
+Подробнее можно почитать [здесь](https://nextjs.org/docs#static-file-serving-eg-images).
+
 ### /sections/
 В процессе написания ✏
 ### /store/
