@@ -123,7 +123,7 @@ npm run dev -- -p <your port here>
 с расширениями eot, woff, woff2, ttf, svg, png, jpg, jpeg, gif. Добавить типы файлов можно в `next.config.js`.
 
 Пример (JS):
-```jsx harmony
+```javascript
 import logoImg from 'assets/img/logo.png';
 
 const logo = <img src={logoImg} alt="Logo" />;
@@ -143,7 +143,7 @@ SVG-код в таком случае будет встраиваться инл
 Если есть необходимость импортировать иконки в качестве ссылок, их нужно хранить в другой директории внутри `/assets/`.
 
 Пример:
-```js
+```javascript
 import LoaderIcon from 'assets/icons/loader.svg';
 
 const loader = <LoaderIcon width={48} height={48} />;
@@ -228,8 +228,8 @@ export default withBreakpoints(MyComponent);
 - [Custom _document](https://nextjs.org/docs#custom-document)
 - [Custom _error page](https://nextjs.orgdocs#custom-error-handling)
 
-Каждая страница должна представлять собой простой компонент, внутри которого лежат уникальные секции страница из папки `/sections/`.
-По возможности стоит максимально избегать сложной логики внутри этих файлов и пытаться экстрактить их в отдельные утилиты и компоненты.
+Каждая страница должна представлять собой простой компонент, внутри которого лежат уникальные секции страницы из папки `/sections/`.
+По возможности стоит максимально избегать сложной логики внутри страниц и пытаться экстрактить их в отдельные утилиты и компоненты.
 
 ### /public/
 Папка для хранения статики и доступных из корня сайта файлов по URL после `/`.
