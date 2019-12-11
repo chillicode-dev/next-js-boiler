@@ -64,14 +64,14 @@
 - ESLint
 - Stylelint
 - Prettier (не конфликтует с ESLint и Stylelint)
-- Jest
-- Git-хуки с правками от таких ребят как ESLint, Stylelint и Prettier
+- Jest для тестов
+- Git-хуки с ESLint, Stylelint и Prettier правками
 - Templateman для быстрого создания повторяющихся компонентов
 - Production-оптимизации: CSSO, Imagemin и SVGO
 - Webpack file loaders
 - ES7 декораторы
 - Redux (на основе Ducks паттерна)
-- Базовые компоненты и компоненты высшего порядка (HOCs или Хоки)
+- Базовые компоненты и компоненты высшего порядка (HOCs)
 
 ## Начало работы
 ### Окружение
@@ -165,7 +165,7 @@ const loader = <LoaderIcon width={48} height={48} />;
  ├─ComponentName.test.js // Файл тестов
  ├─InternalComponent.js // Если есть внутренний компонент, который используется только в контексте текущего
  ├─InternalComponent.test.js // Тесты внутреннего компонента
- └─style.scss // Единый файл стилей
+ └─style.scss // Файл стилей компонента
 ```
 
 После прогона снэпшот-тестами также сгенерируется папка `__snapshots__` со снимками:
