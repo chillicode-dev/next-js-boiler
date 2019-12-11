@@ -174,7 +174,7 @@ const loader = <LoaderIcon width={48} height={48} />;
  ├─...
  ├─__snapshots__/
  │ └─ComponentName.test.js.snap
- └─....
+ └─...
 ```
 
 Файл экспорта оформляется в следующем виде:
@@ -195,7 +195,7 @@ export {default} from './ComponentName';
  ├─index.js
  ├─withReduxStore.js
  ├─withBreakpoints.js
- └─....
+ └─...
 ```
 
 В будущем stateful-компоненты (классы) оборачиваются в виде ES7-декораторов, например:
@@ -238,7 +238,48 @@ export default withBreakpoints(MyComponent);
 Подробнее можно почитать [здесь](https://nextjs.org/docs#static-file-serving-eg-images).
 
 ### /sections/
-В процессе написания ✏
+Папка секций на страницах с уникальным контентом/дизайном. 
+Каждая секция представляет уникальный компонент, чаще всего состоящий из reusable-компонентов
+из папки `/components/`. 
+
+Структура должна повторять структуру `/pages/`, только вместо файлов страниц создаются их папки с компонентами секций внутри.
+Например, у нас есть страница `/pages/about` с секциями `IntroSection`, `AboutSection`, `ContactsSection`.
+
+Тогда страница `about.js` будет выглядить примерно так:
+```javascript
+// Vendor
+import React from 'react';
+import Head from 'next/head';
+// Internals
+import {IntroSection, AboutSection, ContactsSection} from 'sections/about';
+
+const About = () => (
+  <React.Fragment>
+    <Head>
+      <title>About page</title>
+    </Head>
+    <IntroSection />
+    <AboutSection />
+    <ContactsSection />
+  </React.Fragment>
+);
+
+export default About;
+
+```
+
+A структура внутри `/sections/` будет следующая структура:
+```
+./sections
+ ├─...
+ ├─about/
+ │ ├─index.js // Файл экспорта секций
+ │ ├─IntroSection.js
+ │ ├─AboutSection.js
+ │ └─ContactsSection.js
+ └─...
+```
+
 ### /store/
 В процессе написания ✏
 ### /styles/
