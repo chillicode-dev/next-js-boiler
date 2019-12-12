@@ -108,13 +108,6 @@ npm run dev -- -p <your port here>
 
 
 ## Структура проекта
-### Общие положения
-1. Все пути внутри приложения снабжены [алиасами](https://webpack.js.org/configuration/resolve/#resolvealias) 
-для  удобного отображения относительно корня проекта. При добавлении папки в корень проекта 
-следует добавить также ее алиас в `next.config.js` (ищем внутри `config.resolve.alias`).
-2. Каждый корневой папке для удобства желательно добавлять `index.js` файл с экспортами всего содержимого. 
-К примеру, чтобы в будущем в коде импортировать `import {url} from 'utils';` вместо `import url from 'utils/url';`.
-
 ### /assets/
 Папка для хранения ассетов приложения (изображения, иконки, шрифты, видео, документы и прочие файлы), 
 которые импортируются в JS и SCSS-код с помощью Webpack.
@@ -282,8 +275,8 @@ A внутри `/sections/` будет следующая структура:
 
 ### /store/
 В этом святом месте хранится все, что касается Redux.
-В приложении используется паттерн "уточек" [Redux Ducks](https://github.com/erikras/ducks-modular-redux), в котором структура состояния 
-делится не на редьюсеры, экшены и их типы, а на так называемые модули, где каждый модуль объединяет в себе эти 3 сущности.
+В проекте используется паттерн "уточек" [Redux Ducks](https://github.com/erikras/ducks-modular-redux), где структура 
+разделена не на редьюсеры, экшены и их типы, а на так называемые модули, где каждый модуль объединяет в себе эти 3 сущности.
 
 В качестве образца, есть пример с простым модулем инкремента `/store/modules/example.js`. Его можно брать за основу создания модуля.
 Либо создавать модуль через [Templateman](https://www.npmjs.com/package/templateman).
@@ -328,17 +321,6 @@ A внутри `/sections/` будет следующая структура:
     
 ## Ведение разработки
 ### Git-регламент
-Use [Atlassian Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) with some additions.
-
-Follow these four simple steps:
-1) Start branch with your gitlab username. E.g.: `@username/..`
-2) Next use one of action types: `feature`, `hotfix`, `support`, `release`). E.g.: `@username/feature/..`
-3) Describe your activity in this branch (only lowercase letters and hyphens). E.g.: `@username/feature/responsive-header`
-4) Create merge request to `dev`
-
-Для версионирования мы используем модель [Atlassian Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
-с некоторыми дополнениями.
-
 #### Создание репозитория
 Для того, чтобы создать репозиторий на основе react-boilerplate:
 1. Создаем группу по проекту в Gitlab (если еще не создана)
@@ -370,21 +352,203 @@ Follow these four simple steps:
 @developer/type/action -> dev -> stage -> master
 ```
 
+### Компоненты
+#### Типы компонентов
+По уровню уникальности компоненты можно разделить на 4 типа:
+1. [Компоненты высшего порядка](https://reactjs.org/docs/higher-order-components.html) (Higher Order Components, HOCs, хоки или компоненты-усилители) - 
+хранятся в `/hocs/`, созданы для добавления функционала в оборачиваемые компоненты, 
+путем передачи им дополнительных пропсов. Используются всегда повторно и существуют только совместно 
+с другими компонентами.
+2. Reusable-компоненты - хранятся в `/components/` и предназначены для повторного использования 
+во многих местах проекта.
+3. Секции - части верстки, призванные собирать reusable-компоненты в композиции. 
+Лежат в `/sections/`, должны заканчиваться словом `Section` (например `ContactsSection`), всегда уникальны в контексте проекта. 
+4. [Страницы](https://nextjs.org/docs#dynamic-routing) - всегда уникальные компоненты в единственном экземпляре, соответствующие роутам приложения и 
+состоящие из секций. Хранятся в `/pages/`.
+
+#### Компоненты высшего порядка
+Каждый компонент хранится в отдельном файле, все вместе они экспортируются из `index.js`. Пример:
+```
+./hocs
+ ├─...
+ ├─index.js
+ ├─withReduxStore.js
+ ├─withBreakpoints.js
+ └─...
+```
+
+В будущем stateful-компоненты (классы) оборачиваются в виде ES7-декораторов, например:
+```javascript
+import {withBreakpoints} from 'hocs';
+
+@withBreakpoints
+class MyComponent extends React.PureComponent {}
+
+export default MyComponent;
+```
+
+Stateless-компоненты (функции) в виде экспорта обернутых в функцию компонентов:
+```javascript
+import {withBreakpoints} from 'hocs';
+
+const MyComponent = () => <div>MyComponent</div>;
+
+export default withBreakpoints(MyComponent);
+```
+
+#### Reusable-компоненты
+Каждый компонент должен находится в отдельной папке, в формате:
+```
+./ComponentName
+ ├─index.js // Файл экспорта компонента
+ ├─ComponentName.js // Файл самого компонента
+ ├─ComponentName.test.js // Файл тестов
+ ├─InternalComponent.js // Если есть внутренний компонент, который используется только в контексте текущего
+ ├─InternalComponent.test.js // Тесты внутреннего компонента
+ └─style.scss // Файл стилей компонента
+```
+
+После прогона снэпшот-тестами также сгенерируется папка `__snapshots__` со снимками:
+```
+./ComponentName
+ ├─...
+ ├─__snapshots__/
+ │ └─ComponentName.test.js.snap
+ └─...
+```
+
+Файл экспорта оформляется в следующем виде:
+```javascript
+export {default} from './ComponentName';
+```
+
+#### Секции
+Каждая секция представляет уникальный компонент, чаще всего состоящий из reusable-компонентов
+из папки `/components/`. 
+
+Структура должна повторять структуру `/pages/`, только вместо файлов страниц создаются их папки с компонентами секций внутри.
+Например, у нас есть страница `/pages/about` с секциями `IntroSection`, `AboutSection`, `ContactsSection`.
+
+Тогда страница `about.js` будет выглядить примерно так:
+```javascript
+// Vendor
+import React from 'react';
+import Head from 'next/head';
+// Internals
+import {IntroSection, AboutSection, ContactsSection} from 'sections/about';
+
+const About = () => (
+  <React.Fragment>
+    <Head>
+      <title>About page</title>
+    </Head>
+    <IntroSection />
+    <AboutSection />
+    <ContactsSection />
+  </React.Fragment>
+);
+
+export default About;
+
+```
+
+A внутри `/sections/` будет следующая структура:
+```
+./sections
+ ├─...
+ ├─about/
+ │ ├─index.js // Файл экспорта секций
+ │ ├─IntroSection.js
+ │ ├─AboutSection.js
+ │ └─ContactsSection.js
+ └─...
+```
+
+#### Страницы
+Ссылки для ознакомления:
+- [Quick start](https://nextjs.org/docs#quick-start)
+- [Dynamic Routing](https://nextjs.org/docs#dynamic-routing)
+- [Routing](https://nextjs.org/docs#routing)
+- [Custom _app](https://nextjs.org/docs#routing)
+- [Custom _document](https://nextjs.org/docs#custom-document)
+- [Custom _error page](https://nextjs.orgdocs#custom-error-handling)
+
+Каждая страница должна представлять собой простой компонент, внутри которого лежат уникальные секции страницы из папки `/sections/`.
+По возможности стоит максимально избегать сложной логики внутри страниц и пытаться экстрактить их в отдельные утилиты и компоненты.
+
+#### Создание компонентов
+Для создания компонентов следует использовать CLI-утилиту [Templateman](https://www.npmjs.com/package/templateman),
+с помощью которой можно удобно и быстро создавать компоненты из заранее сгенерированных шаблонов в папке `/templates/`.
+Для ее использования после установки зависимостей вводим в консоли:
+```
+tm
+```
+
+После чего откроется меню выбора создаваемого компонента:
+```
++------------------------+
+> Hello, I'm Templateman <
++------------------------+
+? Choose your template: (Use arrow keys)
+> React Component Function
+  React Component Class
+  React Component Connected Class
+  React Section
+  React Page
+  Redux Duck Module
+  React Component Function (partial)
+(Move up and down to reveal more choices)
+```
+
+С помощью стрелок выбираем необходимый пункт, вводим название и базовая структура компонента
+автоматически встраивается в инфраструктуру проекта.
 
 ### Импорты и алиасы
-В процессе написания ✏
+#### Алиасы
+Все пути внутри проекта снабжены [алиасами](https://webpack.js.org/configuration/resolve/#resolvealias) 
+для  удобного отображения относительно корня проекта. При добавлении папки в корень проекта 
+нужно добавить также ее алиас в `next.config.js` (ищем внутри `config.resolve.alias`) и `jest.config.js` (поле `moduleNameMapper`)
+для тестирования без ошибок.
 
-### Создание компонентов
-В процессе написания ✏
+Например, чтобы импортировать утилитарную функцию из компонента мы пишем:
+```
+import {utilName} from 'utils';
+```
+вместо:
+```
+import {utilName} from '../../utils';
+```
+
+#### Экспортные файлы
+Каждый корневой папке для удобства желательно добавлять `index.js` файл с экспортами всего содержимого. 
+Чтобы в будущем в коде импортировать:
+```
+import {url} from 'utils';
+``` 
+вместо:
+```
+import url from 'utils/url';
+```
 
 ### Стили
 В процессе написания ✏
 
-### Страницы
-В процессе написания ✏
-
 ### Redux
-В процессе написания ✏
+В проекте используется паттерн "уточек" [Redux Ducks](https://github.com/erikras/ducks-modular-redux), где структура 
+разделена не на редьюсеры, экшены и их типы, а на так называемые модули, каждый из которых объединяет в себе эти 3 сущности.
+
+В качестве образца, есть пример с простым модулем инкремента `/store/modules/example.js`. 
+Его можно брать за основу, либо создавать с помощью [Templateman](https://www.npmjs.com/package/templateman).
+
+Структура:
+```
+./store
+ ├─modules/
+ │ ├─... // Прочие модули
+ │ └─example.js // Пример модуля
+ ├─index.js // Файл инициализации стора и миддлваров
+ └─reducers.js // Файл с импортом всех редьюсеров
+```
 
 ### Тестирование
-В процессе написания ✏
+В проекте используется Jest в качестве фреймворка для тестирования. 

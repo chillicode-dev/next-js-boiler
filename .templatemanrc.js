@@ -68,6 +68,15 @@ module.exports = {
       ],
     },
     {
+      name: 'React Section',
+      files: [
+        {
+          from: './templates/react-section.js.tm',
+          to: './sections/${TM:PAGE}/${TM:COMPONENT_NAME}.js',
+        },
+      ],
+    },
+    {
       name: 'React Page',
       files: [
         {
