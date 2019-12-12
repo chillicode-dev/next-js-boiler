@@ -328,7 +328,48 @@ A внутри `/sections/` будет следующая структура:
     
 ## Ведение разработки
 ### Git-регламент
-В процессе написания ✏
+Use [Atlassian Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) with some additions.
+
+Follow these four simple steps:
+1) Start branch with your gitlab username. E.g.: `@username/..`
+2) Next use one of action types: `feature`, `hotfix`, `support`, `release`). E.g.: `@username/feature/..`
+3) Describe your activity in this branch (only lowercase letters and hyphens). E.g.: `@username/feature/responsive-header`
+4) Create merge request to `dev`
+
+Для версионирования мы используем модель [Atlassian Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+с некоторыми дополнениями.
+
+#### Создание репозитория
+Для того, чтобы создать репозиторий на основе react-boilerplate:
+1. Создаем группу по проекту в Gitlab (если еще не создана)
+2. Форкаем данный репозиторий в эту группу
+3. Переименовываем README, убрав из нее вступительную описательную часть, 
+добавляем description в Gitlab, переименовываем package.json
+4. Хлопаем в ладоши от первых головокружительных успехов!
+
+#### Ветки
+В проекте обязательно должны присутствовать 3 ветки:
+1. `master` - релизные версии проекта (с тегами по номерам версий)
+2. `stage` - ветка для презентации заказчику и его одобрения для последующего слияния в `master`
+3. `dev` - ветка для залития на наш dev-сервер
+
+Эти 3 основные ветки должны быть снабжены CI-пайплайнами для автоматического тестирования и деплоя на наши dev и stage-сервера.
+
+Остальные же ветки используются для ведения отдельными разработчиками и в будущем будут использоваться для слияния в `dev`.
+
+Для создания своей ветки руководствуемся следующими правилами:
+1) Ответвляемся от актуальной ветки `dev`
+2) Начинаем именование с названия своего аккаунта в Gitlab: `@username/..`
+3) После слеша следует название типа действия, которые мы производим в данной ветке 
+(`feature`, `hotfix`, `support`, `release`). Например: `@username/feature/..`
+4) И описываем наконец сами действия, который мы производим в данной ветке (только буквы в нижнем регистре и дефис). Например: `@username/feature/responsive-header`
+5) После внесения изменений делаем Merge Request в `dev`
+
+Из этого следует, что порядок слияния следующий: 
+```
+@developer/type/action -> dev -> stage -> master
+```
+
 
 ### Импорты и алиасы
 В процессе написания ✏
