@@ -4,17 +4,18 @@
   "description": "Next.js sparkling boiler for all types of projects",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watchAll",
-    "test:update-snapshots": "jest --updateSnapshot",
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:update-snapshots": "jest --updateSnapshot",
     "prettier": "prettier --write \"./**/*.{js,jsx,json,css,scss}\"",
     "lint:inspect": "eslint \"./**/*.{js,jsx}\"",
     "lint:fix": "eslint \"./**/*.{js,jsx}\" --fix",
     "stylelint:inspect": "stylelint \"./**/*.{css,scss}\" --syntax scss",
-    "stylelint:fix": "stylelint \"./**/*.{css,scss}\" --syntax scss --fix"
+    "stylelint:fix": "stylelint \"./**/*.{css,scss}\" --syntax scss --fix",
+    "qa": "npm run prettier && npm run lint:fix && npm run stylelint:fix && npm run test && git add -A"
   },
   "repository": {
     "type": "git",
@@ -35,7 +36,7 @@
   "homepage": "https://github.com/adlite/next-js-boiler#readme",
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prettier && npm run lint:fix && npm run stylelint:fix && git add -A"
+      "pre-commit": "npm run qa"
     }
   },
   "dependencies": {
