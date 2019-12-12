@@ -24,39 +24,40 @@
 - Сайты-презентации с большим количеством анимации и разношерстных компонентов
 
 ## Содержание
-1. Что внутри?
-2. Начало работы
+1. [Что внутри?](#inside)
+2. [Начало работы](#get-started)
     - Окружение
     - Установка зависимостей
     - Запуск development-версии
     - Запуск production-версии
-4. Ведение разработки
+4. [Ведение разработки](#code-of-conduct)
     - Git-регламент
+    - Компоненты
+    - Хранение статики
     - Импорты и алиасы
-    - Создание компонентов
     - Стили
-    - Страницы
     - Redux
     - Тестирование
+    - Качество кода
 
-## Что внутри?
-- Next.js 9 в качестве платформы
-- SCSS
-- PostCSS Autoprefixer and CSS Modules
-- Сетка на основе Susy
-- ESLint
-- Stylelint
-- Prettier (не конфликтует с ESLint и Stylelint)
-- Jest для тестов
-- Git-хуки с ESLint, Stylelint и Prettier правками
-- Templateman для быстрого создания повторяющихся компонентов
-- Production-оптимизации: CSSO, Imagemin и SVGO
-- Webpack file loaders
-- ES7 декораторы
-- Redux (на основе Ducks паттерна)
+## <a name="inside">Что внутри?</a>
+- [Next.js 9](https://nextjs.org/docs) в качестве платформы
+- [SCSS](https://sass-lang.com/documentation)
+- [PostCSS Autoprefixer](https://autoprefixer.github.io/) and [CSS Modules](https://github.com/css-modules/css-modules)
+- [Сетка на основе Susy](https://www.oddbird.net/susy/docs/)
+- [ESLint](https://eslint.org/)
+- [Stylelint](https://stylelint.io/user-guide)
+- [Prettier](https://prettier.io/) (не конфликтует с ESLint и Stylelint)
+- [Jest](https://jestjs.io/) для тестов
+- [Templateman](https://github.com/adlite/templateman) для быстрого создания повторяющихся компонентов
+- Production-оптимизации: [CSSO](https://github.com/css/csso), [Imagemin](https://github.com/Klathmon/imagemin-webpack-plugin) и [SVGO](https://github.com/Klathmon/imagemin-webpack-plugin#optionssvgo)
+- Webpack [file loaders](https://webpack.js.org/loaders/file-loader/)
+- [ES7 декораторы](https://babeljs.io/docs/en/next/babel-plugin-proposal-decorators)
+- [Redux](https://redux.js.org/) (на основе [Ducks](https://github.com/erikras/ducks-modular-redux) паттерна)
 - Базовые компоненты и компоненты высшего порядка (HOCs)
+- Git-хуки с ESLint, Stylelint и Prettier правками
 
-## Начало работы
+## <a name="get-started">Начало работы</a>
 ### Окружение
 Разработка ведется в системах MacOS или Linux.
 На Windows все команды следует выполнять в UNIX-подобной среде (WSL, Git Bash или Cygwin).
@@ -82,8 +83,7 @@ npm run dev -- -p <your port here>
 1. Собираем приложение с помощью `npm run build`
 2. Запускаем сервер `npm run start`
 
-
-## Ведение разработки
+## <a name="code-of-conduct">Ведение разработки</a>
 ### Git-регламент
 #### Создание репозитория
 Для того, чтобы создать репозиторий на основе react-boilerplate:
@@ -302,7 +302,190 @@ import url from 'utils/url';
 ```
 
 ### Стили
-В процессе написания ✏
+#### CSS-модули и стили отдельных компонентов
+В проекте используются [CSS-модули](https://github.com/css-modules/css-modules), это значит, что мы импортируем стили в компоненты в качестве объектов, поля которых 
+затем превращаются в хешированные строки и становятся уникальными в контексте приложения.
+
+Например, есть компонент `Button.js`:
+```javascript
+import React from 'react';
+import style from './style.scss';
+
+const Button = ({children}) => {
+  return (
+    <button className={style.Button}>
+      <span className={style.text}>{children}</span>
+    </button>
+  );
+};
+
+export default Grid;
+```
+И у него есть своя таблица стилей `style.scss`:
+```scss
+.Button {
+  // моднявые стили кнопки
+}
+
+.text {
+ // моднявые стили текста кнопки
+}
+```
+
+И есть компонент `Tab.js`:
+```javascript
+import React from 'react';
+import style from './style.scss';
+
+const Tab = ({children}) => {
+  return (
+    <button className={style.Tab}>
+      <span className={style.text}>{children}</span>
+    </button>
+  );
+};
+
+export default Grid;
+```
+И у него тоже своя таблица стилей `style.scss`:
+```scss
+.Tab {
+  // моднявые стили таба
+}
+
+.text {
+ // моднявые стили текста таба
+}
+```
+
+Здесь селектор `.text` в Button никак не связан с селектором `.text` в Tab и на выходе 
+это абсолютно разные классы. То есть стили каждого компонента инкапсулированы и избавляют разработчика
+от извечной головной боли их наименования, спасают от случайного перезатирания другим таким же селектором и 
+отлично подходят для больших проектов.
+
+Если же в стилях мы хотим описать глобальный селектор (чаще всего для того, чтобы изменить стили в какой-нибудь
+вендорной библиотеке), то используем конструкцию `:global(selector)`:
+```scss
+:global(.library__selector) .myFancyButton {
+  
+}
+```
+
+Правила:
+1. Корневой элемент каждого компонента должен иметь className, идентичный названию компонента с большой буквы.
+2. Все селекторы должны быть записаны в camelCase.
+3. Если у нас есть класс одного компонента, а в другом компоненте он используется и мы хотим перебить его некоторые свойства, 
+для страховки его вес нужно усилить путем вложенности селекторов.
+
+#### Структура папки `/styles/`
+```
+./styles
+ ├─config/
+ ├─preferences/
+ ├─vendor/
+ └─index.scss
+```
+
+- `/styles/config/` - здесь хранятся переменные в JSON-файлах для того, 
+чтобы можно было использовать единую конфигурацию как внутри JS, так и в SCSS.
+В SCSS переменные доступны глобально, в JS их необходимо импортировать в виде 
+`import {brandColor} from 'styles/config/colors'` или `import breakpoints from 'styles/config/breakpoints'`.
+- `/styles/preferences/` - SCSS переменные, миксины и функции для использования только внутри SCSS.
+Все они доступны глобально внутри SCSS-кода.
+- `/styles/vendor/` - вендорные стили библиотек
+- `/styles/index.scss` - общие стили, применимые для всего приложения (например для `body` или `html`)
+
+#### Сетка
+Сетка внутри приложений строится на основе функций библиотеки [Susy 3](https://www.oddbird.net/susy/docs/).
+
+Все параметры сетки конфигурируются в файле `/styles/config/grid.json`. 
+
+К примеру, в `grid.json` у нас указана 12-колоночная сетка с отступом между колонками в 15 пикселей:
+```json
+{
+  "columnsCount": 12,
+  "gutterSize": 15
+}
+```
+Значит, для создания сетки по 3 колонки в строке создаем:
+```javascript
+import React from 'react';
+import style from './style.scss';
+
+const Grid = () => {
+  return (
+    <div className={style.row}>
+      <div className={style.column}>1</div>
+      <div className={style.column}>2</div>
+      <div className={style.column}>3</div>
+      <div className={style.column}>4</div>
+      <div className={style.column}>5</div>
+      <div className={style.column}>6</div>
+    </div>
+  );
+};
+
+export default Grid;
+``` 
+
+А в style.scss будет:
+```scss
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  width: span(4);
+  margin-right: gutter();
+  margin-bottom: gutter();
+  @include disableLastMargin(right);
+  @include disableNthMargin(3n, right);
+}
+```
+
+Здесь:
+- `span(4)` - расчитывыет размер колонки в процентах, где 4 - ширина каждой колонки из 12.
+- `gutter()` - создает указанный в конфиге отступ
+- `disableLastMargin(right)` - миксин, убирающий отступ с указанной стороны у последнего элемента с таким селектором 
+(заменяет `.column:last-child {margin-right: 0}`)
+- `disableNthMargin(3n, right)` - миксин, убирающий отступ с указанной стороны у nth-элемента с таким селектором 
+(заменяет `.column:nth-child(6n) {margin-right: 0}`)
+
+Все миксины, связанные с сеткой, можно посмотреть в файле `/styles/preferences/grid.scss`.
+
+#### Media-запросы
+Все брейкпоинты для медия-запросов конфигурируются в файле `/styles/config/breakpoints.json`.
+Каждый брейкпоинт является максимальной шириной от 0 до указанного значения. 
+Например, брейкпоинт `tablet` будет означать все устройства до 1024px.
+
+Миксины для медия-запросов конфигурируются в `/styles/preferences/grid.scss`.
+
+Например, хотим создать медия-запрос для стилей на мобильных устройствах.
+
+Бро:
+```scss
+.column {
+  // Стили для десктопа
+
+  @include onPhone {
+    // Стили для телефона
+  }
+}
+```
+
+Не бро:
+```scss
+.column {
+  // Стили для десктопа
+}
+
+@media all and (max-width: 767px) {
+  .column {
+    // Стили для телефона
+  }
+}
+```
 
 ### Redux
 В проекте используется паттерн "уточек" [Redux Ducks](https://github.com/erikras/ducks-modular-redux), где структура 
@@ -332,3 +515,15 @@ import url from 'utils/url';
 и тестируется с помощью Jest. 
 
 Если одна из проверок не будет пройдена, сделать коммит не получится. 
+
+### Качество кода
+1. Прояви милосердие для последующих поколений разработчиков, которые будут поддерживать проект.
+Оставляй внятные комментарии в непонятных местах. Для комментирования методов и функций используй [JSDoc](https://jsdoc.app/).
+Следи за документацией в README.md, если в проекте что-то глобально обновилось, обнови это и в документации.
+2. Почитай про ["запахи кода"](https://refactoring.guru/ru/refactoring/smells), не дублируй, выноси сложную логику в отдельные
+методы, функции и утилиты. Не переноси логику в верстку, используй относительные пути в ссылках.
+3. Называй вещи своими именами, используй camelCase, не именуй переменные `var1`, `var2` или `doktorskayaKolbasa`. 
+Названия методов должны соответствовать правилу verb + subjects, то есть всегда начинаться с глагола.
+Например, это твой бро: `setColors(colors)`, а это нет: `colors(colors)`. 
+Классы всегда называются с большой буквы, если с API пришло поле объекта в snake_case, то бери его в квадратные скобки:
+`data.posts['relative_posts']`.
