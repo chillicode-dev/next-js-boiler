@@ -1,0 +1,54 @@
+$footerBgColor: #0b0b0b;
+$secondaryTextColor: #888;
+$borderColor: #191919e6;
+
+.Footer {
+  padding: 50px 0;
+  background-color: $footerBgColor;
+  color: $invertedTextColor;
+
+  .container {
+    display: flex;
+  }
+
+  .col {
+    flex: 1 1 0;
+    padding: 0 15px;
+    min-height: 295px;
+    text-align: center;
+    border-right: 1px solid $borderColor;
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+
+  .colTitle {
+    margin-bottom: 30px;
+  }
+
+  .address {
+    color: $secondaryTextColor;
+    margin-bottom: 10px;
+  }
+
+  .phone {
+    color: $invertedTextColor;
+
+    &:hover {
+      color: $brandColor;
+    }
+  }
+
+  .navItem {
+    margin-bottom: 10px;
+  }
+
+  .navItemLink {
+    color: $secondaryTextColor;
+
+    &:hover {
+      color: $brandColor;
+    }
+  }
+}

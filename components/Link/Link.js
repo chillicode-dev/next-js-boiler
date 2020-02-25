@@ -5,7 +5,7 @@ import cn from 'classnames';
 import NextLink from 'next/link';
 import {useRouter} from 'next/router';
 // Internals
-import {url, env} from 'utils';
+import {url} from 'utils';
 import style from './style.scss';
 
 const Link = ({
@@ -20,7 +20,7 @@ const Link = ({
   disableStyle,
   ...props
 }) => {
-  const router = env.isTest() ? {pathname: '/'} : useRouter();
+  const router = useRouter();
   const classes = cn({
     [style.Link]: !disableStyle,
     [activeClassName]: activeClassName && router.pathname === href,

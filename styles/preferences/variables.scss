@@ -12,3 +12,6 @@ $bold: 600;
 
 // Durations
 $duration: 0.35s;
+
+// Dimensions
+$headerHeight: $headerHeight * 1px; // Get headerHeight from grid.json and convert it to SCSS-friendly format

@@ -1,0 +1,40 @@
+.Header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  background-color: $bgColor;
+  border-bottom: 1px solid $borderColor;
+  min-height: $headerHeight;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logoCol {
+    max-width: 200px;
+  }
+
+  .logo {
+    max-width: 100%;
+  }
+
+  .toolboxCol {
+    display: flex;
+  }
+
+  .navItem {
+    font-weight: $medium;
+    margin-right: 60px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

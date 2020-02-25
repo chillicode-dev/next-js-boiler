@@ -16,7 +16,7 @@
     "lint:fix": "eslint \"./**/*.{js,jsx}\" --fix",
     "stylelint:inspect": "stylelint \"./**/*.{css,scss}\" --syntax scss",
     "stylelint:fix": "stylelint \"./**/*.{css,scss}\" --syntax scss --fix",
-    "qa": "npm run prettier && npm run lint:fix && npm run stylelint:fix && npm run test && git add -A"
+    "qa": "npm run prettier && npm run lint:fix && npm run stylelint:fix && git add -A"
   },
   "repository": {
     "type": "git",

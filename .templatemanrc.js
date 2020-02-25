@@ -19,10 +19,6 @@ module.exports = {
           from: './templates/export-module.js.tm',
           to: './components/${TM:COMPONENT_NAME}/index.js',
         },
-        {
-          from: './templates/react-test-spec.js.tm',
-          to: './components/${TM:COMPONENT_NAME}/${TM:COMPONENT_NAME}.test.js',
-        },
       ],
     },
     {
@@ -40,10 +36,6 @@ module.exports = {
           from: './templates/export-module.js.tm',
           to: './components/${TM:COMPONENT_NAME}/index.js',
         },
-        {
-          from: './templates/react-test-spec.js.tm',
-          to: './components/${TM:COMPONENT_NAME}/${TM:COMPONENT_NAME}.test.js',
-        },
       ],
     },
     {
@@ -60,10 +52,6 @@ module.exports = {
         {
           from: './templates/export-module.js.tm',
           to: './components/${TM:COMPONENT_NAME}/index.js',
-        },
-        {
-          from: './templates/react-test-spec.js.tm',
-          to: './components/${TM:COMPONENT_NAME}/${TM:COMPONENT_NAME}.test.js',
         },
       ],
     },
