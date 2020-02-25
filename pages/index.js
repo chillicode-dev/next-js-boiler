@@ -35,7 +35,7 @@ class Home extends React.PureComponent {
     const {count} = this.props;
     return (
       <React.Fragment>
-        <Section title="Links list" color="brand">
+        <Section title="Links list" color="gray">
           <ul>
             <li>
               <Link href="/" activeClassName="active">
@@ -70,31 +70,33 @@ class Home extends React.PureComponent {
         <Section title="Buttons">
           <ul>
             <li>
-              <Button>Click me</Button>
+              <Button variant="brand">Click me</Button>
               <br />
               <br />
             </li>
             <li>
-              <Button isLoading>Click me</Button>
+              <Button variant="brand" isLoading>
+                Click me
+              </Button>
               <br />
               <br />
             </li>
             <li>
-              <Button href="//ya.ru" targetBlank>
+              <Button variant="brand" href="//ya.ru" targetBlank>
                 Link button
               </Button>
               <br />
               <br />
             </li>
             <li>
-              <Button href="//ya.ru" icon={CheckIcon} targetBlank>
+              <Button variant="brand" href="//ya.ru" icon={CheckIcon} targetBlank>
                 With icon
               </Button>
               <br />
               <br />
             </li>
             <li>
-              <Button href="//ya.ru" icon={CheckIcon} iconSize={40} targetBlank>
+              <Button variant="brand" href="//ya.ru" icon={CheckIcon} iconSize={40} targetBlank>
                 With custom sized icon
               </Button>
               <br />
@@ -108,17 +110,23 @@ class Home extends React.PureComponent {
           </Typography>
           <ul>
             <li>
-              <Button onClick={this.increment}>+ Increment</Button>
+              <Button variant="brand" onClick={this.increment}>
+                + Increment
+              </Button>
               <br />
               <br />
             </li>
             <li>
-              <Button onClick={this.decrement}>- Decrement</Button>
+              <Button variant="brand" onClick={this.decrement}>
+                - Decrement
+              </Button>
               <br />
               <br />
             </li>
             <li>
-              <Button onClick={this.reset}>Reset</Button>
+              <Button variant="brand" onClick={this.reset}>
+                Reset
+              </Button>
               <br />
               <br />
             </li>
@@ -141,7 +149,7 @@ class Home extends React.PureComponent {
             from the 1914 translation by&nbsp;H.&nbsp;Rackham.
           </Typography>
         </Section>
-        <Section title="Section 2" color="brand">
+        <Section title="Section 2" color="gray">
           <Typography variant="paragraph">
             Contrary to&nbsp;popular belief, Lorem Ipsum is&nbsp;not simply random text. It&nbsp;has roots
             in&nbsp;a&nbsp;piece of&nbsp;classical Latin literature from 45&nbsp;BC, making it&nbsp;over 2000 years old.
@@ -158,21 +166,42 @@ class Home extends React.PureComponent {
             from the 1914 translation by&nbsp;H.&nbsp;Rackham.
           </Typography>
         </Section>
-        <Section title="Section without paddings">
-          <Typography variant="paragraph">
-            Contrary to&nbsp;popular belief, Lorem Ipsum is&nbsp;not simply random text. It&nbsp;has roots
-            in&nbsp;a&nbsp;piece of&nbsp;classical Latin literature from 45&nbsp;BC, making it&nbsp;over 2000 years old.
-            Richard McClintock, a&nbsp;Latin professor at&nbsp;Hampden-Sydney College in&nbsp;Virginia, looked
-            up&nbsp;one of&nbsp;the more obscure Latin words, consectetur, from a&nbsp;Lorem Ipsum passage, and going
-            through the cites of&nbsp;the word in&nbsp;classical literature, discovered the undoubtable source. Lorem
-            Ipsum comes from sections 1.10.32 and 1.10.33 of&nbsp;&laquo;de&nbsp;Finibus Bonorum et&nbsp;Malorum&raquo;
-            (The Extremes of&nbsp;Good and Evil) by Cicero, written in&nbsp;45&nbsp;BC. This book
-            is&nbsp;a&nbsp;treatise on&nbsp;the theory of&nbsp;ethics, very popular during the Renaissance. The first
-            line of&nbsp;Lorem Ipsum, &laquo;Lorem ipsum dolor sit amet..&raquo;, comes from a&nbsp;line in&nbsp;section
-            1.10.32. The standard chunk of&nbsp;Lorem Ipsum used since the 1500s is&nbsp;reproduced below for those
-            interested. Sections&nbsp;1.10.32 and 1.10.33 from &laquo;de&nbsp;Finibus Bonorum et&nbsp;Malorum&raquo;
-            by&nbsp;Cicero are also reproduced in&nbsp;their exact original form, accompanied by&nbsp;English versions
-            from the 1914 translation by&nbsp;H.&nbsp;Rackham.
+        <Section title="Typography:">
+          <Typography variant="heading1" hasMargin>
+            heading1
+          </Typography>
+          <Typography variant="heading2" hasMargin>
+            heading2
+          </Typography>
+          <Typography variant="heading3" hasMargin>
+            heading3
+          </Typography>
+          <Typography variant="heading4" hasMargin>
+            heading4
+          </Typography>
+          <Typography variant="heading5" hasMargin>
+            heading5
+          </Typography>
+          <Typography variant="heading6" hasMargin>
+            heading6
+          </Typography>
+          <Typography variant="annotation" hasMargin>
+            annotation
+          </Typography>
+          <Typography variant="paragraph" hasMargin>
+            paragraph
+          </Typography>
+          <Typography variant="paragraph" uppercase>
+            uppercase modifier
+          </Typography>
+          <Typography variant="paragraph" weight="bold">
+            bold modifier
+          </Typography>
+          <Typography variant="paragraph" weight="bold" uppercase>
+            bold and uppercase modifier
+          </Typography>
+          <Typography variant="paragraph" color="brand">
+            color modifier
           </Typography>
         </Section>
       </React.Fragment>

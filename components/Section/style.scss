@@ -1,9 +1,14 @@
 .Section {
   padding: 0;
+
+  .title {
+    text-align: center;
+  }
 }
 
 .hasPaddings {
-  padding: 60px 0;
+  padding-top: 60px;
+  padding-bottom: 150px;
 }
 
 .transparent {
@@ -14,7 +19,6 @@
   background-color: $bgColor;
 }
 
-.brand {
-  background-color: $brandColor;
-  color: white;
+.gray {
+  background-color: $controlColor;
 }

@@ -9,11 +9,12 @@ import style from './style.scss';
 
 const defaultIconSize = 25;
 
-const Button = ({className, children, href, isLoading, icon, iconSize, ...props}) => {
+const Button = ({className, children, variant, href, isLoading, icon, iconSize, ...props}) => {
   const classes = cn({
     [style.Button]: true,
+    [style[variant]]: variant,
     [style.loading]: isLoading,
-    [style.link]: href,
+    // [style.link]: href,
     [style.hasIcon]: icon,
     [className]: className,
   });
@@ -25,6 +26,7 @@ const Button = ({className, children, href, isLoading, icon, iconSize, ...props}
   };
   if (href) {
     combinedProps.href = href;
+    combinedProps.disableStyle = true;
   }
 
   return (
@@ -52,6 +54,7 @@ Button.defaultProps = {
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
+  variant: PropTypes.oneOf(['reset', 'brand', 'gray']).isRequired,
   href: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   isLoading: PropTypes.bool,
   icon: PropTypes.oneOfType([PropTypes.string, PropTypes.elementType]),

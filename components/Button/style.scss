@@ -1,23 +1,34 @@
 .Button {
-  display: inline-block;
-  position: relative;
-  padding: 10px 15px;
-  background-color: $brandColor;
-  color: white;
-  outline: none;
-  text-align: center;
-  border: none;
-  line-height: $lineHeight;
   cursor: pointer;
-  transition: background-color $duration;
+}
+
+// Variants
+.reset {
+  @include resetButton();
+}
+
+.brand {
+  @include button($brandColor, $invertedTextColor);
 
   &:hover {
-    background-color: $brandColorDark;
+    background-color: $brandColorDarker;
+  }
+
+  &:active {
+    background-color: $brandColorGray;
   }
 }
 
-.link {
-  @include link(white, white);
+.gray {
+  @include button($brandColorGray, $invertedTextColor);
+
+  &:hover {
+    background-color: $brandColorDarker;
+  }
+
+  &:active {
+    background-color: $brandColor;
+  }
 }
 
 .loading {

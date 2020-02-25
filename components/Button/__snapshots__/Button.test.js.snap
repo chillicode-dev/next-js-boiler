@@ -40,7 +40,7 @@ exports[`Renders Button correctly 1`] = `
   </li>
   <li>
     <a
-      className="Button link"
+      className="Button"
       href="//ya.ru"
       rel="nofollow noopener"
       target="_blank"

@@ -4,7 +4,7 @@ exports[`Renders Link correctly 1`] = `
 <ul>
   <li>
     <a
-      className="active"
+      className="Link active"
       href="/"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -14,7 +14,7 @@ exports[`Renders Link correctly 1`] = `
   </li>
   <li>
     <a
-      className=""
+      className="Link"
       href="/about"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -24,7 +24,7 @@ exports[`Renders Link correctly 1`] = `
   </li>
   <li>
     <a
-      className=""
+      className="Link"
       href="//ya.ru"
     >
       External
@@ -32,7 +32,7 @@ exports[`Renders Link correctly 1`] = `
   </li>
   <li>
     <a
-      className=""
+      className="Link"
       href="//ya.ru"
       rel="nofollow noopener"
       target="_blank"
@@ -42,7 +42,7 @@ exports[`Renders Link correctly 1`] = `
   </li>
   <li>
     <a
-      className=""
+      className="Link"
       href="tel://+79993335544"
     >
       Call me
@@ -50,7 +50,7 @@ exports[`Renders Link correctly 1`] = `
   </li>
   <li>
     <a
-      className=""
+      className="Link"
       href="mailto://adlite@yandex.ru"
     >
       Send me email

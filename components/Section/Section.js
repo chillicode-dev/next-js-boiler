@@ -19,7 +19,7 @@ const Section = ({className, children, title, hasPaddings, color}) => {
     <div className={classes}>
       <Container>
         {title && (
-          <Typography variant="heading2" hasMargin>
+          <Typography variant="heading1" className={style.title} tagName="h2" weight="bold" uppercase hasMargin>
             {title}
           </Typography>
         )}
@@ -41,7 +41,7 @@ Section.propTypes = {
   children: PropTypes.node.isRequired,
   title: PropTypes.string,
   hasPaddings: PropTypes.bool,
-  color: PropTypes.oneOf(['transparent', 'bg', 'brand']),
+  color: PropTypes.oneOf(['transparent', 'bg', 'gray']),
 };
 
 export default Section;

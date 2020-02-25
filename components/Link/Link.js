@@ -6,10 +6,23 @@ import NextLink from 'next/link';
 import {useRouter} from 'next/router';
 // Internals
 import {url, env} from 'utils';
+import style from './style.scss';
 
-const Link = ({className, activeClassName, children, href, external, targetBlank, protocol, htmlProps, ...props}) => {
+const Link = ({
+  className,
+  activeClassName,
+  children,
+  href,
+  external,
+  targetBlank,
+  protocol,
+  htmlProps,
+  disableStyle,
+  ...props
+}) => {
   const router = env.isTest() ? {pathname: '/'} : useRouter();
   const classes = cn({
+    [style.Link]: !disableStyle,
     [activeClassName]: activeClassName && router.pathname === href,
     [className]: className,
   });
@@ -47,6 +60,7 @@ Link.defaultProps = {
   targetBlank: false,
   protocol: '',
   htmlProps: {},
+  disableStyle: false,
 };
 
 Link.propTypes = {
@@ -58,6 +72,7 @@ Link.propTypes = {
   targetBlank: PropTypes.bool,
   protocol: PropTypes.string,
   htmlProps: PropTypes.object,
+  disableStyle: PropTypes.bool,
 };
 
 export default Link;
