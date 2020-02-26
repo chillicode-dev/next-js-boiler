@@ -14,7 +14,6 @@ const Button = ({className, children, variant, href, isLoading, icon, iconSize, 
     [style.Button]: true,
     [style[variant]]: variant,
     [style.loading]: isLoading,
-    // [style.link]: href,
     [style.hasIcon]: icon,
     [className]: className,
   });
@@ -38,13 +37,14 @@ const Button = ({className, children, variant, href, isLoading, icon, iconSize, 
       )}
       <span className={style.content}>
         {icon && <Icon width={iconSize} height={iconSize} className={style.icon} />}
-        <span>{children}</span>
+        {children && <span className={style.contentText}>{children}</span>}
       </span>
     </TagName>
   );
 };
 
 Button.defaultProps = {
+  children: null,
   href: '',
   isLoading: false,
   icon: '',
@@ -53,7 +53,7 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   variant: PropTypes.oneOf(['reset', 'brand', 'gray']).isRequired,
   href: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   isLoading: PropTypes.bool,

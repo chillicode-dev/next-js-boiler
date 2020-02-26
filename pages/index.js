@@ -1,9 +1,18 @@
 // Vendor
 import React from 'react';
 // Internals
+import IntroSection from 'sections/home/IntroSection';
+import FeaturesSection from 'sections/home/FeaturesSection';
+import InstagramSection from 'sections/home/InstagramSection';
 
 const Home = () => {
-  return <h1>Main</h1>;
+  return (
+    <React.Fragment>
+      <IntroSection />
+      <FeaturesSection />
+      <InstagramSection />
+    </React.Fragment>
+  );
 };
 
 export default Home;

@@ -60,7 +60,15 @@ module.exports = {
       files: [
         {
           from: './templates/react-section.js.tm',
-          to: './sections/${TM:PAGE}/${TM:COMPONENT_NAME}.js',
+          to: './sections/${TM:PAGE}/${TM:COMPONENT_NAME}/${TM:COMPONENT_NAME}.js',
+        },
+        {
+          from: './templates/export-module.js.tm',
+          to: './sections/${TM:PAGE}/${TM:COMPONENT_NAME}/index.js',
+        },
+        {
+          from: './templates/style-file.scss.tm',
+          to: './sections/${TM:PAGE}/${TM:COMPONENT_NAME}/style.scss',
         },
       ],
     },
