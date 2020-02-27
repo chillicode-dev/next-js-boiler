@@ -1,0 +1,23 @@
+.TextInput {
+  position: relative;
+}
+
+.input {
+  @include input();
+}
+
+.error {
+  color: $errorColor;
+}
+
+.hasError {
+  .input {
+    border-color: $errorColor;
+  }
+}
+
+.multiline {
+  .input {
+    resize: none;
+  }
+}

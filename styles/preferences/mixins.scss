@@ -169,3 +169,20 @@
   line-height: $lineHeight;
   transition: background-color $duration;
 }
+
+@mixin input() {
+  display: block;
+  width: 100%;
+  border: 1px solid $borderColor;
+  font-size: $fontSize;
+  font-weight: $regular;
+  line-height: 28px;
+  padding: 4px 15px;
+  border-radius: 0;
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: none;
+    border-color: $brandColor;
+  }
+}

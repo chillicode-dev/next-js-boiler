@@ -83,7 +83,7 @@ Typography.propTypes = {
     'paragraph',
     'annotation',
   ]).isRequired,
-  color: PropTypes.oneOf([null, 'text', 'secondary', 'brand', 'inverted']),
+  color: PropTypes.oneOf([null, 'text', 'secondary', 'brand', 'inverted', 'error']),
   weight: PropTypes.oneOf(['regular', 'medium', 'bold']),
   className: PropTypes.string,
   tagName: PropTypes.oneOfType([PropTypes.string, PropTypes.elementType]),

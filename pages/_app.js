@@ -4,7 +4,6 @@ import NextApp from 'next/app';
 import {Provider} from 'react-redux';
 // Internals
 import {withReduxStore} from 'hocs';
-import Layout from 'components/Layout';
 // Styles
 import 'styles/vendor/normalize.scss';
 import 'styles/vendor/reset.scss';
@@ -28,9 +27,7 @@ class App extends NextApp {
     const {Component, pageProps, reduxStore} = this.props;
     return (
       <Provider store={reduxStore}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Component {...pageProps} />
       </Provider>
     );
   }

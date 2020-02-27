@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 // Internals
 import CheckIcon from 'assets/icons/check.svg';
+import Layout from 'components/Layout';
 import Typography from 'components/Typography';
 import Section from 'components/Section';
 import Button from 'components/Button';
@@ -40,7 +41,7 @@ class Home extends React.PureComponent {
 
     const {count} = this.props;
     return (
-      <React.Fragment>
+      <Layout useContainer={false}>
         <Section title="Links list" color="gray">
           <ul>
             <li>
@@ -210,7 +211,7 @@ class Home extends React.PureComponent {
             color modifier
           </Typography>
         </Section>
-      </React.Fragment>
+      </Layout>
     );
   }
 }

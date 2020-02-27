@@ -9,12 +9,13 @@ import style from './style.scss';
 
 const defaultIconSize = 25;
 
-const Button = ({className, children, variant, href, isLoading, icon, iconSize, ...props}) => {
+const Button = ({className, children, variant, href, isLoading, icon, iconSize, wide, ...props}) => {
   const classes = cn({
     [style.Button]: true,
     [style[variant]]: variant,
     [style.loading]: isLoading,
     [style.hasIcon]: icon,
+    [style.wide]: wide,
     [className]: className,
   });
   const TagName = href ? Link : 'button';
@@ -50,6 +51,7 @@ Button.defaultProps = {
   icon: '',
   iconSize: defaultIconSize,
   className: '',
+  wide: false,
 };
 
 Button.propTypes = {
@@ -60,6 +62,7 @@ Button.propTypes = {
   icon: PropTypes.oneOfType([PropTypes.string, PropTypes.elementType]),
   iconSize: PropTypes.number,
   className: PropTypes.string,
+  wide: PropTypes.bool,
 };
 
 export default Button;

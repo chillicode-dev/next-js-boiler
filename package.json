@@ -88,6 +88,7 @@
     "stylelint-scss": "^3.13.0",
     "susy": "^3.0.5",
     "templateman": "0.0.5",
+    "uuid": "^7.0.1",
     "winston": "^3.2.1"
   }
 }

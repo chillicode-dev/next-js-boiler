@@ -10,5 +10,6 @@
   "secondaryTextColor": "#555",
   "invertedTextColor": "#fff",
   "linkColor": "#c99947",
-  "linkColorActive": "#000"
+  "linkColorActive": "#000",
+  "errorColor": "#a94442"
 }
