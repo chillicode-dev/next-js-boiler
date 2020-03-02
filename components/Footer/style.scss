@@ -50,6 +50,14 @@ $borderColor: #191919e6;
     margin: 0 auto;
     background-color: $bgColor;
     border-radius: 50%;
+
+    &:hover {
+      background-color: $brandColor;
+
+      & svg {
+        fill: $bgColor;
+      }
+    }
   }
 
   .navItem {
