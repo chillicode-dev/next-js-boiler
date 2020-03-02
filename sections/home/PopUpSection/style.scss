@@ -28,6 +28,10 @@
     @include onPhone() {
       display: none;
     }
+
+    img {
+      width: 14px;
+    }
   }
 
   .text {
