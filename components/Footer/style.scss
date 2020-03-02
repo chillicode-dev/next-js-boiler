@@ -33,11 +33,23 @@ $borderColor: #191919e6;
   }
 
   .phone {
+    padding-left: 10px;
     color: $invertedTextColor;
 
     &:hover {
       color: $brandColor;
     }
+  }
+
+  .instagram {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    margin: 0 auto;
+    background-color: $bgColor;
+    border-radius: 50%;
   }
 
   .navItem {

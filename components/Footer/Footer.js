@@ -6,6 +6,8 @@ import cn from 'classnames';
 import Typography from 'components/Typography';
 import Container from 'components/Container';
 import Link from 'components/Link';
+import Phone from 'assets/icons/phone.svg';
+import Instagram from 'assets/icons/instagram.svg';
 import style from './style.scss';
 
 const Footer = ({className}) => {
@@ -20,6 +22,7 @@ const Footer = ({className}) => {
             Los Angeles, CA
           </Typography>
           <Typography variant="annotation">
+            <Phone width={14} height={18} />
             <Link href="3108715002" className={style.phone} protocol="tel">
               310-871-5002
             </Link>
@@ -56,6 +59,9 @@ const Footer = ({className}) => {
           <Typography variant="heading4" className={style.colTitle} uppercase>
             Follow us
           </Typography>
+          <Link href="www.instagram.com/pullquest/" className={style.instagram} protocol="tel" hasHtml>
+            <Instagram width={20} height={24} />
+          </Link>
         </div>
       </Container>
     </footer>
