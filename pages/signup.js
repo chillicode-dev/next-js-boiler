@@ -2,12 +2,12 @@
 import React from 'react';
 // Internals
 import Layout from 'components/Layout';
-import JoinSection from 'sections/signup/JoinPage';
+import SignupForm from 'sections/signup/SignupForm';
 
 const Home = () => {
   return (
-    <Layout title="REQUEST TO JOIN">
-      <JoinSection />
+    <Layout title="GENERAL INFORMATION">
+      <SignupForm />
     </Layout>
   );
 };

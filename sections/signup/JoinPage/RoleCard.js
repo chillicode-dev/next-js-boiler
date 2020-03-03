@@ -38,7 +38,7 @@ const RoleCard = ({role, cost, hasSubtitle, services, isComing, buttonText}) => 
           )}
         </div>
         <Button variant="gray">
-          <Link className={style.link} disableStyle href="/signup" targetBlank>
+          <Link className={style.link} disableStyle href="/signup" targetBlank wide>
             {buttonText}
           </Link>
         </Button>
