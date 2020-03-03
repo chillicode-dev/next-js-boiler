@@ -32,10 +32,10 @@ export default class Header extends PureComponent {
           </Link>
         </div>
         <div className={style.toolboxCol}>
-          <Link href="/" className={style.navItem} activeClassName={style.navItemActive}>
+          <Link href="/join" className={style.navItem} activeClassName={style.navItemActive}>
             REQUEST TO JOIN
           </Link>
-          <Link href="/" className={style.navItem} activeClassName={style.navItemActive}>
+          <Link href="/login" className={style.navItem} activeClassName={style.navItemActive}>
             LOGIN
           </Link>
         </div>
