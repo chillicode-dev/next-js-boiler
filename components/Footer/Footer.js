@@ -49,7 +49,7 @@ const Footer = ({className}) => {
               </Link>
             </li>
             <li className={style.navItem}>
-              <Link href="/" className={style.navItemLink}>
+              <Link href="/contacts" className={style.navItemLink}>
                 Contacts
               </Link>
             </li>
