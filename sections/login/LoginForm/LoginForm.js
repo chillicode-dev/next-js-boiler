@@ -20,7 +20,7 @@ const LoginForm = () => {
         </FormControl>
       </div>
       <Typography variant="paragraph" weight="medium" hasMargin>
-        <Link href="/">Forgot password?</Link>
+        <Link href="/forgot">Forgot password?</Link>
       </Typography>
       <Button variant="brand" type="submit" wide>
         Login
