@@ -39,7 +39,7 @@ const Footer = ({className}) => {
               </Link>
             </li>
             <li className={style.navItem}>
-              <Link href="/" className={style.navItemLink}>
+              <Link href="/privacy" className={style.navItemLink}>
                 Privacy Policy
               </Link>
             </li>
