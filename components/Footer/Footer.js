@@ -34,7 +34,7 @@ const Footer = ({className}) => {
           </Typography>
           <ul className={style.nav}>
             <li className={style.navItem}>
-              <Link href="/" className={style.navItemLink}>
+              <Link href="/about" className={style.navItemLink}>
                 About us
               </Link>
             </li>
