@@ -33,11 +33,11 @@ const RoleCard = ({role, cost, hasSubtitle, services, isComing, buttonText}) => 
           <ul>{renderServices()}</ul>
           {isComing && (
             <div className={style.isComing}>
-              <span className={style.blue}>Coming soon:</span> inventory tracking
+              <span className={style.brand}>Coming soon:</span> inventory tracking
             </div>
           )}
         </div>
-        <Button variant="gray">
+        <Button variant="brand">
           <Link className={style.link} disableStyle href="/signup" targetBlank wide>
             {buttonText}
           </Link>

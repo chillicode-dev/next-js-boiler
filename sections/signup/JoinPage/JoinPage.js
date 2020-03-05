@@ -9,9 +9,10 @@ import style from './style.scss';
 const JoinPage = () => {
   return (
     <div className={style.JoinPage} color="transparent">
-      <Typography variant="paragraph" uppercase="modifier" hasHtml>
-        YOU WILL GET ACCESS TO THE PLATFORM AS SOON AS YOUR APPLICATION HAS BEEN APPROVED BY THE PULLQUEST TEAM. THANK
-        YOU!
+      <Typography className={style.description} variant="paragraph" uppercase="modifier">
+        YOU WILL GET ACCESS TO THE PLATFORM AS SOON AS YOUR <br />
+        APPLICATION HAS BEEN APPROVED BY THE PULLQUEST TEAM. <br />
+        THANK YOU!
       </Typography>
       <div className={style.cards}>
         <RoleCard role="Stylist, Editor &amp; Influencer" cost="FREE!" buttonText="SIGN UP" />

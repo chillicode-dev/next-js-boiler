@@ -1,4 +1,8 @@
 .JoinPage {
+  .description {
+    margin-bottom: 10px;
+  }
+
   .cards {
     display: flex;
     justify-content: space-around;
@@ -40,6 +44,7 @@
   }
 
   .costSubtitle {
+    padding-top: 10px;
     font-size: 12px;
     line-height: 14px;
     color: rgba(0, 0, 0, 0.27);
@@ -60,8 +65,8 @@
     font-weight: $bold;
   }
 
-  .blue {
-    color: #23869c;
+  .brand {
+    color: $brandColor;
   }
 
   .link {
