@@ -1,13 +1,10 @@
 .PrivacyPolicy {
-  .text {
-    margin-bottom: 20px;
-  }
-
   .list {
     list-style-type: disc;
+    list-style-position: inside;
   }
 
-  .listItem {
-    margin-bottom: 5px;
+  strong {
+    font-weight: $bold;
   }
 }
