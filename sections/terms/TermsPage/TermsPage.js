@@ -8,8 +8,8 @@ const TermsPage = () => {
   return (
     <div className={style.TermsPage}>
       <Typography variant="paragraph" hasMargin>
-        Agreement between user and PullQuest Welcome to&nbsp;PullQuest.net. The PullQuest.net website (the
-        &laquo;Site&raquo;) is&nbsp;comprised of&nbsp;various web pages operated by&nbsp;PullQuest LLC
+        <strong>Agreement between user and PullQuest</strong> Welcome to&nbsp;PullQuest.net. The PullQuest.net website
+        (the &laquo;Site&raquo;) is&nbsp;comprised of&nbsp;various web pages operated by&nbsp;PullQuest LLC
         (&laquo;PullQuest&raquo;). PullQuest.net is&nbsp;offered to&nbsp;you conditioned on&nbsp;your acceptance without
         modification of&nbsp;the terms, conditions, and notices contained herein (the &laquo;Terms&raquo;). Your use
         of&nbsp;PullQuest.net constitutes your agreement to&nbsp;all such Terms. Please read these terms carefully, and
@@ -20,18 +20,19 @@ const TermsPage = () => {
         as&nbsp;a&nbsp;service.
       </Typography>
       <Typography variant="paragraph" hasMargin>
-        Privacy Your use of&nbsp;PullQuest.net is&nbsp;subject to&nbsp;PullQuest&rsquo;s Privacy Policy. Please review
-        our Privacy Policy, which also governs the Site and informs users of&nbsp;our data collection practices.
+        <strong>Privacy</strong> Your use of&nbsp;PullQuest.net is&nbsp;subject to&nbsp;PullQuest&rsquo;s Privacy
+        Policy. Please review our Privacy Policy, which also governs the Site and informs users of&nbsp;our data
+        collection practices.
       </Typography>
       <Typography variant="paragraph" hasMargin>
-        Electronic Communications Visiting PullQuest.net or&nbsp;sending emails to&nbsp;PullQuest constitutes electronic
-        communications. You consent to&nbsp;receive electronic communications and you agree that all agreements,
-        notices, disclosures and other communications that we&nbsp;provide to&nbsp;you electronically, via email and
-        on&nbsp;the Site, satisfy any legal requirement that such communications be&nbsp;in&nbsp;writing.
+        <strong>Electronic Communications</strong> Visiting PullQuest.net or&nbsp;sending emails to&nbsp;PullQuest
+        constitutes electronic communications. You consent to&nbsp;receive electronic communications and you agree that
+        all agreements, notices, disclosures and other communications that we&nbsp;provide to&nbsp;you electronically,
+        via email and on&nbsp;the Site, satisfy any legal requirement that such communications be&nbsp;in&nbsp;writing.
       </Typography>
       <Typography variant="paragraph" hasMargin>
-        Your account&nbsp;If you use this site, you are responsible for maintaining the confidentiality of&nbsp;your
-        account and password and for restricting access to&nbsp;your computer, and you agree to&nbsp;accept
+        <strong>Your account&nbsp;</strong>If you use this site, you are responsible for maintaining the confidentiality
+        of&nbsp;your account and password and for restricting access to&nbsp;your computer, and you agree to&nbsp;accept
         responsibility for all activities that occur under your account or&nbsp;password. You may not assign
         or&nbsp;otherwise transfer your account to&nbsp;any other person or&nbsp;entity. You acknowledge that PullQuest
         is&nbsp;not responsible for third party access to&nbsp;your account that results from theft
@@ -44,12 +45,13 @@ const TermsPage = () => {
         of&nbsp;a&nbsp;parent or&nbsp;guardian.
       </Typography>
       <Typography variant="paragraph" hasMargin>
-        Links to&nbsp;third party sites/Third party services PullQuest.net may contain links to&nbsp;other websites
-        (&laquo;Linked Sites&raquo;). The Linked Sites are not under the control of&nbsp;PullQuest and PullQuest
-        is&nbsp;not responsible for the contents of&nbsp;any Linked Site, including without limitation any link
-        contained in&nbsp;a&nbsp;Linked Site, or&nbsp;any changes or&nbsp;updates to&nbsp;a&nbsp;Linked Site. PullQuest
-        is&nbsp;providing these links to&nbsp;you only as&nbsp;a&nbsp;convenience, and the inclusion of&nbsp;any link
-        does not imply endorsement by&nbsp;PullQuest of&nbsp;the site or&nbsp;any association with its operators.
+        <strong>Links to&nbsp;third party sites/Third party services</strong> PullQuest.net may contain links
+        to&nbsp;other websites (&laquo;Linked Sites&raquo;). The Linked Sites are not under the control
+        of&nbsp;PullQuest and PullQuest is&nbsp;not responsible for the contents of&nbsp;any Linked Site, including
+        without limitation any link contained in&nbsp;a&nbsp;Linked Site, or&nbsp;any changes or&nbsp;updates
+        to&nbsp;a&nbsp;Linked Site. PullQuest is&nbsp;providing these links to&nbsp;you only as&nbsp;a&nbsp;convenience,
+        and the inclusion of&nbsp;any link does not imply endorsement by&nbsp;PullQuest of&nbsp;the site or&nbsp;any
+        association with its operators.
       </Typography>
       <Typography variant="paragraph" hasMargin>
         Certain services made available via PullQuest.net are delivered by&nbsp;third party sites and organizations.
@@ -59,54 +61,56 @@ const TermsPage = () => {
         or&nbsp;functionality on&nbsp;behalf of&nbsp;PullQuest.net users and customers.
       </Typography>
       <Typography variant="paragraph" hasMargin>
-        No&nbsp;unlawful or&nbsp;prohibited use/Intellectual Property You are granted a&nbsp;non-exclusive,
-        non-transferable, revocable license to&nbsp;access and use PullQuest.net strictly in&nbsp;accordance with these
-        terms of&nbsp;use. As&nbsp;a&nbsp;condition of&nbsp;your use of&nbsp;the Site, you warrant to&nbsp;PullQuest
-        that you will not use the Site for any purpose that is&nbsp;unlawful or&nbsp;prohibited by&nbsp;these Terms. You
-        may not use the Site in&nbsp;any manner which could damage, disable, overburden, or&nbsp;impair the Site
-        or&nbsp;interfere with any other party&rsquo;s use and enjoyment of&nbsp;the Site. You may not obtain
-        or&nbsp;attempt to&nbsp;obtain any materials or&nbsp;information through any means not intentionally made
-        available or&nbsp;provided for through the Site. All content included as&nbsp;part of&nbsp;the Service, such
-        as&nbsp;text, graphics, logos, images, as&nbsp;well as&nbsp;the compilation thereof, and any software used
-        on&nbsp;the Site, is&nbsp;the property of&nbsp;PullQuest or&nbsp;its suppliers and protected by&nbsp;copyright
-        and other laws that protect intellectual property and proprietary rights. You agree to&nbsp;observe and abide
-        by&nbsp;all copyright and other proprietary notices, legends or&nbsp;other restrictions contained in&nbsp;any
-        such content and will not make any changes thereto. You will not modify, publish, transmit, reverse engineer,
-        participate in&nbsp;the transfer or&nbsp;sale, create derivative works, or&nbsp;in&nbsp;any way exploit any
-        of&nbsp;the content, in&nbsp;whole or&nbsp;in&nbsp;part, found on&nbsp;the Site. PullQuest content is&nbsp;not
-        for resale. Your use of&nbsp;the Site does not entitle you to&nbsp;make any unauthorized use of&nbsp;any
-        protected content, and in&nbsp;particular you will not delete or&nbsp;alter any proprietary rights
-        or&nbsp;attribution notices in&nbsp;any content. You will use protected content solely for your personal use,
-        and will make no&nbsp;other use of&nbsp;the content without the express written permission of&nbsp;PullQuest and
-        the copyright owner. You agree that you do&nbsp;not acquire any ownership rights in&nbsp;any protected content.
-        We&nbsp;do&nbsp;not grant you any licenses, express or&nbsp;implied, to&nbsp;the intellectual property
-        of&nbsp;PullQuest or&nbsp;our licensors except as&nbsp;expressly authorized by&nbsp;these Terms.
+        <strong>No&nbsp;unlawful or&nbsp;prohibited use/Intellectual Property</strong> You are granted
+        a&nbsp;non-exclusive, non-transferable, revocable license to&nbsp;access and use PullQuest.net strictly
+        in&nbsp;accordance with these terms of&nbsp;use. As&nbsp;a&nbsp;condition of&nbsp;your use of&nbsp;the Site, you
+        warrant to&nbsp;PullQuest that you will not use the Site for any purpose that is&nbsp;unlawful
+        or&nbsp;prohibited by&nbsp;these Terms. You may not use the Site in&nbsp;any manner which could damage, disable,
+        overburden, or&nbsp;impair the Site or&nbsp;interfere with any other party&rsquo;s use and enjoyment of&nbsp;the
+        Site. You may not obtain or&nbsp;attempt to&nbsp;obtain any materials or&nbsp;information through any means not
+        intentionally made available or&nbsp;provided for through the Site. All content included as&nbsp;part
+        of&nbsp;the Service, such as&nbsp;text, graphics, logos, images, as&nbsp;well as&nbsp;the compilation thereof,
+        and any software used on&nbsp;the Site, is&nbsp;the property of&nbsp;PullQuest or&nbsp;its suppliers and
+        protected by&nbsp;copyright and other laws that protect intellectual property and proprietary rights. You agree
+        to&nbsp;observe and abide by&nbsp;all copyright and other proprietary notices, legends or&nbsp;other
+        restrictions contained in&nbsp;any such content and will not make any changes thereto. You will not modify,
+        publish, transmit, reverse engineer, participate in&nbsp;the transfer or&nbsp;sale, create derivative works,
+        or&nbsp;in&nbsp;any way exploit any of&nbsp;the content, in&nbsp;whole or&nbsp;in&nbsp;part, found on&nbsp;the
+        Site. PullQuest content is&nbsp;not for resale. Your use of&nbsp;the Site does not entitle you to&nbsp;make any
+        unauthorized use of&nbsp;any protected content, and in&nbsp;particular you will not delete or&nbsp;alter any
+        proprietary rights or&nbsp;attribution notices in&nbsp;any content. You will use protected content solely for
+        your personal use, and will make no&nbsp;other use of&nbsp;the content without the express written permission
+        of&nbsp;PullQuest and the copyright owner. You agree that you do&nbsp;not acquire any ownership rights
+        in&nbsp;any protected content. We&nbsp;do&nbsp;not grant you any licenses, express or&nbsp;implied, to&nbsp;the
+        intellectual property of&nbsp;PullQuest or&nbsp;our licensors except as&nbsp;expressly authorized by&nbsp;these
+        Terms.
       </Typography>
       <Typography variant="paragraph" hasMargin>
-        International Users The Service is&nbsp;controlled, operated and administered by&nbsp;PullQuest from our offices
-        within the USA. If&nbsp;you access the Service from a&nbsp;location outside the USA, you are responsible for
-        compliance with all local laws. You agree that you will not use the PullQuest Content accessed through
-        PullQuest.net in&nbsp;any country or&nbsp;in&nbsp;any manner prohibited by&nbsp;any applicable laws,
+        <strong>International Users</strong> The Service is&nbsp;controlled, operated and administered by&nbsp;PullQuest
+        from our offices within the USA. If&nbsp;you access the Service from a&nbsp;location outside the USA, you are
+        responsible for compliance with all local laws. You agree that you will not use the PullQuest Content accessed
+        through PullQuest.net in&nbsp;any country or&nbsp;in&nbsp;any manner prohibited by&nbsp;any applicable laws,
         restrictions or&nbsp;regulations.
       </Typography>
       <Typography variant="paragraph" hasMargin>
-        Indemnification You agree to&nbsp;indemnify, defend and hold harmless PullQuest, its officers, directors,
-        employees, agents and third parties, for any losses, costs, liabilities and expenses (including reasonable
-        attorneys&rsquo; fees) relating to&nbsp;or&nbsp;arising out of&nbsp;your use of&nbsp;or&nbsp;inability
-        to&nbsp;use the Site or&nbsp;services, any user postings made by&nbsp;you, your violation of&nbsp;any terms
-        of&nbsp;this Agreement or&nbsp;your violation of&nbsp;any rights of&nbsp;a&nbsp;third party, or&nbsp;your
-        violation of&nbsp;any applicable laws, rules or&nbsp;regulations. PullQuest reserves the right, at&nbsp;its own
-        cost, to&nbsp;assume the exclusive defense and control of&nbsp;any matter
+        <strong>Indemnification</strong> You agree to&nbsp;indemnify, defend and hold harmless PullQuest, its officers,
+        directors, employees, agents and third parties, for any losses, costs, liabilities and expenses (including
+        reasonable attorneys&rsquo; fees) relating to&nbsp;or&nbsp;arising out of&nbsp;your use
+        of&nbsp;or&nbsp;inability to&nbsp;use the Site or&nbsp;services, any user postings made by&nbsp;you, your
+        violation of&nbsp;any terms of&nbsp;this Agreement or&nbsp;your violation of&nbsp;any rights
+        of&nbsp;a&nbsp;third party, or&nbsp;your violation of&nbsp;any applicable laws, rules or&nbsp;regulations.
+        PullQuest reserves the right, at&nbsp;its own cost, to&nbsp;assume the exclusive defense and control of&nbsp;any
+        matter
       </Typography>
       <Typography variant="paragraph" hasMargin>
         otherwise subject to indemnification by you, in which event you will fully cooperate with PullQuest in asserting
         any available defenses.
       </Typography>
       <Typography variant="paragraph" hasMargin uppercase>
-        Liability disclaimer THE INFORMATION, SOFTWARE, PRODUCTS, AND SERVICES INCLUDED IN&nbsp;OR&nbsp;AVAILABLE
-        THROUGH THE SITE MAY INCLUDE INACCURACIES OR&nbsp;TYPOGRAPHICAL ERRORS. CHANGES ARE PERIODICALLY ADDED
-        TO&nbsp;THE INFORMATION HEREIN. PullQuest LLC&nbsp;AND/OR ITS SUPPLIERS MAY MAKE IMPROVEMENTS AND/OR CHANGES
-        IN&nbsp;THE SITE AT&nbsp;ANY TIME.
+        <strong>Liability disclaimer </strong>THE INFORMATION, SOFTWARE, PRODUCTS, AND SERVICES INCLUDED
+        IN&nbsp;OR&nbsp;AVAILABLE THROUGH THE SITE MAY INCLUDE INACCURACIES OR&nbsp;TYPOGRAPHICAL ERRORS. CHANGES ARE
+        PERIODICALLY ADDED TO&nbsp;THE INFORMATION HEREIN. PullQuest LLC&nbsp;AND/OR ITS SUPPLIERS MAY MAKE IMPROVEMENTS
+        AND/OR CHANGES IN&nbsp;THE SITE AT&nbsp;ANY TIME.
       </Typography>
       <Typography variant="paragraph" hasMargin uppercase>
         PullQuest LLC&nbsp;AND/OR ITS SUPPLIERS MAKE NO&nbsp;REPRESENTATIONS ABOUT THE SUITABILITY, RELIABILITY,
@@ -134,13 +138,13 @@ const TermsPage = () => {
         OF&nbsp;USE, YOUR SOLE AND EXCLUSIVE REMEDY IS&nbsp;TO&nbsp;DISCONTINUE USING THE SITE.
       </Typography>
       <Typography variant="paragraph" hasMargin>
-        Termination/access restriction PullQuest reserves the right, in&nbsp;its sole discretion, to&nbsp;terminate your
-        access to&nbsp;the Site and the related services or&nbsp;any portion thereof at&nbsp;any time, without notice.
-        To&nbsp;the maximum extent permitted by&nbsp;law, this agreement is&nbsp;governed by&nbsp;the laws of&nbsp;the
-        State of&nbsp;Florida and you hereby consent to&nbsp;the exclusive jurisdiction and venue of&nbsp;courts
-        in&nbsp;Florida in&nbsp;all disputes arising out of&nbsp;or&nbsp;relating to&nbsp;the use of&nbsp;the Site. Use
-        of&nbsp;the Site is&nbsp;unauthorized in&nbsp;any jurisdiction that does not give effect to&nbsp;all provisions
-        of&nbsp;these Terms, including, without limitation, this section.
+        <strong>Termination/access restriction</strong> PullQuest reserves the right, in&nbsp;its sole discretion,
+        to&nbsp;terminate your access to&nbsp;the Site and the related services or&nbsp;any portion thereof at&nbsp;any
+        time, without notice. To&nbsp;the maximum extent permitted by&nbsp;law, this agreement is&nbsp;governed
+        by&nbsp;the laws of&nbsp;the State of&nbsp;Florida and you hereby consent to&nbsp;the exclusive jurisdiction and
+        venue of&nbsp;courts in&nbsp;Florida in&nbsp;all disputes arising out of&nbsp;or&nbsp;relating to&nbsp;the use
+        of&nbsp;the Site. Use of&nbsp;the Site is&nbsp;unauthorized in&nbsp;any jurisdiction that does not give effect
+        to&nbsp;all provisions of&nbsp;these Terms, including, without limitation, this section.
       </Typography>
       <Typography variant="paragraph" hasMargin>
         You agree that no&nbsp;joint venture, partnership, employment, or&nbsp;agency relationship exists between you
@@ -166,13 +170,13 @@ const TermsPage = () => {
         to&nbsp;the parties that this agreement and all related documents be&nbsp;written in&nbsp;English.
       </Typography>
       <Typography variant="paragraph" hasMargin>
-        Changes to&nbsp;Terms PullQuest reserves the right, in&nbsp;its sole discretion, to&nbsp;change the Terms under
-        which PullQuest.net is&nbsp;offered. The most current version of&nbsp;the Terms will supersede all previous
-        versions. PullQuest encourages you to&nbsp;periodically review the Terms to&nbsp;stay informed of&nbsp;our
-        updates.
+        <strong>Changes to&nbsp;Terms</strong> PullQuest reserves the right, in&nbsp;its sole discretion, to&nbsp;change
+        the Terms under which PullQuest.net is&nbsp;offered. The most current version of&nbsp;the Terms will supersede
+        all previous versions. PullQuest encourages you to&nbsp;periodically review the Terms to&nbsp;stay informed
+        of&nbsp;our updates.
       </Typography>
       <Typography variant="paragraph" hasMargin>
-        Contact Us PullQuest welcomes your questions or comments regarding the Terms:
+        <strong> Contact Us </strong>PullQuest welcomes your questions or comments regarding the Terms:
       </Typography>
       <Typography variant="paragraph" hasMargin>
         PullQuest LLC 446&nbsp;S La&nbsp;Brea Ave 90036 Los Angeles, CA

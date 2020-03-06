@@ -10,7 +10,7 @@ const AboutPage = () => {
       <Typography className={style.title} variant="heading1">
         About us
       </Typography>
-      <Typography variant="annotation" hasHtml>
+      <Typography variant="annotation">
         We believe in a more collaborative fashion world by connecting brands with stylists and influencers and
         streamlining the pull process.
       </Typography>

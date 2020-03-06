@@ -26,7 +26,7 @@ const PopUpSection = () => {
           <Typography className={style.text} variant="paragraph" weight="bold">
             Pullquest Platform Connects Brands and Stylists in Digital Showroom
           </Typography>
-          <Typography className={style.text} variant="paragraph" hasHtml>
+          <Typography className={style.text} variant="paragraph">
             &laquo;We&nbsp;want to&nbsp;be&nbsp;the go-to platform for stylists and p.r.&rsquo;s,&raquo; said cofounder
             Natalie Meyer.
           </Typography>

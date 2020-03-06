@@ -11,28 +11,16 @@ const ContactsPage = () => {
         Contacts
       </Typography>
       <div className={style.contact}>
-        <Typography variant="annotation" hasHtml>
-          Email
-        </Typography>
-        <Typography variant="annotation" hasHtml>
-          natalie@pullquest.net
-        </Typography>
+        <Typography variant="annotation">Email</Typography>
+        <Typography variant="annotation">natalie@pullquest.net</Typography>
       </div>
       <div className={style.contact}>
-        <Typography variant="annotation" hasHtml>
-          Phone
-        </Typography>
-        <Typography variant="annotation" hasHtml>
-          310-871-5002
-        </Typography>
+        <Typography variant="annotation">Phone</Typography>
+        <Typography variant="annotation">310-871-5002</Typography>
       </div>
       <div className={style.contact}>
-        <Typography variant="annotation" hasHtml>
-          Address
-        </Typography>
-        <Typography variant="annotation" hasHtml>
-          Los Angeles, CA
-        </Typography>
+        <Typography variant="annotation">Address</Typography>
+        <Typography variant="annotation">Los Angeles, CA</Typography>
       </div>
     </div>
   );
