@@ -11,8 +11,14 @@
 
   .feature {
     display: flex;
+    align-items: center;
     margin-bottom: 50px;
     @include disableLastMargin(bottom);
+
+    svg,
+    img {
+      max-width: 65px;
+    }
   }
 
   .featureContent {

@@ -5,6 +5,7 @@ import Section from 'components/Section';
 import Typography from 'components/Typography';
 import homeImg1 from 'assets/img/home/home1-m.jpg';
 import homeImg2 from 'assets/img/home/home2-m.jpg';
+import hangerImage from 'assets/img/home/hanger.png';
 import MagnifierIcon from 'assets/icons/basic_magnifier.svg';
 import MessageIcon from 'assets/icons/basic_elaboration_message_check.svg';
 import UploadIcon from 'assets/icons/basic_elaboration_browser_download.svg';
@@ -39,7 +40,7 @@ const FeaturesSection = () => {
               </div>
             </article>
             <article className={style.feature}>
-              <MessageIcon width={65} height={65} />
+              <img src={hangerImage} alt="Hanger image" />
               <div className={style.featureContent}>
                 <Typography variant="heading3" weight="bold">
                   Pick up
