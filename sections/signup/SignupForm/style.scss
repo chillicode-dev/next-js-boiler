@@ -1,5 +1,14 @@
 .SignupForm {
   width: 50%;
+
+  .halfItems {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .halfItem {
+    width: 48%;
+  }
 }
 
 .controls {

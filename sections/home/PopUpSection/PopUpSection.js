@@ -31,7 +31,7 @@ const PopUpSection = () => {
             Natalie Meyer.
           </Typography>
           <Typography className={style.text} variant="paragraph">
-            By Booth Moore
+            By <span className={style.red}>Booth Moore</span>
           </Typography>
         </Link>
       </Section>

@@ -61,6 +61,7 @@ const config = {
       store: path.resolve(__dirname, 'store'),
       styles: path.resolve(__dirname, 'styles'),
       utils: path.resolve(__dirname, 'utils'),
+      config: path.resolve(__dirname, 'config'),
     };
 
     return config;

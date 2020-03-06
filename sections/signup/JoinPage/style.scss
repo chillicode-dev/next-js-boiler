@@ -11,7 +11,7 @@
 }
 
 .RoleCard {
-  max-width: 400px;
+  width: 350px;
 
   .header {
     padding: 12px 16px;
@@ -67,9 +67,5 @@
 
   .brand {
     color: $brandColor;
-  }
-
-  .link {
-    color: $invertedTextColor;
   }
 }

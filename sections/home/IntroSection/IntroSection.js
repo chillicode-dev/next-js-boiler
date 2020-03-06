@@ -14,7 +14,7 @@ const IntroSection = () => {
       <Typography variant="heading1" className={style.title} weight="bold" uppercase>
         Pulls made easy
       </Typography>
-      <Button href="/" variant="gray" className={style.button}>
+      <Button href="/join" variant="gray" className={style.button}>
         Sign up
       </Button>
       <div className={style.chevronWrapper}>

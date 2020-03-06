@@ -11,12 +11,14 @@ const SignupForm = () => {
   return (
     <form className={style.SignupForm}>
       <div className={style.controls}>
-        <FormControl>
-          <TextInput type="email" placeholder="First name *" />
-        </FormControl>
-        <FormControl>
-          <TextInput type="password" placeholder="Last name *" />
-        </FormControl>
+        <div className={style.halfItems}>
+          <FormControl className={style.halfItem}>
+            <TextInput type="email" placeholder="First name *" />
+          </FormControl>
+          <FormControl className={style.halfItem}>
+            <TextInput type="password" placeholder="Last name *" />
+          </FormControl>
+        </div>
         <FormControl>
           <TextInput type="password" placeholder="Your Email *" />
         </FormControl>
