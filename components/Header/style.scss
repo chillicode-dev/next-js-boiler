@@ -45,9 +45,18 @@
   .navItem {
     font-weight: $medium;
     margin-right: 40px;
+    color: $textColor;
 
     &:last-child {
       margin-right: 0;
+    }
+
+    &:hover {
+      color: $brandColor;
+    }
+
+    &:active {
+      color: $brandColorDarker;
     }
   }
 
