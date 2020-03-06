@@ -1,7 +1,6 @@
 // Vendor
 import React from 'react';
 // Internals
-
 import FormControl from 'components/FormControl';
 import TextInput from 'components/TextInput';
 import Button from 'components/Button';
