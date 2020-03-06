@@ -19,12 +19,23 @@ const FormControl = ({className, children, hasMargin, label, labelAlign, id, err
   // useState() is used to freeze ID value after rerender
   const [idToRender] = id ? [id] : useState(uuid());
 
+  // Forward props down to child component
+  const childProps = {
+    hasError: error,
+  };
+
+  if (label) {
+    childProps.id = idToRender;
+  }
+
   return (
     <div className={classes}>
-      <label className={style.label} htmlFor={idToRender}>
-        {label}
-      </label>
-      <div className={style.inputWrapper}>{cloneElement(children, {id: idToRender, hasError: error})}</div>
+      {label && (
+        <label className={style.label} htmlFor={idToRender}>
+          {label}
+        </label>
+      )}
+      <div className={style.inputWrapper}>{cloneElement(children, childProps)}</div>
       {isErrorMessageRendered && (
         <Typography variant="paragraph" color="error" weight="medium" className={style.errorMessage}>
           {error}
