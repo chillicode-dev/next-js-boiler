@@ -41,7 +41,7 @@ $borderColor: #191919e6;
     }
   }
 
-  .instagram {
+  .social {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,6 +50,11 @@ $borderColor: #191919e6;
     margin: 0 auto;
     background-color: $bgColor;
     border-radius: 50%;
+
+    &,
+    svg {
+      transition: background-color $duration, fill $duration;
+    }
 
     &:hover {
       background-color: $brandColor;

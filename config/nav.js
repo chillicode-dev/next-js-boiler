@@ -2,23 +2,23 @@ export default {
   userNav: [
     {
       title: 'Posts',
-      href: '/',
+      href: '/posts',
     },
     {
       title: 'Looks',
-      href: '/',
+      href: '/looks',
     },
     {
       title: 'My pulls',
-      href: '/',
+      href: '/pulls',
     },
     {
       title: 'Members',
-      href: '/',
+      href: '/members',
     },
     {
       title: 'Favorites',
-      href: '/',
+      href: '/favorites',
     },
   ],
   publicUserCol: [

@@ -77,6 +77,10 @@
     }
   }
 
+  .navItemActive {
+    color: $brandColor;
+  }
+
   &.sticky {
     position: fixed;
     animation: appear 200ms;

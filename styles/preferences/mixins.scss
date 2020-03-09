@@ -127,6 +127,8 @@
 
 // Components
 @mixin link($color, $activeColor) {
+  transition: color $duration;
+
   &,
   &:hover,
   &:active,

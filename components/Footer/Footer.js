@@ -59,7 +59,7 @@ const Footer = ({className}) => {
           <Typography variant="heading4" className={style.colTitle} uppercase>
             Follow us
           </Typography>
-          <Link href="//www.instagram.com/pullquest/" className={style.instagram}>
+          <Link href="//www.instagram.com/pullquest/" className={style.social}>
             <Instagram width={20} height={24} />
           </Link>
         </div>
