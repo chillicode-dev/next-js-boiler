@@ -4,7 +4,7 @@ import React from 'react';
 import Layout from 'components/Layout';
 import PrivacyPolicy from 'sections/privacy/PrivacyPolicy';
 
-const Home = () => {
+const Privacy = () => {
   return (
     <Layout title="Privacy Policy" type="public">
       <PrivacyPolicy />
@@ -12,4 +12,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Privacy;

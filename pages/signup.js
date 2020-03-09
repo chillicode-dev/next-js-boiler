@@ -4,7 +4,7 @@ import React from 'react';
 import Layout from 'components/Layout';
 import SignupForm from 'sections/signup/SignupForm';
 
-const Home = () => {
+const Signup = () => {
   return (
     <Layout title="GENERAL INFORMATION" type="public">
       <SignupForm />
@@ -12,4 +12,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Signup;

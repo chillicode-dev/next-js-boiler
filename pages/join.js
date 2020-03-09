@@ -4,7 +4,7 @@ import React from 'react';
 import Layout from 'components/Layout';
 import JoinSection from 'sections/signup/JoinPage';
 
-const Home = () => {
+const Join = () => {
   return (
     <Layout title="REQUEST TO JOIN" type="public">
       <JoinSection />
@@ -12,4 +12,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Join;

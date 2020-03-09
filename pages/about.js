@@ -4,7 +4,7 @@ import React from 'react';
 import Layout from 'components/Layout';
 import AboutPage from 'sections/about/AboutPage';
 
-const Home = () => {
+const About = () => {
   return (
     <Layout type="public">
       <AboutPage />
@@ -12,4 +12,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default About;

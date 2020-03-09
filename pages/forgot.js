@@ -4,12 +4,12 @@ import React from 'react';
 import Layout from 'components/Layout';
 import ResetForm from 'sections/forgot/ResetForm';
 
-const Home = () => {
+const Forgot = () => {
   return (
-    <Layout title="Login" type="public">
+    <Layout title="Reset your password" type="public">
       <ResetForm />
     </Layout>
   );
 };
 
-export default Home;
+export default Forgot;

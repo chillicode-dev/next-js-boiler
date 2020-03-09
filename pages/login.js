@@ -4,7 +4,7 @@ import React from 'react';
 import Layout from 'components/Layout';
 import LoginForm from 'sections/login/LoginForm';
 
-const Home = () => {
+const Login = () => {
   return (
     <Layout title="Login" type="public">
       <LoginForm />
@@ -12,4 +12,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Login;

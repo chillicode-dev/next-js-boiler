@@ -4,7 +4,7 @@ import React from 'react';
 import Layout from 'components/Layout';
 import TermsPage from 'sections/terms/TermsPage';
 
-const Home = () => {
+const Terms = () => {
   return (
     <Layout title="Terms of service" type="public">
       <TermsPage />
@@ -12,4 +12,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Terms;

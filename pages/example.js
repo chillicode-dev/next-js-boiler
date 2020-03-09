@@ -15,7 +15,7 @@ import {isProd} from 'utils/env';
 @connect(({example}) => ({
   count: example.count,
 }))
-class Home extends React.PureComponent {
+class Example extends React.PureComponent {
   static propTypes = {
     dispatch: PropTypes.func,
     count: PropTypes.number,
@@ -216,4 +216,4 @@ class Home extends React.PureComponent {
   }
 }
 
-export default Home;
+export default Example;

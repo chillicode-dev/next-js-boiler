@@ -3,7 +3,7 @@ import React from 'react';
 // Internals
 import Layout from 'components/Layout';
 
-const Home = () => {
+const Posts = () => {
   return (
     <Layout type="user" title="Posts">
       Posts page
@@ -11,4 +11,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Posts;
