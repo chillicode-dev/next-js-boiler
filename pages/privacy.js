@@ -6,7 +6,7 @@ import PrivacyPolicy from 'sections/privacy/PrivacyPolicy';
 
 const Home = () => {
   return (
-    <Layout title="Privacy Policy">
+    <Layout title="Privacy Policy" type="public">
       <PrivacyPolicy />
     </Layout>
   );

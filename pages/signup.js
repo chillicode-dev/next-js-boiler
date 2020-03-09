@@ -6,7 +6,7 @@ import SignupForm from 'sections/signup/SignupForm';
 
 const Home = () => {
   return (
-    <Layout title="GENERAL INFORMATION">
+    <Layout title="GENERAL INFORMATION" type="public">
       <SignupForm />
     </Layout>
   );

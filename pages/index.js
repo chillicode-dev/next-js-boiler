@@ -9,7 +9,7 @@ import InstagramSection from 'sections/home/InstagramSection';
 
 const Home = () => {
   return (
-    <Layout useContainer={false}>
+    <Layout type="public" useContainer={false}>
       <IntroSection />
       <PopUpSection />
       <FeaturesSection />

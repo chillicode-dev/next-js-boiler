@@ -6,7 +6,7 @@ import LoginForm from 'sections/login/LoginForm';
 
 const Home = () => {
   return (
-    <Layout title="Login">
+    <Layout title="Login" type="public">
       <LoginForm />
     </Layout>
   );

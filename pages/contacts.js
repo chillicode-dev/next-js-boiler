@@ -6,7 +6,7 @@ import ContactsPage from 'sections/contacts/ContactsPage';
 
 const Home = () => {
   return (
-    <Layout>
+    <Layout type="public">
       <ContactsPage />
     </Layout>
   );

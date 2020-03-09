@@ -6,7 +6,7 @@ import AboutPage from 'sections/about/AboutPage';
 
 const Home = () => {
   return (
-    <Layout>
+    <Layout type="public">
       <AboutPage />
     </Layout>
   );

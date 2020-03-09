@@ -31,21 +31,38 @@
   }
 
   .logoCol {
+    position: relative;
     max-width: 200px;
+    margin-right: 50px;
   }
 
   .logo {
     max-width: 100%;
   }
 
-  .authCol {
+  .logoLink {
+    @include fullsize();
+    opacity: 0;
+  }
+
+  .navCol {
+    flex: 1 1 0;
+  }
+
+  .userCol {
+    max-width: 250px;
+  }
+
+  .nav {
     display: flex;
+    align-items: center;
   }
 
   .navItem {
     font-weight: $medium;
     margin-right: 40px;
     color: $textColor;
+    text-transform: uppercase;
 
     &:last-child {
       margin-right: 0;
@@ -61,7 +78,6 @@
   }
 
   &.sticky {
-    justify-content: center;
     position: fixed;
     animation: appear 200ms;
     padding-top: 15px;
@@ -73,5 +89,13 @@
     .logoCol {
       display: none;
     }
+  }
+
+  &.sticky.publicLayoutType {
+    justify-content: center;
+  }
+
+  &.sticky.userLayoutType {
+    justify-content: space-between;
   }
 }

@@ -41,7 +41,7 @@ class Home extends React.PureComponent {
 
     const {count} = this.props;
     return (
-      <Layout useContainer={false}>
+      <Layout useContainer={false} type="public">
         <Section title="Links list" color="gray">
           <ul>
             <li>

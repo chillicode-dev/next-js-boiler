@@ -7,6 +7,7 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Container from 'components/Container';
 import Typography from 'components/Typography';
+import AppPropTypes from 'utils/propTypes';
 import style from './style.scss';
 
 export default class Layout extends PureComponent {
@@ -21,6 +22,7 @@ export default class Layout extends PureComponent {
     className: PropTypes.string,
     title: PropTypes.string,
     useContainer: PropTypes.bool,
+    type: AppPropTypes.layoutType,
   };
 
   constructor(props) {
@@ -48,11 +50,11 @@ export default class Layout extends PureComponent {
   }
 
   render() {
-    const {className} = this.props;
+    const {className, type} = this.props;
 
     return (
       <div className={cn(style.Layout, className)}>
-        <Header />
+        <Header type={type} />
         <main className={style.main}>{this.renderPage()}</main>
         <Footer />
       </div>

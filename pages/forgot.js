@@ -6,7 +6,7 @@ import ResetForm from 'sections/forgot/ResetForm';
 
 const Home = () => {
   return (
-    <Layout title="Login">
+    <Layout title="Login" type="public">
       <ResetForm />
     </Layout>
   );
