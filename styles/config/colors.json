@@ -1,10 +1,12 @@
 {
   "brandColor": "#c99947",
+  "brandColorLighter": "#efd5ab",
   "brandColorDarker": "#af8132",
   "brandColorGray": "#525151",
   "brandColorGrayDarker": "#404040",
   "controlColor": "#f0f0f0",
   "borderColor": "#ddd",
+  "borderColorHover": "#b3b3b3",
   "bgColor": "#FFF",
   "textColor": "#000",
   "secondaryTextColor": "#555",

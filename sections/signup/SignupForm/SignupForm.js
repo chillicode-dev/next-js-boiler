@@ -4,6 +4,7 @@ import React from 'react';
 import FormControl from 'components/FormControl';
 import TextInput from 'components/TextInput';
 import Button from 'components/Button';
+import Select from 'components/Select';
 import style from './style.scss';
 
 const SignupForm = () => {
@@ -12,14 +13,14 @@ const SignupForm = () => {
       <div className={style.controls}>
         <div className={style.halfItems}>
           <FormControl className={style.halfItem}>
-            <TextInput type="email" placeholder="First name *" />
+            <TextInput type="text" placeholder="First name *" />
           </FormControl>
           <FormControl className={style.halfItem}>
-            <TextInput type="password" placeholder="Last name *" />
+            <TextInput type="text" placeholder="Last name *" />
           </FormControl>
         </div>
         <FormControl>
-          <TextInput type="password" placeholder="Your Email *" />
+          <TextInput type="email" placeholder="Your Email *" />
         </FormControl>
         <FormControl>
           <TextInput type="password" placeholder="Password *" />
@@ -28,13 +29,23 @@ const SignupForm = () => {
           <TextInput type="password" placeholder="Confirm password *" />
         </FormControl>
         <FormControl>
-          <TextInput type="password" placeholder="Agency/Company" />
+          <TextInput type="text" placeholder="Agency/Company" />
         </FormControl>
         <FormControl>
-          <TextInput type="password" placeholder="Instagram user name *" />
+          <TextInput type="text" placeholder="Instagram user name *" />
         </FormControl>
         <FormControl>
-          <TextInput type="password" placeholder="City" />
+          {/* TODO: add Google Places API cities */}
+          <Select
+            options={[
+              {value: 'london', label: 'London'},
+              {value: 'new-york', label: 'New York City'},
+              {value: 'berlin', label: 'Berlin'},
+              {value: 'paris', label: 'Paris'},
+              {value: 'moscow', label: 'Moscow'},
+            ]}
+            placeholder="Select city"
+          />
         </FormControl>
       </div>
       <Button variant="brand" type="submit" wide>

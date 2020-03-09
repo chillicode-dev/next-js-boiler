@@ -185,4 +185,8 @@
     outline: none;
     border-color: $brandColor;
   }
+
+  &:not(:focus):hover {
+    border-color: $borderColorHover;
+  }
 }
