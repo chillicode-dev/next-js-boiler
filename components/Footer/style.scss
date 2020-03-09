@@ -58,10 +58,10 @@ $borderColor: #191919e6;
 
     &:hover {
       background-color: $brandColor;
+    }
 
-      & svg {
-        fill: $bgColor;
-      }
+    &:hover svg {
+      fill: $bgColor;
     }
   }
 
