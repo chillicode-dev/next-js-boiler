@@ -7,7 +7,7 @@ import Container from 'components/Container';
 import Typography from 'components/Typography';
 import style from './style.scss';
 
-const Section = ({className, containerClassName, children, title, hasPaddings, color, ...props}) => {
+const Section = ({className, children, title, hasPaddings, color}) => {
   const classes = cn({
     [style.Section]: true,
     [style.hasPaddings]: hasPaddings,
@@ -16,34 +16,32 @@ const Section = ({className, containerClassName, children, title, hasPaddings, c
   });
 
   return (
-    <section className={classes} {...props}>
-      <Container className={containerClassName}>
+    <div className={classes}>
+      <Container>
         {title && (
-          <Typography variant="heading1" className={style.title} tagName="h2" weight="bold" uppercase>
+          <Typography variant="heading2" hasMargin>
             {title}
           </Typography>
         )}
         <div>{children}</div>
       </Container>
-    </section>
+    </div>
   );
 };
 
 Section.defaultProps = {
   className: '',
-  containerClassName: '',
   title: '',
-  hasPaddings: false,
+  hasPaddings: true,
   color: 'transparent',
 };
 
 Section.propTypes = {
   className: PropTypes.string,
-  containerClassName: PropTypes.string,
   children: PropTypes.node.isRequired,
   title: PropTypes.string,
   hasPaddings: PropTypes.bool,
-  color: PropTypes.oneOf(['transparent', 'bg', 'gray']),
+  color: PropTypes.oneOf(['transparent', 'bg', 'brand']),
 };
 
 export default Section;

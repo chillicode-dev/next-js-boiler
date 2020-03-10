@@ -1,17 +1,15 @@
 // Fonts
-$fontFamily: 'Montserrat';
-$fontFamilyPlayfair: 'Playfair Display';
+$fontFamily: 'Open Sans';
 $fallbackFont: Arial, Helvetica, sans-serif;
-$fontSize: 14px;
-$lineHeight: 1.714;
+$fontSize: 16px;
+$fontSizeSmaller: 14px;
+$lineHeight: 1.618; // based on https://medium.com/@zkareemz/golden-ratio-62b3b6d4282a
 
 // Font weights
+$light: 300;
 $regular: 400;
-$medium: 500;
-$bold: 600;
+$bold: 700;
+$extraBold: 800;
 
 // Durations
 $duration: 0.35s;
-
-// Dimensions
-$headerHeight: $headerHeight * 1px; // Get headerHeight from grid.json and convert it to SCSS-friendly format

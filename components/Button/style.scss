@@ -1,34 +1,23 @@
 .Button {
+  display: inline-block;
+  position: relative;
+  padding: 10px 15px;
+  background-color: $brandColor;
+  color: white;
+  outline: none;
+  text-align: center;
+  border: none;
+  line-height: $lineHeight;
   cursor: pointer;
-}
-
-// Variants
-.reset {
-  @include resetButton();
-}
-
-.brand {
-  @include button($brandColor, $invertedTextColor);
+  transition: background-color $duration;
 
   &:hover {
-    background-color: $brandColorDarker;
-  }
-
-  &:active {
-    background-color: $brandColorGray;
+    background-color: $brandColorDark;
   }
 }
 
-.gray {
-  @include button($brandColorGray, $invertedTextColor);
-
-  &:hover {
-    background-color: $brandColorDarker;
-  }
-
-  &:active {
-    background-color: $brandColor;
-  }
+.link {
+  @include link(white, white);
 }
 
 .loading {
@@ -44,10 +33,6 @@
     display: flex;
     align-items: center;
   }
-
-  .contentText {
-    margin-left: 5px;
-  }
 }
 
 .loaderBox {
@@ -57,6 +42,6 @@
   @include fullsize;
 }
 
-.wide {
-  min-width: 164px;
+.icon {
+  margin-right: 5px;
 }

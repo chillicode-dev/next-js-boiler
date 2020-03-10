@@ -1,17 +1,9 @@
 {
-  "brandColor": "#c99947",
-  "brandColorLighter": "#efd5ab",
-  "brandColorDarker": "#af8132",
-  "brandColorGray": "#525151",
-  "brandColorGrayDarker": "#404040",
-  "controlColor": "#f0f0f0",
-  "borderColor": "#ddd",
-  "borderColorHover": "#b3b3b3",
+  "brandColor": "#09D3AC",
+  "brandColorDark": "#129c81",
   "bgColor": "#FFF",
-  "textColor": "#000",
-  "secondaryTextColor": "#555",
-  "invertedTextColor": "#fff",
-  "linkColor": "#c99947",
-  "linkColorActive": "#000",
-  "errorColor": "#a94442"
+  "textColor": "#1A1A1A",
+  "secondaryTextColor": "#848484",
+  "linkColor": "#4682b4",
+  "linkColorActive": "#2d516f"
 }

@@ -20,10 +20,6 @@
   @include h4();
 }
 
-.annotation {
-  @include annotation();
-}
-
 .paragraph {
   @include paragraph();
 }
@@ -46,36 +42,6 @@
   line-height: 1;
 }
 
-// Weights
-.regular {
-  font-weight: $regular;
-}
-
-.medium {
-  font-weight: $medium;
-}
-
-.bold {
-  font-weight: $bold;
-}
-
-// Colors
-.text {
-  color: $textColor;
-}
-
 .secondary {
   color: $secondaryTextColor;
-}
-
-.inverted {
-  color: $invertedTextColor;
-}
-
-.brand {
-  color: $brandColor;
-}
-
-.error {
-  color: $errorColor;
 }

@@ -4,6 +4,5 @@
   "spread": "narrow",
   "containerSpread": "narrow",
   "containerMaxWidth": 1280,
-  "containerMinWidth": 320,
-  "headerHeight": 96
+  "containerMinWidth": 320
 }

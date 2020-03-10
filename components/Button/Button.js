@@ -9,13 +9,12 @@ import style from './style.scss';
 
 const defaultIconSize = 25;
 
-const Button = ({className, children, variant, href, isLoading, icon, iconSize, wide, ...props}) => {
+const Button = ({className, children, href, isLoading, icon, iconSize, ...props}) => {
   const classes = cn({
     [style.Button]: true,
-    [style[variant]]: variant,
     [style.loading]: isLoading,
+    [style.link]: href,
     [style.hasIcon]: icon,
-    [style.wide]: wide,
     [className]: className,
   });
   const TagName = href ? Link : 'button';
@@ -26,7 +25,6 @@ const Button = ({className, children, variant, href, isLoading, icon, iconSize, 
   };
   if (href) {
     combinedProps.href = href;
-    combinedProps.disableStyle = true;
   }
 
   return (
@@ -38,31 +36,27 @@ const Button = ({className, children, variant, href, isLoading, icon, iconSize, 
       )}
       <span className={style.content}>
         {icon && <Icon width={iconSize} height={iconSize} className={style.icon} />}
-        {children && <span className={style.contentText}>{children}</span>}
+        <span>{children}</span>
       </span>
     </TagName>
   );
 };
 
 Button.defaultProps = {
-  children: null,
   href: '',
   isLoading: false,
   icon: '',
   iconSize: defaultIconSize,
   className: '',
-  wide: false,
 };
 
 Button.propTypes = {
-  children: PropTypes.node,
-  variant: PropTypes.oneOf(['reset', 'brand', 'gray']).isRequired,
+  children: PropTypes.node.isRequired,
   href: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   isLoading: PropTypes.bool,
   icon: PropTypes.oneOfType([PropTypes.string, PropTypes.elementType]),
   iconSize: PropTypes.number,
   className: PropTypes.string,
-  wide: PropTypes.bool,
 };
 
 export default Button;

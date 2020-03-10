@@ -2,14 +2,10 @@
 # Global app styles
 --------------------------------------------------------------*/
 // Load fonts
-@include webfont($fontFamily, 'assets/fonts/Montserrat/Montserrat-Medium.ttf', $medium);
-@include webfont($fontFamily, 'assets/fonts/Montserrat/Montserrat-MediumItalic.ttf', $medium, italic);
-@include webfont($fontFamily, 'assets/fonts/Montserrat/Montserrat-Regular.ttf', $regular);
-@include webfont($fontFamily, 'assets/fonts/Montserrat/Montserrat-RegularItalic.ttf', $regular, italic);
-@include webfont($fontFamily, 'assets/fonts/Montserrat/Montserrat-SemiBold.ttf', $bold);
-@include webfont($fontFamily, 'assets/fonts/Montserrat/Montserrat-SemiBoldItalic.ttf', $bold, italic);
-
-@include webfont($fontFamilyPlayfair, 'assets/fonts/PlayfairDisplay/PlayfairDisplay-Italic.ttf', $regular, italic);
+@include webfont($fontFamily, 'assets/fonts/OpenSans/OpenSans-Light.woff', $light);
+@include webfont($fontFamily, 'assets/fonts/OpenSans/OpenSans-Regular.woff', $regular);
+@include webfont($fontFamily, 'assets/fonts/OpenSans/OpenSans-Bold.woff', $bold);
+@include webfont($fontFamily, 'assets/fonts/OpenSans/OpenSans-ExtraBold.woff', $extraBold);
 
 // Common styles
 * {
@@ -33,5 +29,5 @@ body {
 }
 
 a {
-  text-decoration: none;
+  @include link($linkColor, $linkColorActive);
 }

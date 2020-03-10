@@ -1,14 +1,11 @@
 // Vendor
 import React from 'react';
-// Internals
-import Section from 'components/Section';
-import style from './style.scss';
 
 const ${TM:COMPONENT_NAME} = () => {
   return (
-    <Section className={style.${TM:COMPONENT_NAME}}>
+    <div>
       ${TM:COMPONENT_NAME}
-    </Section>
+    </div>
   );
 };
 

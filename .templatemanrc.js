@@ -19,6 +19,10 @@ module.exports = {
           from: './templates/export-module.js.tm',
           to: './components/${TM:COMPONENT_NAME}/index.js',
         },
+        {
+          from: './templates/react-test-spec.js.tm',
+          to: './components/${TM:COMPONENT_NAME}/${TM:COMPONENT_NAME}.test.js',
+        },
       ],
     },
     {
@@ -35,6 +39,10 @@ module.exports = {
         {
           from: './templates/export-module.js.tm',
           to: './components/${TM:COMPONENT_NAME}/index.js',
+        },
+        {
+          from: './templates/react-test-spec.js.tm',
+          to: './components/${TM:COMPONENT_NAME}/${TM:COMPONENT_NAME}.test.js',
         },
       ],
     },
@@ -53,6 +61,10 @@ module.exports = {
           from: './templates/export-module.js.tm',
           to: './components/${TM:COMPONENT_NAME}/index.js',
         },
+        {
+          from: './templates/react-test-spec.js.tm',
+          to: './components/${TM:COMPONENT_NAME}/${TM:COMPONENT_NAME}.test.js',
+        },
       ],
     },
     {
@@ -60,15 +72,7 @@ module.exports = {
       files: [
         {
           from: './templates/react-section.js.tm',
-          to: './sections/${TM:PAGE}/${TM:COMPONENT_NAME}/${TM:COMPONENT_NAME}.js',
-        },
-        {
-          from: './templates/export-module.js.tm',
-          to: './sections/${TM:PAGE}/${TM:COMPONENT_NAME}/index.js',
-        },
-        {
-          from: './templates/style-file.scss.tm',
-          to: './sections/${TM:PAGE}/${TM:COMPONENT_NAME}/style.scss',
+          to: './sections/${TM:PAGE}/${TM:COMPONENT_NAME}.js',
         },
       ],
     },
