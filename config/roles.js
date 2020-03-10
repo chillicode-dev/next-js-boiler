@@ -1,6 +1,6 @@
 export default [
   {
-    role: 'Stylist, Editor &amp; Influencer',
+    role: 'Stylist, Editor & Influencer',
     cost: 'FREE!',
     services: [
       'Connect with designers & PR’s',
@@ -12,7 +12,7 @@ export default [
   },
   {
     role: 'Designer',
-    cost: 'First 3 month: $150/month | Regular pricing: $180/month',
+    cost: '$350/month Subscription </br> 7 day money back guarantee </br> Pause or cancel anytime',
     services: [
       'Upload unlimited number of looks',
       'Connect with 250+ stylists',
@@ -25,7 +25,7 @@ export default [
   },
   {
     role: 'PR\n',
-    cost: '$150 trial month | $350/month after trial',
+    cost: '$350/month Subscription </br> 7 day money back guarantee </br> Pause or cancel anytime',
     services: [
       'Manage multiple brands',
       'Upload their looks',

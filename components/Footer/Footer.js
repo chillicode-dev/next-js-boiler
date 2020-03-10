@@ -21,7 +21,7 @@ const Footer = ({className}) => {
           <Typography variant="paragraph" className={style.address} tagName="div">
             Los Angeles, CA
           </Typography>
-          <Typography variant="annotation">
+          <Typography className={style.phoneCol} variant="annotation">
             <Phone width={14} height={18} />
             <Link href="3108715002" className={style.phone} protocol="tel">
               310-871-5002

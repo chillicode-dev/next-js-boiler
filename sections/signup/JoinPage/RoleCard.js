@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // Internal
+import parseHtml from 'react-html-parser';
 import Typography from 'components/Typography';
 import Button from 'components/Button';
 import Correct from 'assets/icons/correct.svg';
@@ -24,7 +25,7 @@ const RoleCard = ({role, cost, services, buttonText, isComing, hasSubtitle}) => 
       <div className={style.header}> {role}</div>
       <div className={style.body}>
         <div className={style.cost}>
-          <div className={style.costTitle}> {cost}</div>
+          <div className={style.costTitle}> {parseHtml(cost)}</div>
           {hasSubtitle && <div className={style.costSubtitle}>Pause or cancel anytime!</div>}
         </div>
 

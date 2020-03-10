@@ -1,7 +1,6 @@
 // Vendor
 import React, {useState} from 'react';
 // Internals
-import Section from 'components/Section';
 import Typography from 'components/Typography';
 import Button from 'components/Button';
 import Link from 'components/Link';
@@ -18,7 +17,7 @@ const PopUpSection = () => {
   }
 
   return (
-    <Section className={style.PopUpSection} color="transparent">
+    <div className={style.PopUpSection}>
       <Button variant="reset" className={style.close} onClick={handleHideClick}>
         <img src={closeImg} alt="Close button" />
       </Button>
@@ -37,7 +36,7 @@ const PopUpSection = () => {
           By <span className={style.red}>Booth Moore</span>
         </Typography>
       </Link>
-    </Section>
+    </div>
   );
 };
 

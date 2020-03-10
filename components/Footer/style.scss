@@ -32,15 +32,6 @@ $borderColor: #191919e6;
     margin-bottom: 10px;
   }
 
-  .phone {
-    padding-left: 10px;
-    color: $invertedTextColor;
-
-    &:hover {
-      color: $brandColor;
-    }
-  }
-
   .social {
     display: flex;
     justify-content: center;
@@ -62,6 +53,27 @@ $borderColor: #191919e6;
 
     &:hover svg {
       fill: $bgColor;
+    }
+  }
+
+  .phone {
+    padding-left: 10px;
+    color: $invertedTextColor;
+  }
+
+  .phoneCol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      .phone {
+        color: $brandColor;
+      }
+
+      svg {
+        fill: $brandColor;
+      }
     }
   }
 

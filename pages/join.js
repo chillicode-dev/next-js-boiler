@@ -6,7 +6,7 @@ import JoinSection from 'sections/signup/JoinPage';
 
 const Join = () => {
   return (
-    <Layout title="REQUEST TO JOIN" type="public">
+    <Layout type="public">
       <JoinSection />
     </Layout>
   );
