@@ -20,6 +20,7 @@ const getTagNameFromVariant = variant => {
       return 'h5';
     case 'heading6':
       return 'h6';
+    case 'annotation':
     case 'paragraph':
       return 'p';
     default:
@@ -31,11 +32,12 @@ const Typography = ({
   className,
   children,
   variant,
+  weight,
+  color,
   tagName,
   hasHtml,
   hasMargin,
   uppercase,
-  secondary,
   zeroLineHeight,
   ...props
 }) => {
@@ -43,9 +45,10 @@ const Typography = ({
   const classes = cn({
     [style.Typography]: true,
     [style[variant]]: variant,
-    [style.uppercase]: uppercase,
+    [style[weight]]: weight,
+    [style[color]]: color,
     [style.hasMargin]: hasMargin,
-    [style.secondary]: secondary,
+    [style.uppercase]: uppercase,
     [style.zeroLineHeight]: zeroLineHeight,
     [className]: className,
   });
@@ -60,7 +63,8 @@ const Typography = ({
 Typography.defaultProps = {
   className: '',
   tagName: null,
-  secondary: false,
+  color: null,
+  weight: 'regular',
   hasHtml: false,
   hasMargin: false,
   uppercase: false,
@@ -69,14 +73,23 @@ Typography.defaultProps = {
 
 Typography.propTypes = {
   children: PropTypes.node.isRequired,
-  variant: PropTypes.oneOf(['heading1', 'heading2', 'heading3', 'heading4', 'heading5', 'heading6', 'paragraph'])
-    .isRequired,
+  variant: PropTypes.oneOf([
+    'heading1',
+    'heading2',
+    'heading3',
+    'heading4',
+    'heading5',
+    'heading6',
+    'paragraph',
+    'annotation',
+  ]).isRequired,
+  color: PropTypes.oneOf([null, 'text', 'secondary', 'brand', 'inverted', 'error']),
+  weight: PropTypes.oneOf(['regular', 'medium', 'bold']),
   className: PropTypes.string,
   tagName: PropTypes.oneOfType([PropTypes.string, PropTypes.elementType]),
   hasHtml: PropTypes.bool,
   hasMargin: PropTypes.bool,
   uppercase: PropTypes.bool,
-  secondary: PropTypes.bool,
   zeroLineHeight: PropTypes.bool,
 };
 

@@ -1,0 +1,17 @@
+.Layout {
+  position: relative;
+
+  .main {
+    padding-top: $headerHeight;
+    min-height: 60vh;
+  }
+
+  .container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .title {
+    margin-bottom: 40px;
+  }
+}

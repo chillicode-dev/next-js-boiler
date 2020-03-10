@@ -88,7 +88,7 @@
 }
 
 // Typography
-@mixin addTextMargin($margin: 16px) {
+@mixin addTextMargin($margin: 22px) {
   margin-bottom: $margin;
 }
 
@@ -102,26 +102,33 @@
 }
 
 @mixin h1($hasMargin: false) {
-  @include typography($fontSize + 20px, $extraBold, $hasMargin);
+  @include typography(36px, $regular, $hasMargin);
 }
 
 @mixin h2($hasMargin: false) {
-  @include typography($fontSize + 16px, $bold, $hasMargin);
+  @include typography(28px, $regular, $hasMargin);
 }
 
 @mixin h3($hasMargin: false) {
-  @include typography($fontSize + 8px, $bold, $hasMargin);
+  @include typography(24px, $regular, $hasMargin);
 }
 
 @mixin h4($hasMargin: false) {
-  @include typography($fontSize + 2px, $bold, $hasMargin);
+  @include typography(20px, $regular, $hasMargin);
+}
+
+@mixin annotation($hasMargin: false) {
+  @include typography(18px, $regular, $hasMargin);
 }
 
 @mixin paragraph($hasMargin: false) {
   @include typography($fontSize, $regular, $hasMargin);
 }
 
+// Components
 @mixin link($color, $activeColor) {
+  transition: color $duration;
+
   &,
   &:hover,
   &:active,
@@ -133,5 +140,55 @@
   &:active,
   &:hover {
     color: $activeColor;
+  }
+}
+
+@mixin resetButton() {
+  &,
+  &:hover,
+  &:active,
+  &:visited {
+    margin: 0;
+    padding: 0;
+    background: none;
+    text-align: left;
+    outline: none;
+    border: none;
+    color: $textColor;
+    @include paragraph();
+  }
+}
+
+@mixin button($bgColor, $textColor) {
+  display: inline-block;
+  position: relative;
+  padding: 10px 15px;
+  background-color: $bgColor;
+  color: $textColor;
+  outline: none;
+  text-align: center;
+  border: none;
+  line-height: $lineHeight;
+  transition: background-color $duration;
+}
+
+@mixin input() {
+  display: block;
+  width: 100%;
+  border: 1px solid $borderColor;
+  font-size: $fontSize;
+  font-weight: $regular;
+  line-height: 28px;
+  padding: 4px 15px;
+  border-radius: 0;
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: none;
+    border-color: $brandColor;
+  }
+
+  &:not(:focus):hover {
+    border-color: $borderColorHover;
   }
 }
