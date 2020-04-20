@@ -47,6 +47,7 @@
     "babel-eslint": "^10.0.3",
     "body-parser": "^1.19.0",
     "classnames": "^2.2.6",
+    "cross-env": "^7.0.2",
     "csso-webpack-plugin": "^1.0.0-beta.12",
     "dotenv": "^8.2.0",
     "eslint": "^6.6.0",
