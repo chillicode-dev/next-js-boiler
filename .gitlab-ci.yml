@@ -1,0 +1,50 @@
+# https://hub.docker.com/r/library/node/tags/
+image: node:10
+
+stages:
+  - init
+  - test
+  - deploy
+
+# This folder is cached between builds
+# http://docs.gitlab.com/ce/ci/yaml/README.html#cache
+cache:
+  paths:
+    - node_modules/
+    - .next/
+    - .env
+
+install_dependencies:
+  stage: init
+  script:
+    - npm ci
+    - cp .env.example .env
+
+run_tests:
+  stage: test
+  script:
+    - npm run prettier:inspect
+    - npm run lint:inspect
+    - npm run stylelint:inspect
+    - npm run test
+
+deploy_to_dev:
+  stage: deploy
+  only:
+    - dev
+  script:
+    - echo "Deployed to dev-server"
+
+deploy_to_stage:
+  stage: deploy
+  only:
+    - stage
+  script:
+    - echo "Deployed to stage-server"
+
+deploy_to_prod:
+  stage: deploy
+  only:
+    - master
+  script:
+    - echo "Deployed to production-server"
