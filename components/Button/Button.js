@@ -27,10 +27,6 @@ const Button = ({className, children, href, isLoading, icon, iconSize, ...props}
     combinedProps.href = href;
   }
 
-  if (false) {
-    return false;
-  }
-
   return (
     <TagName {...combinedProps}>
       {isLoading && (
