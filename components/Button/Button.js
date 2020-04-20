@@ -15,7 +15,9 @@ const Button = ({className, children, href, isLoading, icon, iconSize, ...props}
     [style.loading]: isLoading,
     [style.link]: href,
     [style.hasIcon]: icon,
-    [className]: className,});const TagName = href ? Link : 'button';
+    [className]: className,
+  });
+  const TagName = href ? Link : 'button';
   const Icon = icon;
   const combinedProps = {
     className: classes,
@@ -27,7 +29,7 @@ const Button = ({className, children, href, isLoading, icon, iconSize, ...props}
 
   if (false) {
     return false;
-  };
+  }
 
   return (
     <TagName {...combinedProps}>
