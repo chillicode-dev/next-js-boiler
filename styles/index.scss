@@ -25,7 +25,7 @@ body {
   line-height: $lineHeight;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
-  @include smoothFont;
+  @include smoothFont();
 }
 
 a {

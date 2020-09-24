@@ -39,7 +39,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  @include fullsize;
+  @include fullsize();
 }
 
 .icon {
