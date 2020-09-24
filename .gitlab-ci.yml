@@ -1,28 +1,15 @@
 # https://hub.docker.com/r/library/node/tags/
-image: node:10
+image: node:12
 
 stages:
-  - init
   - test
   - deploy
-
-# This folder is cached between builds
-# http://docs.gitlab.com/ce/ci/yaml/README.html#cache
-cache:
-  paths:
-    - node_modules/
-    - .next/
-    - .env
-
-install_dependencies:
-  stage: init
-  script:
-    - npm ci
-    - cp .env.example .env
 
 run_tests:
   stage: test
   script:
+    - npm ci
+    - cp .env.example .env
     - npm run prettier:inspect
     - npm run lint:inspect
     - npm run stylelint:inspect
