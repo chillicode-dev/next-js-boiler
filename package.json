@@ -12,7 +12,7 @@
     "test:watch": "jest --watchAll",
     "test:update-snapshots": "jest --updateSnapshot",
     "prettier:inspect": "prettier --check \"./**/*.{js,jsx,json,css,scss}\"",
-    "prettier:write": "prettier --write \"./**/*.{js,jsx,json,css,scss}\"",
+    "prettier:fix": "prettier --write \"./**/*.{js,jsx,json,css,scss}\"",
     "lint:inspect": "eslint \"./**/*.{js,jsx}\"",
     "lint:fix": "eslint \"./**/*.{js,jsx}\" --fix",
     "stylelint:inspect": "stylelint \"./**/*.{css,scss}\" --syntax scss",
@@ -37,7 +37,7 @@
   "homepage": "https://github.com/adlite/next-js-boiler#readme",
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prettier:write"
+      "pre-commit": "npm run prettier:fix"
     }
   },
   "dependencies": {

@@ -6,17 +6,7 @@ import {useRouter} from 'next/router';
 // Internals
 import {url} from 'utils';
 
-const Link = ({
-  className,
-  activeClassName,
-  children,
-  href,
-  external,
-  targetBlank,
-  protocol,
-  onClick,
-  ...props
-}) => {
+const Link = ({className, activeClassName, children, href, external, targetBlank, protocol, onClick, ...props}) => {
   const router = useRouter();
   const classes = cn({
     [activeClassName]: activeClassName && router.pathname === href,
