@@ -2,20 +2,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import NextLink from 'next/link';
 import {useRouter} from 'next/router';
 // Internals
-import {url, env} from 'utils';
+import {url} from 'utils';
 
-const Link = ({className, activeClassName, children, href, external, targetBlank, protocol, htmlProps, ...props}) => {
-  const router = env.isTest() ? {pathname: '/'} : useRouter();
+const Link = ({
+  className,
+  activeClassName,
+  children,
+  href,
+  external,
+  targetBlank,
+  protocol,
+  onClick,
+  ...props
+}) => {
+  const router = useRouter();
   const classes = cn({
     [activeClassName]: activeClassName && router.pathname === href,
     [className]: className,
   });
   const nativeHtmlProps = {
     className: classes,
-    ...htmlProps,
+    ...props,
   };
   const isExternal = external || url.isAbsolute(href);
 
@@ -32,11 +41,34 @@ const Link = ({className, activeClassName, children, href, external, targetBlank
     return <a {...nativeHtmlProps}>{children}</a>;
   }
 
+  // Return plain <a> with onClick event with internal links
+  const handleLinkClick = event => {
+    // Prevent link behavior if onClick handler exists
+    if (typeof onClick === 'function') {
+      const result = onClick(event);
+      if (result === false) {
+        event.preventDefault();
+        return;
+      }
+    }
+
+    // Check event preventing (from react-router's <Link />)
+    if (
+      !event.defaultPrevented && // onClick prevented default
+      event.button === 0 && // ignore everything but left clicks
+      !targetBlank && // let browser handle "target=_blank" etc.
+      !(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey) // ignore clicks with modifier keys
+    ) {
+      event.preventDefault();
+      router.push(href);
+    }
+  };
+
   // Return next/link if link is internal
   return (
-    <NextLink href={href} {...props}>
-      <a {...nativeHtmlProps}>{children}</a>
-    </NextLink>
+    <a href={href} onClick={handleLinkClick} {...nativeHtmlProps}>
+      {children}
+    </a>
   );
 };
 
@@ -46,7 +78,7 @@ Link.defaultProps = {
   external: false,
   targetBlank: false,
   protocol: '',
-  htmlProps: {},
+  onClick: null,
 };
 
 Link.propTypes = {
@@ -57,7 +89,7 @@ Link.propTypes = {
   external: PropTypes.bool,
   targetBlank: PropTypes.bool,
   protocol: PropTypes.string,
-  htmlProps: PropTypes.object,
+  onClick: PropTypes.func,
 };
 
 export default Link;
