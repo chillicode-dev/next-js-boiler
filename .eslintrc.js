@@ -46,6 +46,7 @@ module.exports = {
       2,
       {devDependencies: false, optionalDependencies: false, peerDependencies: false},
     ],
+    eqeqeq: ['error', 'always'],
   },
   settings: {
     // eslint-plugin-react settings

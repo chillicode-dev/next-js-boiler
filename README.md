@@ -43,7 +43,7 @@
 ## <a name="inside">Что внутри?</a>
 - [Next.js 9](https://nextjs.org/docs) в качестве платформы
 - [SCSS](https://sass-lang.com/documentation)
-- [PostCSS Autoprefixer](https://autoprefixer.github.io/) and [CSS Modules](https://github.com/css-modules/css-modules)
+- [CSS Modules](https://github.com/css-modules/css-modules)
 - [Сетка на основе Susy](https://www.oddbird.net/susy/docs/)
 - [ESLint](https://eslint.org/)
 - [Stylelint](https://stylelint.io/user-guide)

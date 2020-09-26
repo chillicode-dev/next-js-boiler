@@ -43,7 +43,6 @@
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.7.4",
     "@zeit/next-sass": "1.0.1",
-    "autoprefixer": "^9.7.3",
     "babel-eslint": "^10.0.3",
     "body-parser": "^1.19.0",
     "classnames": "^2.2.6",
@@ -61,7 +60,6 @@
     "husky": "^3.1.0",
     "identity-obj-proxy": "^3.0.0",
     "imagemin-webpack-plugin": "^2.4.2",
-    "isomorphic-unfetch": "^3.0.0",
     "jest": "^24.9.0",
     "mkdirp": "^1.0.3",
     "next": "^9.5.3",

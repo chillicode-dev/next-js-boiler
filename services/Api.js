@@ -1,5 +1,4 @@
 // Vendor
-import fetch from 'isomorphic-unfetch';
 import queryString from 'query-string';
 // Internals
 import {HttpMethod} from 'utils/enums';
