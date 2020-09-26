@@ -54,10 +54,10 @@ const config = {
     config.resolve.alias = {
       ...config.resolve.alias,
       assets: path.resolve(__dirname, 'assets'),
-      classes: path.resolve(__dirname, 'classes'),
       components: path.resolve(__dirname, 'components'),
       hocs: path.resolve(__dirname, 'hocs'),
       sections: path.resolve(__dirname, 'sections'),
+      services: path.resolve(__dirname, 'services'),
       store: path.resolve(__dirname, 'store'),
       styles: path.resolve(__dirname, 'styles'),
       utils: path.resolve(__dirname, 'utils'),

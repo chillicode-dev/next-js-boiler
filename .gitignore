@@ -59,6 +59,8 @@ typings/
 
 # next.js build output
 .next
+out
+dist
 
 # JetBrains IDEs
 .idea
