@@ -21,7 +21,7 @@ const initialState = {
   count: 0,
 };
 
-const ExampleReduser = (state = initialState, action) => {
+const exampleReduser = (state = initialState, action) => {
   switch (action.type) {
     case INCREMENT:
       return {
@@ -43,4 +43,4 @@ const ExampleReduser = (state = initialState, action) => {
   }
 };
 
-export default ExampleReduser;
+export default exampleReduser;
