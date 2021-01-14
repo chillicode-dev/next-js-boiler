@@ -27,6 +27,7 @@ module.exports = {
   },
   plugins: ['babel', 'react', 'import'],
   rules: {
+    'react/react-in-jsx-scope': 0,
     'import/order': 2,
     'import/first': 2,
     'import/exports-last': 0,
