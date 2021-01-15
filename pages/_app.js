@@ -1,0 +1,22 @@
+import {Provider} from 'react-redux';
+import PropTypes from 'prop-types';
+
+import {useStore} from '../store';
+
+const App = ({Component, pageProps}) => {
+  // Initialize Redux from
+  const store = useStore(pageProps.reduxStore);
+
+  return (
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider>
+  );
+};
+
+App.propTypes = {
+  Component: PropTypes.elementType.isRequired,
+  pageProps: PropTypes.object.isRequired,
+};
+
+export default App;
