@@ -1,7 +1,7 @@
 import {Provider} from 'react-redux';
 import PropTypes from 'prop-types';
 
-import {useStore} from '../store';
+import {useStore} from 'store';
 
 const App = ({Component, pageProps}) => {
   // Initialize Redux from

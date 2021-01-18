@@ -1,38 +1,21 @@
 import Link from 'next/link';
 
-import {initStore} from '../store';
-import {incrementCount} from '../store/modules/example';
+import {ConnectedCounter} from 'components/Counter';
+import SettingsIcon from 'assets/icons/settings.svg';
 
-function Index({reduxState}) {
+function Index() {
   return (
     <div>
+      <SettingsIcon width={64} height={64} />
       <h1>Homepage</h1>
-      <p>Count: {reduxState.example.count}</p>
       <div>
         <Link href="/about">
           <a>About</a>
         </Link>
       </div>
+      <ConnectedCounter />
     </div>
   );
-}
-
-// The data returned here will be different for every request that hits the page,
-// that is because the page becomes a serverless function instead of being statically
-// exported when you use `getServerSideProps` or `getInitialProps`
-export function getServerSideProps() {
-  const reduxStore = initStore();
-  const {dispatch} = reduxStore;
-
-  dispatch(incrementCount());
-  dispatch(incrementCount());
-  dispatch(incrementCount());
-
-  return {
-    props: {
-      reduxState: reduxStore.getState(),
-    },
-  };
 }
 
 export default Index;

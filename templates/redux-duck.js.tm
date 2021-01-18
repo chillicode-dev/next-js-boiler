@@ -1,15 +1,11 @@
-// Internals
-import {Api} from 'classes/Api';
-import {getApiErrorMessage} from 'utils';
-
 // Action names
-export const FETCH = '@${TM:DUCK_NAME}/FETCH';
+export const FETCH_START = '@${TM:DUCK_NAME}/FETCH_START';
 export const FETCH_OK = '@${TM:DUCK_NAME}/FETCH_OK';
 export const FETCH_ERR = '@${TM:DUCK_NAME}/FETCH_ERR';
 
 // Action creators
 const fetchStart = () => {
-  return {type: FETCH};
+  return {type: FETCH_START};
 };
 
 const fetchOk = data => ({
@@ -22,20 +18,6 @@ const fetchErr = err => ({
   error: err,
 });
 
-export const fetch = () => (dispatch, getState) => {
-  dispatch(fetchStart());
-
-  return Api.get({
-    url: '/',
-    onResponse: res => {
-      dispatch(fetchOk(res));
-    },
-    onReject: err => {
-      dispatch(fetchErr(getApiErrorMessage(err)));
-    },
-  });
-};
-
 // Reducer
 const initialState = {
   data: [],
@@ -43,7 +25,7 @@ const initialState = {
   error: null,
 };
 
-export default function reducer(state = initialState, action) {
+export default function ${TM:DUCK_NAME}Reducer(state = initialState, action) {
   switch (action.type) {
     case FETCH:
       return {

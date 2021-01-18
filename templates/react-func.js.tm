@@ -1,17 +1,16 @@
 // Vendor
-import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 // Internals
-import style from './style.scss';
+import style from './style.module.scss';
 
-const ${TM:COMPONENT_NAME} = ({className}) => {
+function ${TM:COMPONENT_NAME}({className, children}) {
   return (
     <div className={cn(style.${TM:COMPONENT_NAME}, className)}>
-      ${TM:COMPONENT_NAME} component
+      {children}
     </div>
   );
-};
+}
 
 ${TM:COMPONENT_NAME}.defaultProps = {
   className: '',
@@ -19,6 +18,7 @@ ${TM:COMPONENT_NAME}.defaultProps = {
 
 ${TM:COMPONENT_NAME}.propTypes = {
   className: PropTypes.string,
+  children: PropTypes.node.isRequired,
 };
 
 export default ${TM:COMPONENT_NAME};
