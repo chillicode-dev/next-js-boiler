@@ -15,7 +15,9 @@
     "lint:inspect": "eslint \"./**/*.{js,jsx}\"",
     "lint:fix": "eslint \"./**/*.{js,jsx}\" --fix",
     "linters:inspect": "npm run prettier:inspect && npm run lint:inspect",
-    "linters:fix": "npm run prettier:fix && npm run lint:fix"
+    "linters:fix": "npm run prettier:fix && npm run lint:fix",
+    "stylelint:inspect": "stylelint \"./**/*.{css,scss}\" --syntax scss",
+    "stylelint:fix": "stylelint \"./**/*.{css,scss}\" --syntax scss --fix"
   },
   "dependencies": {
     "classnames": "^2.2.6",
@@ -47,6 +49,11 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
     "react-svg-loader": "^3.0.3",
-    "sass": "^1.32.4"
+    "sass": "^1.32.4",
+    "stylelint": "^13.8.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-scss": "^3.18.0"
   }
 }
