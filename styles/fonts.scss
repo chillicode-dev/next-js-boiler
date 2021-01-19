@@ -1,25 +1,28 @@
 // Load fonts
 @include webfont(
-  $fontFamily,
-  '../../assets/fonts/OpenSans/OpenSans-Light.woff',
-  '../../assets/fonts/OpenSans/OpenSans-Light.woff2',
+  $baseFont,
+  '/assets/fonts/OpenSans/OpenSans-Light.woff',
+  '/assets/fonts/OpenSans/OpenSans-Light.woff2',
   $light
 );
+
 @include webfont(
-  $fontFamily,
-  '../../assets/fonts/OpenSans/OpenSans-Regular.woff',
-  '../../assets/fonts/OpenSans/OpenSans-Regular.woff2',
+  $baseFont,
+  '/assets/fonts/OpenSans/OpenSans-Regular.woff',
+  '/assets/fonts/OpenSans/OpenSans-Regular.woff2',
   $regular
 );
+
 @include webfont(
-  $fontFamily,
-  '../../assets/fonts/OpenSans/OpenSans-Bold.woff',
-  '../../assets/fonts/OpenSans/OpenSans-Bold.woff2',
+  $baseFont,
+  '/assets/fonts/OpenSans/OpenSans-Bold.woff',
+  '/assets/fonts/OpenSans/OpenSans-Bold.woff2',
   $bold
 );
+
 @include webfont(
-  $fontFamily,
-  '../../assets/fonts/OpenSans/OpenSans-ExtraBold.woff',
-  '../../assets/fonts/OpenSans/OpenSans-ExtraBold.woff2',
+  $baseFont,
+  '/assets/fonts/OpenSans/OpenSans-ExtraBold.woff',
+  '/assets/fonts/OpenSans/OpenSans-ExtraBold.woff2',
   $extraBold
 );

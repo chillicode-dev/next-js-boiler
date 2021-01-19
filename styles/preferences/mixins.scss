@@ -35,13 +35,13 @@
 }
 
 // Font-face
-@mixin webfont($family, $path1, $path2, $weight: normal, $style: normal) {
+@mixin webfont($family, $woffPath, $woff2Path, $weight: normal, $style: normal) {
   @font-face {
     font-family: $family;
     font-weight: $weight;
     font-style: $style;
     font-display: swap;
-    src: local($family), url($path1) format('woff'), url($path2) format('woff2');
+    src: local($family), url($woffPath) format('woff'), url($woff2Path) format('woff2');
   }
 }
 
@@ -92,26 +92,6 @@
   @if $hasMargin {
     @include addTextMargin();
   }
-}
-
-@mixin h1($hasMargin: false) {
-  @include typography($fontSize + 20px, $extraBold, $hasMargin);
-}
-
-@mixin h2($hasMargin: false) {
-  @include typography($fontSize + 16px, $bold, $hasMargin);
-}
-
-@mixin h3($hasMargin: false) {
-  @include typography($fontSize + 8px, $bold, $hasMargin);
-}
-
-@mixin h4($hasMargin: false) {
-  @include typography($fontSize + 2px, $bold, $hasMargin);
-}
-
-@mixin paragraph($hasMargin: false) {
-  @include typography($fontSize, $regular, $hasMargin);
 }
 
 @mixin link($color, $activeColor) {

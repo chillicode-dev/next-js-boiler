@@ -11,7 +11,7 @@ module.exports = {
   webpack(config, {defaultLoaders}) {
     config.module.rules.push({
       test: /\.svg$/,
-      include: path.resolve(__dirname, 'assets', 'icons'),
+      include: path.resolve(__dirname, 'public', 'assets', 'icons'),
       use: [
         defaultLoaders.babel,
         {
@@ -38,6 +38,7 @@ module.exports = {
       hocs: path.resolve(__dirname, 'hocs'),
       hooks: path.resolve(__dirname, 'hooks'),
       modals: path.resolve(__dirname, 'modals'),
+      public: path.resolve(__dirname, 'public'),
       sections: path.resolve(__dirname, 'sections'),
       services: path.resolve(__dirname, 'services'),
       store: path.resolve(__dirname, 'store'),
@@ -59,6 +60,5 @@ module.exports = {
       'styles/preferences/mixins',
       'styles/preferences/easings',
     ]),
-    includePaths: [__dirname],
   },
 };

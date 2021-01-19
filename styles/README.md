@@ -1,15 +1,18 @@
 ### /styles/
 
+#### Next.js build-in-css
+Подробнее про подключение SCSS в Next.js можно почитать [здесь](https://nextjs.org/docs/basic-features/built-in-css-support#sass-support).
+
 #### CSS-модули и стили отдельных компонентов
 
 В проекте используются [CSS-модули](https://github.com/css-modules/css-modules), это значит, что мы импортируем стили в компоненты в качестве объектов, поля которых
-затем превращаются в хешированные строки и становятся уникальными в контексте приложения.
+затем превращаются в хэшированные строки и становятся уникальными в контексте приложения.
 
 Например, есть компонент `Button.js`:
 
 ```javascript
 import React from 'react';
-import style from './style.scss';
+import style from './style.module.scss';
 
 const Button = ({children}) => {
   return (
@@ -22,7 +25,7 @@ const Button = ({children}) => {
 export default Grid;
 ```
 
-И у него есть своя таблица стилей `style.scss`:
+И у него есть своя таблица стилей `style.module.scss`:
 
 ```scss
 .Button {
@@ -38,7 +41,7 @@ export default Grid;
 
 ```javascript
 import React from 'react';
-import style from './style.scss';
+import style from './style.module.scss';
 
 const Tab = ({children}) => {
   return (
@@ -51,7 +54,7 @@ const Tab = ({children}) => {
 export default Grid;
 ```
 
-И у него тоже своя таблица стилей `style.scss`:
+И у него тоже своя таблица стилей `style.module.scss`:
 
 ```scss
 .Tab {
@@ -80,7 +83,7 @@ export default Grid;
 
 1. Корневой элемент каждого компонента должен иметь className, идентичный названию компонента с большой буквы
 2. Все селекторы должны быть записаны в camelCase
-3. Если у нас есть класс одного компонента, а в другом компоненте он используется и мы хотим перебить его некоторые свойства,
+3. Если есть класс одного компонента, а в другом компоненте нужно переопределить некоторые его свойства,
    для страховки его вес нужно усилить путем вложенности селекторов
 
 #### Структура папки `/styles/`
@@ -101,7 +104,8 @@ export default Grid;
 - `/styles/preferences/` - SCSS переменные, миксины и функции для использования только внутри SCSS.
   Все они доступны глобально внутри SCSS-кода
 - `/styles/vendor/` - вендорные стили библиотек
-- `/styles/index.scss` - общие стили, применимые для всего приложения (например для `body` или `html`)
+- `/styles/fonts.scss` - подключение шрифтов
+- `/styles/base.scss` - общие стили, применимые для всего приложения (например для `body` или `html`)
 
 #### Media-запросы
 
@@ -119,7 +123,7 @@ export default Grid;
 .column {
   // Стили для десктопа
 
-  @include onPhone {
+  @include onPhone() {
     // Стили для телефона
   }
 }

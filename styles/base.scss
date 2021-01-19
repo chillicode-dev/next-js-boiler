@@ -1,5 +1,3 @@
-@import 'fonts.scss';
-
 /*--------------------------------------------------------------
 # Global app styles
 --------------------------------------------------------------*/
@@ -17,7 +15,7 @@ body {
   font: {
     weight: $regular;
     size: $fontSize;
-    family: $fontFamily, $fallbackFont;
+    family: $baseFont, $fallbackFont;
   }
   line-height: $lineHeight;
   -webkit-text-size-adjust: 100%;

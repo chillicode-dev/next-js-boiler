@@ -6,7 +6,7 @@ import style from './style.module.scss';
 function Counter({className, count, onIncrement, onDecrement, onReset}) {
   return (
     <div className={cn(style.Counter, className)}>
-      <p>Count: {count}</p>
+      <p>Redux counter: {count}</p>
       <button onClick={onIncrement}>Increment +</button>
       <button onClick={onDecrement}>Decrement -</button>
       <button onClick={onReset}>Reset</button>
