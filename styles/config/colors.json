@@ -1,6 +1,7 @@
 {
-  "brandColor": "#09D3AC",
+  "brandColor": "#E21F26",
   "bgColor": "#FFF",
+  "bgSecondaryColor": "#E1EBF3",
   "textColor": "#1A1A1A",
   "linkColor": "#4682b4",
   "linkColorActive": "#2d516f"

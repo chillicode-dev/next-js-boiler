@@ -11,4 +11,6 @@ export default {
 const Template = args => <Counter {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  count: 1,
+};
