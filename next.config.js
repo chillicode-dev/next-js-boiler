@@ -51,6 +51,7 @@ module.exports = {
   sassOptions: {
     importer: jsonImporter(),
     additionalData: scssImportChain([
+      'styles/config/grid.json',
       'styles/config/breakpoints.json',
       'styles/config/colors.json',
       'styles/preferences/variables',

@@ -34,3 +34,14 @@
     @content;
   }
 }
+
+// Grid
+@mixin setGridLayout($columnsCount, $gutterSize, $containerMaxWidth) {
+  display: grid;
+  grid-template-columns: repeat($columnsCount, 1fr);
+  column-gap: calc(#{$gutterSize} * 100% / #{$containerMaxWidth});
+}
+
+@mixin grid {
+  @include setGridLayout($columnsCount, $gutterSize, $containerMaxWidth);
+}
