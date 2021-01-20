@@ -1,5 +1,5 @@
 import Link from 'next/link';
-// import {initStore, useStore} from 'store';
+// import {initStore} from 'store';
 import {ConnectedCounter} from 'components/Counter';
 
 function About() {
@@ -8,7 +8,7 @@ function About() {
       <h1>About</h1>
       <div>
         <Link href="/">
-          <a>homepage</a>
+          <a>Homepage</a>
         </Link>
       </div>
       <ConnectedCounter />
