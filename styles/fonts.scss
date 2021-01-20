@@ -1,0 +1,28 @@
+// Load fonts
+@include webfont(
+  $baseFont,
+  '/assets/fonts/OpenSans/OpenSans-Light.woff',
+  '/assets/fonts/OpenSans/OpenSans-Light.woff2',
+  $light
+);
+
+@include webfont(
+  $baseFont,
+  '/assets/fonts/OpenSans/OpenSans-Regular.woff',
+  '/assets/fonts/OpenSans/OpenSans-Regular.woff2',
+  $regular
+);
+
+@include webfont(
+  $baseFont,
+  '/assets/fonts/OpenSans/OpenSans-Bold.woff',
+  '/assets/fonts/OpenSans/OpenSans-Bold.woff2',
+  $bold
+);
+
+@include webfont(
+  $baseFont,
+  '/assets/fonts/OpenSans/OpenSans-ExtraBold.woff',
+  '/assets/fonts/OpenSans/OpenSans-ExtraBold.woff2',
+  $extraBold
+);

@@ -1,36 +1,28 @@
 // Vendor
-import React from 'react';
-import NextApp from 'next/app';
 import {Provider} from 'react-redux';
+import PropTypes from 'prop-types';
 // Internals
-import {withReduxStore} from 'hocs';
+import {useStore} from 'store';
 // Styles
 import 'styles/vendor/normalize.scss';
 import 'styles/vendor/reset.scss';
-import 'styles/index.scss';
+import 'styles/fonts.scss';
+import 'styles/base.scss';
 
-@withReduxStore
-class App extends NextApp {
-  // Only uncomment this method if you have blocking data requirements for
-  // every single page in your application. This disables the ability to
-  // perform automatic static optimization, causing every page in your app to
-  // be server-side rendered.
-  //
-  // static async getInitialProps(appContext) {
-  //   // calls page's `getInitialProps` and fills `appProps.pageProps`
-  //   const appProps = await App.getInitialProps(appContext);
-  //
-  //   return { ...appProps }
-  // }
+const App = ({Component, pageProps}) => {
+  // Initialize Redux from page
+  const store = useStore(pageProps.reduxStore);
 
-  render() {
-    const {Component, pageProps, reduxStore} = this.props;
-    return (
-      <Provider store={reduxStore}>
-        <Component {...pageProps} />
-      </Provider>
-    );
-  }
-}
+  return (
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider>
+  );
+};
+
+App.propTypes = {
+  Component: PropTypes.elementType.isRequired,
+  pageProps: PropTypes.object.isRequired,
+};
 
 export default App;

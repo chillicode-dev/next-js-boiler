@@ -62,3 +62,9 @@ typings/
 
 # JetBrains IDEs
 .idea
+
+# Next export folder
+out
+
+# Storybook export folder
+storybook-static

@@ -111,15 +111,6 @@ export default class Api {
   }
 
   /**
-   * HEAD request
-   * @param options {ApiOptions}
-   * @return {Promise<ApiResponse>}
-   */
-  head(options) {
-    return this.makeRequest(HttpMethod.HEAD, options);
-  }
-
-  /**
    * @typedef ApiResponse
    * @property success {boolean} - is status between 200 and 399
    * @property payload {any} - response data
@@ -192,7 +183,7 @@ export default class Api {
       }
     } catch (err) {
       // Runtime and internet connection errors
-      const apiResponse = this.makeResponse({}, -1, err.message);
+      const apiResponse = this.makeResponse({}, 400, err.message);
       options.onError(apiResponse);
       return apiResponse;
     }
@@ -270,7 +261,7 @@ export default class Api {
         xhr.send(body);
       } catch (err) {
         // Runtime and internet connection errors
-        const apiResponse = this.makeResponse({}, -1, err.message);
+        const apiResponse = this.makeResponse({}, 400, err.message);
         options.onError(apiResponse);
         return resolve(apiResponse);
       }
@@ -358,7 +349,7 @@ export default class Api {
    * @return {boolean}
    */
   isStatusSuccessful(status) {
-    return status >= 200 && status <= 299;
+    return status >= 200 && status <= 399;
   }
 
   /**

@@ -13,15 +13,15 @@ module.exports = {
         },
         {
           from: './templates/style-file.scss.tm',
-          to: './components/${TM:COMPONENT_NAME}/style.scss',
+          to: './components/${TM:COMPONENT_NAME}/style.module.scss',
         },
         {
           from: './templates/export-module.js.tm',
           to: './components/${TM:COMPONENT_NAME}/index.js',
         },
         {
-          from: './templates/react-test-spec.js.tm',
-          to: './components/${TM:COMPONENT_NAME}/${TM:COMPONENT_NAME}.test.js',
+          from: './templates/storybook-stories.js.tm',
+          to: './components/${TM:COMPONENT_NAME}/${TM:COMPONENT_NAME}.stories.js',
         },
       ],
     },
@@ -34,15 +34,15 @@ module.exports = {
         },
         {
           from: './templates/style-file.scss.tm',
-          to: './components/${TM:COMPONENT_NAME}/style.scss',
+          to: './components/${TM:COMPONENT_NAME}/style.module.scss',
         },
         {
           from: './templates/export-module.js.tm',
           to: './components/${TM:COMPONENT_NAME}/index.js',
         },
         {
-          from: './templates/react-test-spec.js.tm',
-          to: './components/${TM:COMPONENT_NAME}/${TM:COMPONENT_NAME}.test.js',
+          from: './templates/storybook-stories.js.tm',
+          to: './components/${TM:COMPONENT_NAME}/${TM:COMPONENT_NAME}.stories.js',
         },
       ],
     },
@@ -55,24 +55,15 @@ module.exports = {
         },
         {
           from: './templates/style-file.scss.tm',
-          to: './components/${TM:COMPONENT_NAME}/style.scss',
+          to: './components/${TM:COMPONENT_NAME}/style.module.scss',
         },
         {
           from: './templates/export-module.js.tm',
           to: './components/${TM:COMPONENT_NAME}/index.js',
         },
         {
-          from: './templates/react-test-spec.js.tm',
-          to: './components/${TM:COMPONENT_NAME}/${TM:COMPONENT_NAME}.test.js',
-        },
-      ],
-    },
-    {
-      name: 'React Section',
-      files: [
-        {
-          from: './templates/react-section.js.tm',
-          to: './sections/${TM:PAGE}/${TM:COMPONENT_NAME}.js',
+          from: './templates/storybook-stories.js.tm',
+          to: './components/${TM:COMPONENT_NAME}/${TM:COMPONENT_NAME}.stories.js',
         },
       ],
     },
@@ -114,10 +105,10 @@ module.exports = {
       },
     },
     {
-      name: 'React Test Spec',
+      name: 'Storybook Stories (partial)',
       files: {
-        from: './templates/react-test-spec.js.tm',
-        to: './components/${TM:PARENT_COMPONENT_NAME}/${TM:COMPONENT_NAME}.test.js',
+        from: './templates/storybook-stories.js.tm',
+        to: './components/${TM:PARENT_COMPONENT_NAME}/${TM:COMPONENT_NAME}.stories.js',
       },
     },
   ],

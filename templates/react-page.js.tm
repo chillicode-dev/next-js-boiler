@@ -1,8 +1,7 @@
 // Vendor
-import React from 'react';
 import Head from 'next/head'
 
-const ${TM:COMPONENT_NAME} = () => (
+function ${TM:COMPONENT_NAME}() => (
   <div>
     <Head>
       <title>${TM:COMPONENT_NAME}</title>

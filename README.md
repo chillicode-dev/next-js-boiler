@@ -292,7 +292,7 @@ import url from 'utils/url';
 Например, есть компонент `Button.js`:
 ```javascript
 import React from 'react';
-import style from './style.scss';
+import style from './style.module.scss';
 
 const Button = ({children}) => {
   return (
@@ -318,7 +318,7 @@ export default Grid;
 И есть компонент `Tab.js`:
 ```javascript
 import React from 'react';
-import style from './style.scss';
+import style from './style.module.scss';
 
 const Tab = ({children}) => {
   return (
@@ -393,7 +393,7 @@ export default Grid;
 Значит, для создания сетки по 3 колонки в строке создаем:
 ```javascript
 import React from 'react';
-import style from './style.scss';
+import style from './style.module.scss';
 
 const Grid = () => {
   return (
