@@ -26,6 +26,7 @@
     "next": "10.0.5",
     "node-sass-json-importer": "^4.3.0",
     "prop-types": "^15.7.2",
+    "query-string": "^6.13.8",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-redux": "^7.2.2",
