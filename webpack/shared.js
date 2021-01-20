@@ -32,19 +32,21 @@ const sassJsonImporter = () => jsonImporter();
 const sassIncludePaths = () => [process.cwd()];
 
 /**
+ * @param env {'next'|'storybook'}
  * @see https://github.com/sass/node-sass#data
  */
-const sassSharedData = () => {
-  const imports = [
-    'styles/config/breakpoints.json',
-    'styles/config/grid.json',
-    'styles/config/colors.json',
-    'styles/preferences/variables',
-    'styles/preferences/grid',
-    'styles/preferences/mixins',
-    'styles/preferences/easings',
-  ];
-  return imports.map(path => `@import '${path}';`).join('');
+const sassSharedData = env => {
+  return `
+    $publicPath: ${env === 'storybook' ? '/public' : '""'};
+    
+    @import 'styles/config/breakpoints.json';
+    @import 'styles/config/grid.json';
+    @import 'styles/config/colors.json';
+    @import 'styles/preferences/variables';
+    @import 'styles/preferences/grid';
+    @import 'styles/preferences/mixins';
+    @import 'styles/preferences/easings';
+  `;
 };
 
 /**

@@ -5,7 +5,7 @@ const {aliases, sassSharedData, sassJsonImporter, reactSvgLoaderRule, cssoWebpac
 module.exports = {
   sassOptions: {
     importer: sassJsonImporter(),
-    additionalData: sassSharedData(),
+    additionalData: sassSharedData('next'),
   },
   webpack(config, {defaultLoaders}) {
     // React SVG Loader

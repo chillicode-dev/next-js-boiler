@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "npm-run-all -p app:dev storybook:dev",
-    "app:dev": "next dev",
+    "app:dev": "next dev -p 3000",
     "app:build": "next build",
     "app:export": "next export",
     "app:start": "next start",

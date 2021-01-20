@@ -1,6 +1,7 @@
 ### /styles/
 
 #### Next.js build-in-css
+
 Подробнее про подключение SCSS в Next.js можно почитать [здесь](https://nextjs.org/docs/basic-features/built-in-css-support#sass-support).
 
 #### CSS-модули и стили отдельных компонентов
@@ -140,5 +141,17 @@ export default Grid;
   .column {
     // Стили для телефона
   }
+}
+```
+
+#### Работа с url(...)
+
+Поскольку реализации Sass не поддерживают перезапись URL-адресов, все ресурсы должны иметь относительные пути.
+
+Для обхода этой проблемы и доступа к папке `/public` можно интерполировать переменную `$publicPath` в путь к файлу, например:
+
+```scss
+.image {
+  background-image: url('#{$publicPath}/assets/images/test-next-logo.png');
 }
 ```

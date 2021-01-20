@@ -20,7 +20,7 @@ module.exports = {
       name: '@storybook/preset-scss',
       options: {
         sassLoaderOptions: {
-          additionalData: sassSharedData(),
+          additionalData: sassSharedData('storybook'),
           sassOptions: {
             importer: sassJsonImporter(),
             includePaths: sassIncludePaths(),
