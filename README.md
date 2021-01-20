@@ -41,21 +41,16 @@
     - Качество кода
 
 ## <a name="inside">Что внутри?</a>
-- [Next.js 9](https://nextjs.org/docs) в качестве платформы
+- [Next.js 10](https://nextjs.org/docs) в качестве платформы
 - [SCSS](https://sass-lang.com/documentation)
 - [CSS Modules](https://github.com/css-modules/css-modules)
-- [Сетка на основе Susy](https://www.oddbird.net/susy/docs/)
 - [ESLint](https://eslint.org/)
 - [Stylelint](https://stylelint.io/user-guide)
 - [Prettier](https://prettier.io/) (не конфликтует с ESLint и Stylelint)
-- [Jest](https://jestjs.io/) для тестов
 - [Templateman](https://github.com/adlite/templateman) для быстрого создания повторяющихся компонентов
-- Production-оптимизации: [CSSO](https://github.com/css/csso), [Imagemin](https://github.com/Klathmon/imagemin-webpack-plugin) и [SVGO](https://github.com/Klathmon/imagemin-webpack-plugin#optionssvgo)
+- Production-оптимизации: [CSSO](https://github.com/css/csso) и [SVGO](https://github.com/Klathmon/imagemin-webpack-plugin#optionssvgo)
 - Webpack [file loaders](https://webpack.js.org/loaders/file-loader/)
-- [ES7 декораторы](https://babeljs.io/docs/en/next/babel-plugin-proposal-decorators)
 - [Redux](https://redux.js.org/) (на основе [Ducks](https://github.com/erikras/ducks-modular-redux) паттерна)
-- Базовые компоненты и компоненты высшего порядка (HOCs)
-- Git-хуки с ESLint, Stylelint и Prettier правками
 
 ## <a name="get-started">Начало работы</a>
 ### Окружение
@@ -63,7 +58,7 @@
 На Windows все команды следует выполнять в UNIX-подобной среде (WSL, Git Bash или Cygwin).
 
 ### Должны быть предустановлены
-- Node.js v12.x.x+
+- Node.js v14.x.x+
 - Npm v6.x.x+
 
 ### Установка зависимостей
