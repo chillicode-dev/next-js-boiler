@@ -14,8 +14,8 @@
     "prettier:fix": "prettier --write \"./**/*.{js,jsx,json,css,scss}\"",
     "lint:inspect": "eslint \"./**/*.{js,jsx}\"",
     "lint:fix": "eslint \"./**/*.{js,jsx}\" --fix",
-    "linters:inspect": "npm run prettier:inspect && npm run lint:inspect",
-    "linters:fix": "npm run prettier:fix && npm run lint:fix",
+    "linters:inspect": "npm run prettier:inspect && npm run lint:inspect && npm run stylelint:inspect",
+    "linters:fix": "npm run prettier:fix && npm run lint:fix && npm run stylelint:fix",
     "stylelint:inspect": "stylelint \"./**/*.{css,scss}\" --syntax scss",
     "stylelint:fix": "stylelint \"./**/*.{css,scss}\" --syntax scss --fix"
   },

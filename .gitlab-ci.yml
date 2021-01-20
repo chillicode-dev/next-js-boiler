@@ -1,5 +1,5 @@
 # https://hub.docker.com/r/library/node/tags/
-image: node:12
+image: node:14
 
 stages:
   - test
@@ -9,11 +9,7 @@ run_tests:
   stage: test
   script:
     - npm ci
-    - cp .env.example .env
-    - npm run prettier:inspect
-    - npm run lint:inspect
-    - npm run stylelint:inspect
-    - npm run test
+    - npm run linters:inspect
 
 deploy_to_dev:
   stage: deploy
