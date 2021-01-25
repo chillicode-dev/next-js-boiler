@@ -5,6 +5,7 @@ const {
   sassJsonImporter,
   reactSvgLoaderRule,
   cssoWebpackPlugin,
+  svgExcludeRuleFromStorybookLoaders,
 } = require('../webpack/shared');
 
 module.exports = {
@@ -34,6 +35,9 @@ module.exports = {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
     // You can change the configuration based on that.
     // 'PRODUCTION' is used when building the static version of storybook.
+
+    // Exclude SVG from Storybook file-loader
+    config.module.rules = svgExcludeRuleFromStorybookLoaders(config.module.rules);
 
     // React SVG Loader
     config.module.rules.push(reactSvgLoaderRule('babel-loader'));
