@@ -168,6 +168,23 @@ const svgoConfig = () => ({
 });
 
 /**
+ * @see https://github.com/storybookjs/storybook/issues/7360#issuecomment-538799239
+ * @param rules {Array<object>}
+ * @returns {Array<object>}
+ */
+const svgExcludeRuleFromStorybookLoaders = rules => {
+  return rules.map(rule => {
+    if (rule.test.test('.svg')) {
+      return {
+        ...rule,
+        test: /\.(ico|jpg|jpeg|png|apng|gif|eot|otf|webp|ttf|woff|woff2|cur|ani|pdf)(\?.*)?$/,
+      };
+    }
+    return rule;
+  });
+};
+
+/**
  * Shared react-svg-loader rule
  * @see https://www.npmjs.com/package/react-svg-loader
  * @param defaultBabelLoader {string}
@@ -181,7 +198,7 @@ const reactSvgLoaderRule = defaultBabelLoader => ({
     {
       loader: 'react-svg-loader',
       options: {
-        jsx: true, // true outputs JSX tags
+        jsx: false, // true outputs JSX tags
         svgo: svgoConfig(),
       },
     },
@@ -193,6 +210,7 @@ module.exports = {
   sassJsonImporter,
   sassSharedData,
   svgoConfig,
+  svgExcludeRuleFromStorybookLoaders,
   reactSvgLoaderRule,
   cssoWebpackPlugin,
   aliases,
