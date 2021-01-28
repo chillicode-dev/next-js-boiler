@@ -58,36 +58,33 @@
 На Windows все команды следует выполнять в UNIX-подобной среде (WSL, Git Bash или Cygwin).
 
 ### Должны быть предустановлены
-- Node.js v14.x.x+
+- Node.js v12.x.x+
 - Npm v6.x.x+
 
 ### Установка зависимостей
-Для инициализации проекта устанавливаем зависимости и копируем образец env-переменных:
-1. `npm ci`
-2. `cp .env.example .env`
-
-..или просто запускаем:
-```
-bash ./shell/init.sh
+Устанавливаем зависимости из `package-lock.json` с помощью команды:
+```shell
+npm ci
 ```
 
-### Запуск development-версии
+### Запуск development-версии приложения
 Для запуска Next development-сервера:
 ```
-npm run dev
+npm run app:dev
 ```
 Затем переходим на `http://localhost:3000`.
 
-Кастомный порт можно поставить в `.env` файле.
-
-### Запуск production-версии
-1. Собираем приложение с помощью `npm run build`
-2. Запускаем сервер `npm run start`
-
-### Деплой
-Для деплоя изменений на сервере запускаем:
+### Запуск development-версии Storybook
+Для запуска Storybook development-сервера:
 ```
-bash ./shell/deploy.sh
+npm run storybook:dev
+```
+Затем переходим на `http://localhost:3001`.
+
+### Запуск development-версии всего окружения
+Для параллельного запуска Storybook и Next.js выполняем:
+```
+npm run dev
 ```
 
 ## <a name="code-of-conduct">Ведение разработки</a>
