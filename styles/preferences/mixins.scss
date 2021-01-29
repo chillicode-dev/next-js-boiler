@@ -6,7 +6,7 @@
 }
 
 // Accessible hiding
-@mixin visually-hidden {
+@mixin visuallyHidden {
   &:not(:focus):not(:active) {
     position: absolute;
     width: 1px;
