@@ -32,21 +32,22 @@ const sassJsonImporter = () => jsonImporter();
 const sassIncludePaths = () => [process.cwd()];
 
 /**
- * @param env {'next'|'storybook'}
+ * @param envResources {'next'|'storybook'}
  * @see https://github.com/sass/node-sass#data
+ * Resources in 'styles' directory to be allowed in each component
  */
-const sassSharedData = env => {
-  return `
-    $publicPath: ${env === 'storybook' ? '/public' : '""'};
-    
-    @import 'styles/config/breakpoints.json';
-    @import 'styles/config/grid.json';
-    @import 'styles/config/colors.json';
-    @import 'styles/preferences/variables';
-    @import 'styles/preferences/grid';
-    @import 'styles/preferences/mixins';
-    @import 'styles/preferences/easings';
-  `;
+const sassSharedData = envResources => {
+  const sharedResources = [
+    'styles/config/breakpoints.json',
+    'styles/config/colors.json',
+    'styles/config/grid.json',
+    `styles/resources/${envResources}`,
+    'styles/resources/grid',
+    'styles/resources/mixins',
+    'styles/resources/variables.scss',
+  ];
+
+  return sharedResources.map(path => `@import '${path}';`).join('');
 };
 
 /**

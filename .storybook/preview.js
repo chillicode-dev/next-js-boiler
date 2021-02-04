@@ -1,7 +1,7 @@
-import colors from 'styles/config/colors.json';
-
 import 'styles/base.scss';
 import 'styles/storybook.scss';
+
+import colors from 'styles/config/colors.json';
 
 export const parameters = {
   actions: {argTypesRegex: '^on[A-Z].*'},
