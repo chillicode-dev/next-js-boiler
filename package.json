@@ -10,14 +10,14 @@
     "app:start": "next start",
     "storybook:dev": "start-storybook -p 3001 --ci --quiet --static-dir ./public",
     "storybook:build": "build-storybook",
-    "prettier:inspect": "prettier --check \"./**/*.{js,jsx,json,css,scss}\"",
-    "prettier:fix": "prettier --write \"./**/*.{js,jsx,json,css,scss}\"",
-    "lint:inspect": "eslint \"./**/*.{js,jsx}\"",
-    "lint:fix": "eslint \"./**/*.{js,jsx}\" --fix",
-    "linters:inspect": "npm run prettier:inspect && npm run lint:inspect && npm run stylelint:inspect",
-    "linters:fix": "npm run prettier:fix && npm run lint:fix && npm run stylelint:fix",
-    "stylelint:inspect": "stylelint \"./**/*.{css,scss}\" --syntax scss",
-    "stylelint:fix": "stylelint \"./**/*.{css,scss}\" --syntax scss --fix"
+    "eslint:inspect": "eslint \"./**/*.{js,jsx}\" --ignore-path .gitignore .",
+    "eslint:fix": "npm run eslint:inspect -- --fix",
+    "stylelint:inspect": "stylelint \"./**/*.{css,scss}\" \"!./styles/vendor/**\" --ignore-path .gitignore",
+    "stylelint:fix": "npm run stylelint:inspect -- --fix",
+    "prettier:inspect": "prettier --check \"./**/*.{js,jsx,json,css,scss}\" --ignore-path .gitignore",
+    "prettier:fix": "prettier --write \"./**/*.{js,jsx,json,css,scss}\" --ignore-path .gitignore",
+    "linters:inspect": "npm-run-all -p prettier:inspect stylelint:inspect eslint:inspect",
+    "linters:fix": "npm-run-all -p prettier:fix stylelint:fix eslint:fix"
   },
   "dependencies": {
     "@babel/core": "^7.12.10",
