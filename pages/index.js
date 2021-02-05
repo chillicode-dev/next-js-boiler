@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-import {ConnectedCounter} from 'components/Counter';
-import TestIcon from 'public/assets/icons/test-icon.svg';
+import {ConnectedCounter} from '@/components/Counter';
+import TestIcon from '@/public/assets/icons/test-icon.svg';
 
 function Index() {
   return (

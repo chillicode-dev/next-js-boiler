@@ -1,8 +1,8 @@
 // Vendor
 import queryString from 'query-string';
 // Internals
-import {HttpMethod} from 'utils/enums';
-import {concatLinks} from 'utils/url';
+import {HttpMethod} from '@/utils/enums';
+import {concatLinks} from '@/utils/url';
 
 /**
  * Wrapper around fetch() for AJAX requests

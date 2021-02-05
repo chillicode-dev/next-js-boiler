@@ -1,6 +1,6 @@
 import Link from 'next/link';
-// import {initStore} from 'store';
-import {ConnectedCounter} from 'components/Counter';
+// import {initStore} from '@/store';
+import {ConnectedCounter} from '@/components/Counter';
 
 function About() {
   return (

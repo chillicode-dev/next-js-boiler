@@ -6,19 +6,7 @@ const CssoWebpackPlugin = require('csso-webpack-plugin').default;
  * Aliases for Webpack alias resolver
  */
 const aliases = () => ({
-  assets: path.resolve(process.cwd(), 'assets'),
-  components: path.resolve(process.cwd(), 'components'),
-  config: path.resolve(process.cwd(), 'config'),
-  hocs: path.resolve(process.cwd(), 'hocs'),
-  hooks: path.resolve(process.cwd(), 'hooks'),
-  modals: path.resolve(process.cwd(), 'modals'),
-  public: path.resolve(process.cwd(), 'public'),
-  sections: path.resolve(process.cwd(), 'sections'),
-  services: path.resolve(process.cwd(), 'services'),
-  store: path.resolve(process.cwd(), 'store'),
-  styles: path.resolve(process.cwd(), 'styles'),
-  tests: path.resolve(process.cwd(), 'tests'),
-  utils: path.resolve(process.cwd(), 'utils'),
+  '@': process.cwd(),
 });
 
 /**

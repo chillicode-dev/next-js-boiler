@@ -1,7 +1,7 @@
 // Vendor
 import {useDispatch, useSelector} from 'react-redux';
 // Internals
-import {decrementCount, incrementCount, resetCount} from 'store/modules/example';
+import {decrementCount, incrementCount, resetCount} from '@/store/modules/example';
 import Counter from './Counter';
 
 function ConnectedCounter() {
