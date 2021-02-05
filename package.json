@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-decorators": "^7.12.13",
     "@storybook/addon-actions": "^6.1.14",
     "@storybook/addon-essentials": "^6.1.14",
     "@storybook/addon-links": "^6.1.14",
