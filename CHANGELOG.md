@@ -9,7 +9,7 @@ These 2 main branches should have CI/CD pipelines for automated testing and depl
 
 Another branches are used by developers and will be merged to `dev` branch in the future.
 
-To start development you got to stick to the following rules:
+To start development you should follow some rules:
 1. Fork from the current `dev` branch
 1. Start naming with the name of the type of action that we perform in this branch
    (`feature`, `hotfix`, `support`, `release`). For example: `feature/..`
