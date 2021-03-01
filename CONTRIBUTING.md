@@ -1,69 +1,63 @@
 # Contributing
-Правила разработки проекта в команде
+### Git
+#### Branches
+The project must have 2 branches:
+- `master` - release versions of the project (tagged by version numbers)
+- `dev` - branch for deploying to dev-server
 
-### Git-регламент
-#### Ветки
-В проекте обязательно должны присутствовать 3 ветки:
-1. `master` - релизные версии проекта (с тегами по номерам версий)
-1. `stage` - ветка для презентации заказчику и его одобрения для последующего слияния в `master`
-1. `dev` - ветка для деплоя на наш dev-сервер
+These 2 main branches should have CI/CD pipelines for automated testing and deployment to dev and stage servers.
 
-Эти 3 основные ветки должны быть снабжены CI-пайплайнами для автоматического тестирования и деплоя на наши dev и stage-сервера.
+Another branches are used by developers and will be merged to `dev` branch in the future.
 
-Остальные же ветки используются для ведения отдельными разработчиками и в будущем будут использоваться для слияния в `dev`.
+To start development you should follow some rules:
+1. Fork from the current `dev` branch
+1. Name branch with the type of action that you perform (`feature`, `hotfix`, `support`, `release`). For example: `feature/..`
+1. After the slash, put the task number from the task tracker and briefly describe actions that you perform in this branch (only lowercase letters and a hyphen). For example: `feature/1337-responsive-header`
+1. After changes, create a Merge Request to `dev`
 
-Для создания своей ветки руководствуемся следующими правилами:
-1. Ответвляемся от актуальной ветки `dev`
-1. Начинаем именование с названия типа действия, которые мы производим в данной ветке 
-(`feature`, `hotfix`, `support`, `release`). Например: `feature/..`
-1. После косой черты ставим номер задачи в таск-трекере и вкратце описываем действия, который мы производим в данной ветке (только буквы в нижнем регистре и дефис). Например: `feature/1337-responsive-header`
-1. После внесения изменений делаем Merge Request в `dev`
-
-Из этого следует, что порядок слияния следующий: 
+The order of the merge is as follows:
 ```
-feature/1-feature-title -> dev -> stage -> master
+feature/1-feature-title -> dev -> master
 ```
 
-#### Коммиты
-Все названия коммитов должны быть на английском языке и начинаться с большой буквы.
-Если изменения коснулись только одного файла, следует вначале указать его название, например:
+#### Commits
+All commit names must be in English and begin with a capital letter.
+If the changes affected only one file, you should first insert its name, for example:
 ```
 Button.js: Change text styles
 ```
 
-Запрещено использовать необъективные названия коммитов в стиле `fix bugs`. 
-Всегда начинай коммит с глагола (например: Add, Fix, Update, Remove, Rename, Delete и тд), 
-либо с названия файла/папки, в котором велась работа. Затем идет субъект, над которым производилось действие и затем
-указывается местоположение, где оно производилось.
+Do not use `fix bugs`-style commit names.
 
-То есть сообщение коммита должно примерно соответствовать следующему правилу:
+Always start commit with a verb (for example: Add, Fix, Update, Remove, Rename, Delete, etc.),
+or with the name of the file/folder which was changed.
+
+The commit message should roughly match the following rule:
 ```
 {Place}: {action} + {subjects}
 ```
-или:
+or:
 ```
 {Action} + {subjects} in {place}
 ```
 
-Например нам нужно изменить PropTypes в компоненте `/components/Button/Button.js`, тогда название коммита будет:
+For example, you need to change PropTypes in the component `/components/Button/Button.js`, then the name of the commit will be:
 ```
 Button.js: fix propTypes
 ```
-или:
+or:
 ```
 Fix propTypes in Button.js
 ```
 
+
 #### Merge Requests
-Для создания MR перед деплоем новых фич:
-1. Переходим в раздел "Merge Requests" в репозитории проекта и нажимаем "New Merge Request"
-1. Выбираем в качестве "Source branch" свою ветку с фичами/багфиксами, а в качестве "Target branch" ветку `dev`
-1. "Title" должен начинаться с номера задачи в таск-трекере, после этого вписываем кратко что было сделано. Например: `#1337 create responsive header`
-1. Если работа в ветке не завершена, перед названием MR ставим префикс `WIP:`. Например: `WIP: #1337 create responsive header`
-1. "Assignee" ставим тимлида разраба, который проводит Code review
-1. Отмечаем галочкой "Delete source branch when merge request is accepted" если хотим удалить ветку после слияния
-1. Нажимаем "Submit merge request"
-1. После успешного завершения пайплайнов и подтверждения мёрдж реквеста переключаемся в проекте локально на ветку `dev` и подтягиваем изменения
-1. В консоли увеличиваем номер версии с помощью команды `npm version patch`
-1. Дожидаемся окончания выполнения команды и пушим в репозиторий автоматически созданный коммит с версией и ее тегом
-1. Только после этого перед заливом на сервер сливаем `dev` в `stage` (для деплоя на стейдж), а `stage` в `master` (для деплоя в прод)
+To create MR before deploying new features:
+1. Go to the "Merge Requests" section in the project repository and click "New Merge Request"
+1. Select as a "Source branch" your branch with features/bug fixes, and as "Target branch" branch `dev`
+1. "Title" should begin with the task number in the task tracker. After that, enter briefly what was done. For example: `# 1337 create responsive header`
+1. If the work is not completed, put the prefix `WIP:` before the MR name. For example: `WIP: #1337 create responsive header`
+1. Set team leader of the project as "Assignee"
+1. Click "Delete source branch when merge request is accepted" if you want to delete the branch after the merge
+1. Click "Submit merge request"
+1. After the successful completion of the pipelines and the confirmation of the merge request, team lead should checkout `dev` branch and pull changes. Then he increases version number using the command `npm version patch` and push tags to the repository
