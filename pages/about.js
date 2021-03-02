@@ -1,32 +1,29 @@
 import Link from 'next/link';
-// import {initStore} from '@/store';
-import {ConnectedCounter} from '@/components/Counter';
+
+import TestIcon from '@/public/assets/icons/test-icon.svg';
 
 function About() {
   return (
     <div>
+      <TestIcon width={64} height={64} />
       <h1>About</h1>
       <div>
         <Link href="/">
-          <a>Homepage</a>
+          <a>Index</a>
         </Link>
       </div>
-      <ConnectedCounter />
     </div>
   );
 }
 
-// The data returned here will be different for every request that hits the page,
-// that is because the page becomes a serverless function instead of being statically
-// exported when you use `getServerSideProps` or `getInitialProps`
-// export function getServerSideProps() {
-//   const reduxStore = initStore();
-//
-//   return {
-//     props: {
-//       reduxState: reduxStore.getState(),
-//     },
-//   };
-// }
+export function getServerSideProps() {
+  console.log('About getServerSideProps');
+
+  return {
+    props: {
+      a: 1,
+    },
+  };
+}
 
 export default About;
