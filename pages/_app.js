@@ -1,9 +1,9 @@
 // Vendor
 import {Provider} from 'mobx-react';
-import {getSnapshot} from 'mobx-state-tree';
 import PropTypes from 'prop-types';
 // Internals
 import {useStore} from '@/stores';
+import Header from '@/components/Header';
 // Styles
 import '@/styles/base.scss';
 
@@ -11,11 +11,12 @@ const App = ({Component, pageProps}) => {
   // Initialize Redux from page
   const store = useStore(pageProps.initialState);
 
-  console.log(getSnapshot(store));
-
   return (
     <Provider store={store}>
-      <Component {...pageProps} />
+      <Header />
+      <main style={{paddingTop: 30}}>
+        <Component {...pageProps} />
+      </main>
     </Provider>
   );
 };

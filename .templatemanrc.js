@@ -47,32 +47,24 @@ module.exports = {
       ],
     },
     {
-      name: 'React Component Connected Class',
-      files: [
-        {
-          from: './templates/react-connected-class.js.tm',
-          to: './components/${TM:COMPONENT_NAME}/${TM:COMPONENT_NAME}.js',
-        },
-        {
-          from: './templates/style-file.scss.tm',
-          to: './components/${TM:COMPONENT_NAME}/style.module.scss',
-        },
-        {
-          from: './templates/export-module.js.tm',
-          to: './components/${TM:COMPONENT_NAME}/index.js',
-        },
-        {
-          from: './templates/storybook-stories.js.tm',
-          to: './components/${TM:COMPONENT_NAME}/${TM:COMPONENT_NAME}.stories.js',
-        },
-      ],
-    },
-    {
       name: 'React Page',
       files: [
         {
           from: './templates/react-page.js.tm',
           to: './pages/${TM:URL}/index.js',
+        },
+      ],
+    },
+    {
+      name: 'React Section',
+      files: [
+        {
+          from: './templates/export-module.js.tm',
+          to: './sections/${TM:PAGE_ROUTE}/index.js',
+        },
+        {
+          from: './templates/react-func.js.tm',
+          to: './sections/${TM:PAGE_ROUTE}/${TM:COMPONENT_NAME}.js',
         },
       ],
     },
@@ -94,13 +86,6 @@ module.exports = {
       name: 'React Component Class (partial)',
       files: {
         from: './templates/react-class.js.tm',
-        to: './components/${TM:PARENT_COMPONENT_NAME}/${TM:COMPONENT_NAME}.js',
-      },
-    },
-    {
-      name: 'React Component Connected Class (partial)',
-      files: {
-        from: './templates/react-connected-class.js.tm',
         to: './components/${TM:PARENT_COMPONENT_NAME}/${TM:COMPONENT_NAME}.js',
       },
     },

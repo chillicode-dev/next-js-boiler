@@ -1,11 +1,11 @@
 import Link from 'next/link';
 
-import TestIcon from '@/public/assets/icons/test-icon.svg';
+import ExampleIcon from '@/public/assets/icons/example-icon.svg';
 
 function About() {
   return (
     <div>
-      <TestIcon width={64} height={64} />
+      <ExampleIcon width={64} height={64} />
       <h1>About</h1>
       <div>
         <Link href="/">

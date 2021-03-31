@@ -10,7 +10,7 @@ export const parameters = {
     values: [
       {
         name: 'primary',
-        value: colors.bgColor,
+        value: colors.bgPrimaryColor,
       },
       {
         name: 'secondary',

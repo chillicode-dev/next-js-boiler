@@ -1,5 +1,6 @@
 import {useMemo} from 'react';
 import {types, applySnapshot} from 'mobx-state-tree';
+import {inject, observer} from 'mobx-react';
 
 import CommentsStore from '@/stores/models/CommentsStore';
 import PostsStore from '@/stores/models/PostsStore';
@@ -40,4 +41,8 @@ export function initStore(snapshot = null) {
 
 export function useStore(initialState) {
   return useMemo(() => initStore(initialState), [initialState]);
+}
+
+export function connectMobX(stores, component) {
+  return inject(stores)(observer(component));
 }
