@@ -2,24 +2,23 @@
 import {Provider} from 'mobx-react';
 import PropTypes from 'prop-types';
 // Internals
-import {useStore} from '@/stores';
-import Header from '@/components/Header';
+import {useStore} from '@/store';
+import Layout from '@/components/Layout';
 // Styles
 import '@/styles/base.scss';
 
-const App = ({Component, pageProps}) => {
+function App({Component, pageProps}) {
   // Initialize Redux from page
   const store = useStore(pageProps.initialState);
 
   return (
     <Provider store={store}>
-      <Header />
-      <main style={{paddingTop: 30}}>
+      <Layout>
         <Component {...pageProps} />
-      </main>
+      </Layout>
     </Provider>
   );
-};
+}
 
 App.propTypes = {
   Component: PropTypes.elementType.isRequired,

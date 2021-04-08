@@ -1,4 +1,4 @@
-import {types, getSnapshot, destroy} from 'mobx-state-tree';
+import {types, destroy} from 'mobx-state-tree';
 
 // Models
 const Post = types.model({
@@ -9,7 +9,7 @@ const Post = types.model({
 });
 
 // Main store
-const PostsStore = types
+const ExamplePostsStore = types
   .model({
     posts: types.array(Post),
     isLoading: types.boolean,
@@ -42,6 +42,6 @@ const initialState = {
 };
 
 export default {
-  model: PostsStore,
+  model: ExamplePostsStore,
   initialState: initialState,
 };

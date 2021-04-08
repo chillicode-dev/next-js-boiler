@@ -1,23 +1,11 @@
 import {useMemo} from 'react';
-import {types, applySnapshot} from 'mobx-state-tree';
 import {inject, observer} from 'mobx-react';
+import {applySnapshot} from 'mobx-state-tree';
 
-import CommentsStore from '@/stores/models/CommentsStore';
-import PostsStore from '@/stores/models/PostsStore';
+import {RootStore, rootStoreInitialState} from '@/store/models';
 import {isServer} from '@/utils/env';
 
 let store;
-
-// Define a store just like a model
-const RootStore = types.model({
-  comments: CommentsStore.model,
-  posts: PostsStore.model,
-});
-
-const rootStoreInitialState = {
-  comments: CommentsStore.initialState,
-  posts: PostsStore.initialState,
-};
 
 export function initStore(snapshot = null) {
   const _store = store ?? RootStore.create(rootStoreInitialState);
@@ -43,6 +31,6 @@ export function useStore(initialState) {
   return useMemo(() => initStore(initialState), [initialState]);
 }
 
-export function connectMobX(stores, component) {
-  return inject(stores)(observer(component));
+export function connectMobX(component, stores = null) {
+  return inject(stores || 'store')(observer(component));
 }

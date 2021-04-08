@@ -15,7 +15,7 @@ const Comment = types
     },
   }));
 
-const CommentsStore = types
+const ExampleCommentsStore = types
   .model({
     comments: types.array(Comment),
     isLoading: types.boolean,
@@ -47,6 +47,6 @@ const initialState = {
 };
 
 export default {
-  model: CommentsStore,
+  model: ExampleCommentsStore,
   initialState: initialState,
 };

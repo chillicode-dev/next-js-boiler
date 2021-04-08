@@ -1,16 +1,16 @@
 // Vendor
 import React from 'react';
 import PropTypes from 'prop-types';
-import {inject, observer} from 'mobx-react';
 import cn from 'classnames';
 // Internals
+import {connectMobX} from '@/store';
 import style from './style.module.scss';
 
-function CommentsView({className, store}) {
+function ExampleCommentsSection({className, store}) {
   const {comments} = store.comments;
 
   return (
-    <ul className={cn(style.CommentsView, className)}>
+    <ul className={cn(style.ExampleCommentsSection, className)}>
       {comments.map(comment => (
         <li key={comment.id}>
           <button onClick={comment.remove}>Удалить</button>
@@ -21,13 +21,14 @@ function CommentsView({className, store}) {
   );
 }
 
-CommentsView.defaultProps = {
+ExampleCommentsSection.defaultProps = {
   className: '',
+  store: {},
 };
 
-CommentsView.propTypes = {
+ExampleCommentsSection.propTypes = {
   className: PropTypes.string,
-  posts: PropTypes.array,
+  store: PropTypes.object,
 };
 
-export default inject('store')(observer(CommentsView));
+export default connectMobX(ExampleCommentsSection);
