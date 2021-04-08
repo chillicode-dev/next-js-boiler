@@ -56,23 +56,27 @@ module.exports = {
       ],
     },
     {
-      name: 'React Section',
+      name: 'App Section',
       files: [
         {
           from: './templates/export-module.js.tm',
-          to: './sections/${TM:PAGE_ROUTE}/index.js',
+          to: './sections/${TM:PAGE_ROUTE}/${TM:COMPONENT_NAME}/index.js',
         },
         {
-          from: './templates/react-func.js.tm',
-          to: './sections/${TM:PAGE_ROUTE}/${TM:COMPONENT_NAME}.js',
+          from: './templates/app-section.js.tm',
+          to: './sections/${TM:PAGE_ROUTE}/${TM:COMPONENT_NAME}/${TM:COMPONENT_NAME}.js',
+        },
+        {
+          from: './templates/style-file.scss.tm',
+          to: './sections/${TM:PAGE_ROUTE}/${TM:COMPONENT_NAME}/style.module.scss',
         },
       ],
     },
     {
-      name: 'Redux Duck Module',
+      name: 'MobX State Tree Model',
       files: {
-        from: './templates/redux-duck.js.tm',
-        to: './store/modules/${TM:DUCK_NAME}.js',
+        from: './templates/mobx-state-tree-model.js.tm',
+        to: './store/models/${TM:MODEL_NAME}.js',
       },
     },
     {

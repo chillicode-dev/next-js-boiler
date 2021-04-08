@@ -1,4 +1,3 @@
-// Vendor
 import Head from 'next/head'
 
 function ${TM:COMPONENT_NAME}() {

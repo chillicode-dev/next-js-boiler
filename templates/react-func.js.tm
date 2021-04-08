@@ -1,7 +1,6 @@
-// Vendor
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-// Internals
+
 import style from './style.module.scss';
 
 function ${TM:COMPONENT_NAME}({className}) {
