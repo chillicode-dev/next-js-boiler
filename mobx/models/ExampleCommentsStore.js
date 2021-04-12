@@ -10,8 +10,8 @@ const Comment = types
     body: types.string,
   })
   .actions(self => ({
-    remove() {
-      getParent(self, 2).remove(self);
+    delete() {
+      getParent(self, 2).delete(self);
     },
   }));
 
@@ -33,7 +33,7 @@ const ExampleCommentsStore = types
     },
     async fetchData() {
       self.startLoading();
-      const response = await fetch('http://jsonplaceholder.typicode.com/comments');
+      const response = await fetch('https://jsonplaceholder.typicode.com/comments');
       const comments = await response.json();
       self.saveDataFromServer(comments);
     },
@@ -42,7 +42,7 @@ const ExampleCommentsStore = types
         await self.fetchData();
       }
     },
-    remove(comment) {
+    delete(comment) {
       destroy(comment);
     },
   }));

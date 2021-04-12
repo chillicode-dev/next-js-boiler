@@ -1,28 +1,31 @@
 // Vendor
-import {Provider} from 'mobx-react';
+import NextApp from 'next/app';
 import PropTypes from 'prop-types';
+import {Provider} from 'mobx-react';
 // Internals
-import {useStore} from '@/stores';
 import Layout from '@/components/Layout';
+import {withMobXStore} from '@/mobx';
 // Styles
 import '@/styles/base.scss';
 
-function App({Component, pageProps}) {
-  // Initialize Redux from page
-  const store = useStore(pageProps.initialState);
+class App extends NextApp {
+  static propTypes = {
+    Component: PropTypes.elementType.isRequired,
+    pageProps: PropTypes.object.isRequired,
+    store: PropTypes.object.isRequired,
+  };
 
-  return (
-    <Provider store={store}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </Provider>
-  );
+  render() {
+    const {Component, pageProps, store} = this.props;
+
+    return (
+      <Provider store={store}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </Provider>
+    );
+  }
 }
 
-App.propTypes = {
-  Component: PropTypes.elementType.isRequired,
-  pageProps: PropTypes.object.isRequired,
-};
-
-export default App;
+export default withMobXStore(App);

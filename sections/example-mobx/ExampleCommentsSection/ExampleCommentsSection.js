@@ -1,19 +1,18 @@
-// Vendor
-import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-// Internals
-import {connectMobX} from '@/stores';
+
+import {connectMobX} from '@/mobx/utils/hocs';
 import style from './style.module.scss';
 
 function ExampleCommentsSection({className, store}) {
-  const {comments} = store.commentsStore;
+  // Store
+  const {commentsStore} = store;
 
   return (
     <ul className={cn(style.ExampleCommentsSection, className)}>
-      {comments.map(comment => (
+      {commentsStore.comments.map(comment => (
         <li key={comment.id}>
-          <button onClick={comment.remove}>Удалить</button>
+          <button onClick={comment.delete}>Удалить</button>
           <span>{comment.body}</span>
         </li>
       ))}
@@ -23,7 +22,6 @@ function ExampleCommentsSection({className, store}) {
 
 ExampleCommentsSection.defaultProps = {
   className: '',
-  store: {},
 };
 
 ExampleCommentsSection.propTypes = {

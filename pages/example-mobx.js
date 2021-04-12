@@ -2,7 +2,6 @@ import {getSnapshot} from 'mobx-state-tree';
 
 import ExamplePostsSection from '@/sections/example-mobx/ExamplePostsSection';
 import ExampleCommentsSection from '@/sections/example-mobx/ExampleCommentsSection';
-import {initStore} from '@/stores';
 
 function ExampleMobX() {
   return (
@@ -13,15 +12,9 @@ function ExampleMobX() {
   );
 }
 
-export async function getServerSideProps() {
-  const store = initStore();
-  await Promise.all([store.postsStore.fetchData(), store.commentsStore.fetchData()]);
-
-  return {
-    props: {
-      initialState: getSnapshot(store),
-    },
-  };
-}
+ExampleMobX.getInitialProps = async ({store}) => {
+  await Promise.all([store.postsStore.fetchDataIfNeeded(), store.commentsStore.fetchDataIfNeeded()]);
+  return {};
+};
 
 export default ExampleMobX;

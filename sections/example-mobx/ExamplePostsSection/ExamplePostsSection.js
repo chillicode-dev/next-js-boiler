@@ -3,13 +3,10 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 // Internals
-import {connectMobX} from '@/stores';
+import {connectMobX} from '@/mobx';
 import style from './style.module.scss';
 
 function ExamplePostsSection({className, store}) {
-  // Store
-  const {postsStore} = store;
-
   // State
   const [searchValue, setSearchValue] = useState('');
 
@@ -31,7 +28,7 @@ function ExamplePostsSection({className, store}) {
         />
       </div>
       <ul>
-        {postsStore.foundPosts(searchValue).map(post => (
+        {store.postsStore.foundPosts(searchValue).map(post => (
           <li className={style.post} key={post.id}>
             <span>{post.title}</span>
           </li>
