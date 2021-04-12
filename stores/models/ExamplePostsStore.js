@@ -1,4 +1,4 @@
-import {types, destroy} from 'mobx-state-tree';
+import {types} from 'mobx-state-tree';
 
 // Models
 const Post = types.model({
@@ -15,6 +15,11 @@ const ExamplePostsStore = types
     isLoading: types.boolean,
     error: types.string,
   })
+  .views(self => ({
+    foundPosts(searchText) {
+      return self.posts.filter(({title}) => title.toLowerCase().includes(searchText.trim().toLowerCase()));
+    }
+  }))
   .actions(self => ({
     startLoading() {
       self.isLoading = true;
@@ -28,9 +33,6 @@ const ExamplePostsStore = types
       const response = await fetch('http://jsonplaceholder.typicode.com/posts');
       const posts = await response.json();
       self.saveDataFromServer(posts);
-    },
-    removePost(post) {
-      destroy(post);
     },
   }));
 

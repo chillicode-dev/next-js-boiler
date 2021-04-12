@@ -3,11 +3,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 // Internals
-import {connectMobX} from '@/store';
+import {connectMobX} from '@/stores';
 import style from './style.module.scss';
 
 function ExampleCommentsSection({className, store}) {
-  const {comments} = store.comments;
+  const {comments} = store.commentsStore;
 
   return (
     <ul className={cn(style.ExampleCommentsSection, className)}>

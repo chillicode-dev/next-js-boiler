@@ -1,23 +1,43 @@
 // Vendor
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 // Internals
-import {connectMobX} from '@/store';
+import {connectMobX} from '@/stores';
 import style from './style.module.scss';
 
 function ExamplePostsSection({className, store}) {
+  // Store
+  const {postsStore} = store;
+
+  // State
+  const [searchValue, setSearchValue] = useState('');
+
+  // Handlers
+  const handleSearchInputChange = event => {
+    setSearchValue(event.target.value);
+  };
+
   return (
-    <ul className={cn(style.ExamplePostsSection, className)}>
-      {store.posts.posts.map(post => (
-        <li key={post.id}>
-          <button className={style.button} onClick={() => store.posts.removePost(post)}>
-            Удалить
-          </button>
-          <span>{post.title}</span>
-        </li>
-      ))}
-    </ul>
+    <div className={cn(style.ExamplePostsSection, className)}>
+      <h2>Posts list MobX example</h2>
+      <div className={style.searchInputWrapper}>
+        <input
+          type="search"
+          className={style.searchInput}
+          placeholder="Search posts"
+          value={searchValue}
+          onChange={handleSearchInputChange}
+        />
+      </div>
+      <ul>
+        {postsStore.foundPosts(searchValue).map(post => (
+          <li className={style.post} key={post.id}>
+            <span>{post.title}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

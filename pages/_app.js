@@ -2,7 +2,7 @@
 import {Provider} from 'mobx-react';
 import PropTypes from 'prop-types';
 // Internals
-import {useStore} from '@/store';
+import {useStore} from '@/stores';
 import Layout from '@/components/Layout';
 // Styles
 import '@/styles/base.scss';

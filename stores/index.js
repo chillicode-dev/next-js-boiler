@@ -2,7 +2,7 @@ import {useMemo} from 'react';
 import {inject, observer} from 'mobx-react';
 import {applySnapshot} from 'mobx-state-tree';
 
-import {RootStore, rootStoreInitialState} from '@/store/models';
+import {RootStore, rootStoreInitialState} from '@/stores/models';
 import {isServer} from '@/utils/env';
 
 let store;

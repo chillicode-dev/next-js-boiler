@@ -4,7 +4,19 @@
   padding: 20px;
   background-color: #f5eeee;
 
-  .button {
-    margin-right: 10px;
+  .searchInputWrapper {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .searchInput {
+    display: block;
+    width: 100%;
+  }
+
+  .post {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed black;
   }
 }
