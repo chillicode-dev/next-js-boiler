@@ -19,6 +19,7 @@ const ExampleCommentsStore = types
   .model({
     comments: types.array(Comment),
     isLoading: types.boolean,
+    isLoaded: types.boolean,
     error: types.string,
   })
   .actions(self => ({
@@ -28,12 +29,18 @@ const ExampleCommentsStore = types
     saveDataFromServer(comments) {
       self.comments = comments;
       self.isLoading = false;
+      self.isLoaded = true;
     },
     async fetchData() {
       self.startLoading();
       const response = await fetch('http://jsonplaceholder.typicode.com/comments');
       const comments = await response.json();
       self.saveDataFromServer(comments);
+    },
+    async fetchDataIfNeeded() {
+      if (!self.isLoaded) {
+        await self.fetchData();
+      }
     },
     remove(comment) {
       destroy(comment);
@@ -43,6 +50,7 @@ const ExampleCommentsStore = types
 const initialState = {
   comments: [],
   isLoading: false,
+  isLoaded: false,
   error: '',
 };
 

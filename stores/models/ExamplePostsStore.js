@@ -13,6 +13,7 @@ const ExamplePostsStore = types
   .model({
     posts: types.array(Post),
     isLoading: types.boolean,
+    isLoaded: types.boolean,
     error: types.string,
   })
   .views(self => ({
@@ -27,6 +28,7 @@ const ExamplePostsStore = types
     saveDataFromServer(posts) {
       self.posts = posts;
       self.isLoading = false;
+      self.isLoaded = true;
     },
     async fetchData() {
       self.startLoading();
@@ -34,12 +36,18 @@ const ExamplePostsStore = types
       const posts = await response.json();
       self.saveDataFromServer(posts);
     },
+    async fetchDataIfNeeded() {
+      if (!self.isLoaded) {
+        await self.fetchData();
+      }
+    },
   }));
 
 // Instance initial state
 const initialState = {
   posts: [],
   isLoading: false,
+  isLoaded: false,
   error: '',
 };
 
