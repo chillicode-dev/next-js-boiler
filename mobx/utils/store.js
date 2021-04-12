@@ -1,7 +1,7 @@
-import {applySnapshot} from 'mobx-state-tree';
+import {applySnapshot, onSnapshot} from 'mobx-state-tree';
 
 import {model as RootStore, initialState as rootStoreInitialState} from '@/mobx/models/RootStore';
-import {isServer} from '@/utils/env';
+import {isClient, isDev, isServer} from '@/utils/env';
 
 /**
  * Initializes store and applies snapshot if it exists
@@ -15,6 +15,13 @@ export function initStore(snapshot = null) {
   // get hydrated here, check `pages/ssg.js` and `pages/ssr.js` for more details
   if (snapshot) {
     applySnapshot(store, snapshot);
+  }
+
+  // Logging in dev mode
+  if (isClient && isDev) {
+    onSnapshot(store, newSnapshot => {
+      console.info('MobX state has changed:', newSnapshot);
+    });
   }
 
   return store;
