@@ -2,25 +2,25 @@
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 // Internals
-import Header from '@/components/Header';
+import ExampleHeader from '@/components/ExampleHeader';
 import style from './style.module.scss';
 
-function Layout({className, children}) {
+function ExampleLayout({className, children}) {
   return (
-    <div className={cn(style.Layout, className)}>
-      <Header />
+    <div className={cn(style.ExampleLayout, className)}>
+      <ExampleHeader />
       <main className={style.main}>{children}</main>
     </div>
   );
 }
 
-Layout.defaultProps = {
+ExampleLayout.defaultProps = {
   className: '',
 };
 
-Layout.propTypes = {
+ExampleLayout.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
 
-export default Layout;
+export default ExampleLayout;

@@ -6,26 +6,28 @@ import Link from 'next/link';
 import ExampleLogo from '@/public/assets/icons/example-logo.svg';
 import style from './style.module.scss';
 
-function Header({className, isLogoHidden}) {
+function ExampleHeader({className, isLogoHidden}) {
   return (
-    <header className={cn(style.Header, className)}>
+    <header className={cn(style.ExampleHeader, className)}>
       {isLogoHidden || (
         <Link href="/" passHref={false}>
-          <ExampleLogo className={style.logo} />
+          <div>
+            <ExampleLogo className={style.logo} />
+          </div>
         </Link>
       )}
     </header>
   );
 }
 
-Header.defaultProps = {
+ExampleHeader.defaultProps = {
   className: '',
   isLogoHidden: false,
 };
 
-Header.propTypes = {
+ExampleHeader.propTypes = {
   className: PropTypes.string,
   isLogoHidden: PropTypes.bool,
 };
 
-export default Header;
+export default ExampleHeader;

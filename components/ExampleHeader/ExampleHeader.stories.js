@@ -1,12 +1,12 @@
-import Header from './Header';
+import ExampleHeader from './ExampleHeader';
 
 export default {
-  title: 'App/Header',
-  component: Header,
+  title: 'Examples/ExampleHeader',
+  component: ExampleHeader,
   argTypes: {},
 };
 
-const Template = args => <Header {...args} />;
+const Template = args => <ExampleHeader {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};
