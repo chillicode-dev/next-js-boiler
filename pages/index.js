@@ -1,20 +1,15 @@
-import Link from 'next/link';
+import Head from 'next/head';
 
-import {ConnectedCounter} from 'components/Counter';
-import TestIcon from 'public/assets/icons/test-icon.svg';
+import ExampleIntroSection from '@/sections/home/ExampleIntroSection';
 
 function Index() {
   return (
-    <div>
-      <TestIcon width={64} height={64} />
-      <h1>Homepage</h1>
-      <div>
-        <Link href="/about">
-          <a>About</a>
-        </Link>
-      </div>
-      <ConnectedCounter />
-    </div>
+    <>
+      <Head>
+        <title>Chillicode Next.js Boiler | Home</title>
+      </Head>
+      <ExampleIntroSection />
+    </>
   );
 }
 

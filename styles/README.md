@@ -1,157 +1,64 @@
-### /styles/
+# STYLES
 
-#### Next.js build-in-css
-
-Подробнее про подключение SCSS в Next.js можно почитать [здесь](https://nextjs.org/docs/basic-features/built-in-css-support#sass-support).
-
-#### CSS-модули и стили отдельных компонентов
-
-В проекте используются [CSS-модули](https://github.com/css-modules/css-modules), это значит, что мы импортируем стили в компоненты в качестве объектов, поля которых
-затем превращаются в хэшированные строки и становятся уникальными в контексте приложения.
-
-Например, есть компонент `Button.js`:
-
-```javascript
-import React from 'react';
-import style from './style.module.scss';
-
-const Button = ({children}) => {
-  return (
-    <button className={style.Button}>
-      <span className={style.text}>{children}</span>
-    </button>
-  );
-};
-
-export default Grid;
-```
-
-И у него есть своя таблица стилей `style.module.scss`:
-
-```scss
-.Button {
-  // моднявые стили кнопки
-}
-
-.text {
-  // моднявые стили текста кнопки
-}
-```
-
-И есть компонент `Tab.js`:
-
-```javascript
-import React from 'react';
-import style from './style.module.scss';
-
-const Tab = ({children}) => {
-  return (
-    <button className={style.Tab}>
-      <span className={style.text}>{children}</span>
-    </button>
-  );
-};
-
-export default Grid;
-```
-
-И у него тоже своя таблица стилей `style.module.scss`:
-
-```scss
-.Tab {
-  // моднявые стили таба
-}
-
-.text {
-  // моднявые стили текста таба
-}
-```
-
-Здесь селектор `.text` в Button никак не связан с селектором `.text` в Tab и на выходе
-это абсолютно разные классы. То есть, стили каждого компонента инкапсулированы и избавляют разработчика
-от извечной головной боли их наименования, спасают от случайного перезатирания другим таким же селектором и
-отлично подходят для больших проектов.
-
-Если же в стилях мы хотим описать глобальный селектор (чаще всего для того, чтобы изменить стили в какой-нибудь
-вендорной библиотеке), то используем конструкцию `:global(selector)`:
-
-```scss
-:global(.library__selector) .myFancyButton {
-}
-```
-
-Правила:
-
-1. Корневой элемент каждого компонента должен иметь className, идентичный названию компонента с большой буквы
-2. Все селекторы должны быть записаны в camelCase
-3. Если есть класс одного компонента, а в другом компоненте нужно переопределить некоторые его свойства,
-   для страховки его вес нужно усилить путем вложенности селекторов
-
-#### Структура папки `/styles/`
+## Directory structure
 
 ```
 ./styles
  ├─config/
- ├─preferences/
+ ├─resources/
  ├─vendor/
- ├─fonts.scss
- └─base.scss
+ ├─base.scss
+ └─storybook.scss
 ```
 
-- `/styles/config/` - здесь хранятся переменные в JSON-файлах для того,
-  чтобы можно было использовать единую конфигурацию как внутри JS, так и в SCSS
-  В SCSS переменные доступны глобально, в JS их необходимо импортировать в виде
-  `import {brandColor} from 'styles/config/colors'` или `import breakpoints from 'styles/config/breakpoints'`.
-- `/styles/preferences/` - SCSS переменные, миксины и функции для использования только внутри SCSS.
-  Все они доступны глобально внутри SCSS-кода
-- `/styles/vendor/` - вендорные стили библиотек
-- `/styles/fonts.scss` - подключение шрифтов
-- `/styles/base.scss` - общие стили, применимые для всего приложения (например для `body` или `html`)
+- `/styles/resources/` - SCSS variables, mixins and functions used in SCSS. All of them are available globally in each component
+- `/styles/config/` - variables, mixins and functions used both in SCSS and JS stored as JSON files. All of them are available globally in each component
+- `/styles/vendor/` - libraries vendor styles
+- `/styles/base.scss` - general styles for the whole application (i.e. `body`, `a` or `html`)
+- `/styles/storybook.scss` - Storybook overrides
 
-#### Media-запросы
+#### Media queries
 
-Все брейкпоинты для медия-запросов конфигурируются в файле `/styles/config/breakpoints.json`.
-Каждый брейкпоинт является максимальной шириной от 0 до указанного значения.
-Например, брейкпоинт `tablet` будет означать все устройства до 1024px.
+All breakpoints and mixins for media queries are configured in the file `/styles/resources/grid.scss`.
+Each breakpoint is a maximum width from 0 to the specified value.
+For example, the breakpoint `tablet` would mean all devices up to 1024px.
 
-Миксины для медия-запросов конфигурируются в `/styles/preferences/grid.scss`.
+For example, let's say we want to create a media query for styles on mobile devices.
 
-Например, хотим создать медия-запрос для стилей на мобильных устройствах.
-
-Бро:
+Bro:
 
 ```scss
-.column {
-  // Стили для десктопа
+.selector {
+  // Styles for the desktop
 
   @include onPhone() {
-    // Стили для телефона
+    // Styles for the phone
   }
 }
 ```
 
-Не бро:
+Not bro:
 
 ```scss
-.column {
-  // Стили для десктопа
+.selector {
+  // Styles for the desktop
 }
 
 @media all and (max-width: 767px) {
-  .column {
-    // Стили для телефона
+  .selector {
+    // Styles for the phone
   }
 }
 ```
 
-#### Работа с url(...)
+#### Working with url (...)
 
-Поскольку реализации Sass не поддерживают перезапись URL-адресов, все ресурсы должны иметь относительные пути.
+Since Sass implementations do not support URL rewriting, all resources must have relative paths.
 
-Для обхода этой проблемы и доступа к папке `/public` можно интерполировать переменную `$publicPath` в путь к файлу, например:
+To work around this problem and access the `/public` folder, you can interpolate the `$publicPath` variable in the file path, for example:
 
 ```scss
 .image {
-  background-image: url('#{$publicPath}/assets/images/test-next-logo.png');
+  background-image: url('#{$publicPath}/assets/images/image.webp');
 }
 ```

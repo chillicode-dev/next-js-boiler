@@ -1,2 +1,2 @@
-### /templates/
-Папка шаблонов для [Templateman](https://www.npmjs.com/package/templateman).
+# TEMPLATES
+Templates folder for [Templateman](https://www.npmjs.com/package/templateman).

@@ -1,7 +1,7 @@
 # Contributing
 ### Git
 #### Branches
-The project must have 2 branches:
+The project must have at least 2 branches:
 - `master` - release versions of the project (tagged by version numbers)
 - `dev` - branch for deploying to dev-server
 
@@ -41,21 +41,20 @@ or:
 {Action} + {subjects} in {place}
 ```
 
-For example, you need to change PropTypes in the component `/components/Button/Button.js`, then the name of the commit will be:
+For example, you need to change some prop in the component `/components/Button/Button.vue`, then the name of the commit will be:
 ```
-Button.js: fix propTypes
+Button.vue: change 'isVisible' prop logic
 ```
 or:
 ```
-Fix propTypes in Button.js
+Change 'isVisible' prop logic in Button.vue
 ```
-
 
 #### Merge Requests
 To create MR before deploying new features:
 1. Go to the "Merge Requests" section in the project repository and click "New Merge Request"
 1. Select as a "Source branch" your branch with features/bug fixes, and as "Target branch" branch `dev`
-1. "Title" should begin with the task number in the task tracker. After that, enter briefly what was done. For example: `# 1337 create responsive header`
+1. "Title" should begin with the task number in the task tracker. After that, enter briefly what was done. For example: `#1337 create responsive header`
 1. If the work is not completed, put the prefix `WIP:` before the MR name. For example: `WIP: #1337 create responsive header`
 1. Set team leader of the project as "Assignee"
 1. Click "Delete source branch when merge request is accepted" if you want to delete the branch after the merge

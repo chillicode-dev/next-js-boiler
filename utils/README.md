@@ -1,3 +1,5 @@
-### /utils/
-Папка с небольшими утилитарными функциями. Желательно делить их модульно по смыслу. 
-Например, все что касается работы с URL хранить в модуле `/utils/url.js`, утилиты с различным назначением можно сложить в модуль `/utils/helpers.js`.
+# UTILS
+
+Miscellaneous utility functions.
+
+It is preferable to separate them according to their meaning. For example, everything related to working with URLs can be stored in the `/utils/url.js` module and utilities with various purposes can be added to the `/utils/helpers.js`.

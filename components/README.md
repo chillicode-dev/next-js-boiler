@@ -1,20 +1,22 @@
-### /components/
-Здесь находятся reusable React-компоненты.
-Каждый компонент должен храниться в отдельной папке в формате:
+# COMPONENTS
+
+The components directory contains your React reusable components.
+
+Each component should store in separate directory in the shape of:
 ```
 ./ComponentName
- ├─index.js // Файл экспорта компонента
- ├─ComponentName.js // Файл самого компонента
- ├─ComponentName.test.js // Файл тестов
- ├─InternalComponent.js // Если есть внутренний компонент, который используется только в контексте текущего
- ├─InternalComponent.test.js // Тесты внутреннего компонента
- └─style.module.scss // Файл стилей компонента
+ ├─index.js // Component export file
+ ├─ComponentName.js // Component itself
+ ├─ComponentName.test.js // Component tests (if exist)
+ ├─InternalComponent.js // Child component
+ ├─InternalComponent.test.js // Child component tests (if exist)
+ └─style.module.scss // Styles (CSS modules enabled)
 ```
 
-Файл экспорта оформляется в следующем виде:
+Export file is designed as following:
 ```javascript
 export {default} from './ComponentName';
 ```
 
-Дабы не создавать каждый раз такую структуру руками, можно использовать cli-утилиту [Templateman](https://www.npmjs.com/package/templateman),
-которая сама создает базовую структуру для каждого компонента.
+If you are tired to create this structure manually, you can use [Templateman](https://www.npmjs.com/package/templateman) 
+CLI-tool which creates this automatically for you.
