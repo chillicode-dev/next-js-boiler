@@ -42,6 +42,15 @@ const ExampleCommentsStore = types
         await self.fetchData();
       }
     },
+    addComment(text) {
+      self.comments.unshift({
+        id: Date.now(),
+        postId: 1,
+        name: 'Example username',
+        email: 'Example email',
+        body: text,
+      });
+    },
     delete(comment) {
       destroy(comment);
     },
