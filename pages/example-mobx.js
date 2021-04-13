@@ -1,5 +1,3 @@
-import {getSnapshot} from 'mobx-state-tree';
-
 import ExamplePostsSection from '@/sections/example-mobx/ExamplePostsSection';
 import ExampleCommentsSection from '@/sections/example-mobx/ExampleCommentsSection';
 
