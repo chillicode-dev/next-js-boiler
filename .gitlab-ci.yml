@@ -18,13 +18,6 @@ deploy_to_dev:
   script:
     - echo "Deployed to dev-server"
 
-deploy_to_stage:
-  stage: deploy
-  only:
-    - stage
-  script:
-    - echo "Deployed to stage-server"
-
 deploy_to_prod:
   stage: deploy
   only:
