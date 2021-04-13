@@ -1,6 +1,6 @@
 {
   "name": "next-js-boiler",
-  "version": "2.0.0-rc.3",
+  "version": "2.0.0",
   "author": "Chillicode <info@chillicode.ru> (https://github.com/chillicode-dev)",
   "scripts": {
     "dev": "npm-run-all -p app:dev storybook:dev",
