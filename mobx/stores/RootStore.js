@@ -1,7 +1,7 @@
 import {types} from 'mobx-state-tree';
 
-import ExampleCommentsStore from '@/mobx/models/ExampleCommentsStore';
-import ExamplePostsStore from '@/mobx/models/ExamplePostsStore';
+import ExampleCommentsStore from '@/mobx/stores/ExampleCommentsStore';
+import ExamplePostsStore from '@/mobx/stores/ExamplePostsStore';
 
 // Define a store just like a model
 export const model = types.model({
@@ -9,7 +9,7 @@ export const model = types.model({
   postsStore: ExamplePostsStore.model,
 });
 
-// Define a store just like a model
+// Define an initial states of all stores
 export const initialState = {
   commentsStore: ExampleCommentsStore.initialState,
   postsStore: ExamplePostsStore.initialState,

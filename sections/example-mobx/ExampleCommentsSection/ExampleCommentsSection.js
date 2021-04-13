@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 
-import {connectMobX} from '@/mobx/utils/hocs';
+import {connectMobX} from '@/mobx';
 import style from './style.module.scss';
 
 function ExampleCommentsSection({className, store}) {
@@ -41,8 +41,8 @@ function ExampleCommentsSection({className, store}) {
       <ul>
         {commentsStore.comments.map(comment => (
           <li className={style.comment} key={comment.id}>
-            <div className={style.commentBody}>{comment.body}</div>
-            <button onClick={comment.delete}>Удалить</button>
+            <p className={style.commentBody}>{comment.body}</p>
+            <button onClick={comment.delete}>Delete</button>
           </li>
         ))}
       </ul>

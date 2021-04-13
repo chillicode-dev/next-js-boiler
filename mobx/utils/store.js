@@ -1,6 +1,6 @@
 import {applySnapshot, onSnapshot} from 'mobx-state-tree';
 
-import {model as RootStore, initialState as rootStoreInitialState} from '@/mobx/models/RootStore';
+import {model as RootStore, initialState as rootStoreInitialState} from '@/mobx/stores/RootStore';
 import {isClient, isDev, isServer} from '@/utils/env';
 
 /**
