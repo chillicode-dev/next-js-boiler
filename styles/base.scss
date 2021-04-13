@@ -1,3 +1,6 @@
+@import 'vendor/reset';
+@import 'fonts';
+
 /*--------------------------------------------------------------
 # Global app styles
 --------------------------------------------------------------*/
@@ -10,8 +13,8 @@ html,
 body {
   min-width: 320px;
   height: 100%;
-  background: $bgColor;
-  color: $textColor;
+  background: $bgPrimaryColor;
+  color: $bgPrimaryTextColor;
   font: {
     weight: $regular;
     size: $fontSize;
@@ -22,7 +25,7 @@ body {
 }
 
 a {
-  @include link($linkColor, $linkColorActive);
+  @include link($secondaryColor, $secondaryLightColor);
 }
 
 img {

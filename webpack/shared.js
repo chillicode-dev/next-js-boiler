@@ -6,19 +6,7 @@ const CssoWebpackPlugin = require('csso-webpack-plugin').default;
  * Aliases for Webpack alias resolver
  */
 const aliases = () => ({
-  assets: path.resolve(process.cwd(), 'assets'),
-  components: path.resolve(process.cwd(), 'components'),
-  config: path.resolve(process.cwd(), 'config'),
-  hocs: path.resolve(process.cwd(), 'hocs'),
-  hooks: path.resolve(process.cwd(), 'hooks'),
-  modals: path.resolve(process.cwd(), 'modals'),
-  public: path.resolve(process.cwd(), 'public'),
-  sections: path.resolve(process.cwd(), 'sections'),
-  services: path.resolve(process.cwd(), 'services'),
-  store: path.resolve(process.cwd(), 'store'),
-  styles: path.resolve(process.cwd(), 'styles'),
-  tests: path.resolve(process.cwd(), 'tests'),
-  utils: path.resolve(process.cwd(), 'utils'),
+  '@': process.cwd(),
 });
 
 /**
@@ -32,21 +20,22 @@ const sassJsonImporter = () => jsonImporter();
 const sassIncludePaths = () => [process.cwd()];
 
 /**
- * @param env {'next'|'storybook'}
+ * @param envResources {'next'|'storybook'}
  * @see https://github.com/sass/node-sass#data
+ * Resources in 'styles' directory to be allowed in each component
  */
-const sassSharedData = env => {
-  return `
-    $publicPath: ${env === 'storybook' ? '/public' : '""'};
-    
-    @import 'styles/config/breakpoints.json';
-    @import 'styles/config/grid.json';
-    @import 'styles/config/colors.json';
-    @import 'styles/preferences/variables';
-    @import 'styles/preferences/grid';
-    @import 'styles/preferences/mixins';
-    @import 'styles/preferences/easings';
-  `;
+const sassSharedData = envResources => {
+  const sharedResources = [
+    'styles/config/breakpoints.json',
+    'styles/config/colors.json',
+    'styles/config/grid.json',
+    `styles/resources/${envResources}`,
+    'styles/resources/grid',
+    'styles/resources/mixins',
+    'styles/resources/variables.scss',
+  ];
+
+  return sharedResources.map(path => `@import '${path}';`).join('');
 };
 
 /**

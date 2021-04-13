@@ -47,27 +47,6 @@ module.exports = {
       ],
     },
     {
-      name: 'React Component Connected Class',
-      files: [
-        {
-          from: './templates/react-connected-class.js.tm',
-          to: './components/${TM:COMPONENT_NAME}/${TM:COMPONENT_NAME}.js',
-        },
-        {
-          from: './templates/style-file.scss.tm',
-          to: './components/${TM:COMPONENT_NAME}/style.module.scss',
-        },
-        {
-          from: './templates/export-module.js.tm',
-          to: './components/${TM:COMPONENT_NAME}/index.js',
-        },
-        {
-          from: './templates/storybook-stories.js.tm',
-          to: './components/${TM:COMPONENT_NAME}/${TM:COMPONENT_NAME}.stories.js',
-        },
-      ],
-    },
-    {
       name: 'React Page',
       files: [
         {
@@ -77,10 +56,27 @@ module.exports = {
       ],
     },
     {
-      name: 'Redux Duck Module',
+      name: 'App Section',
+      files: [
+        {
+          from: './templates/export-module.js.tm',
+          to: './sections/${TM:PAGE_ROUTE}/${TM:COMPONENT_NAME}/index.js',
+        },
+        {
+          from: './templates/app-section.js.tm',
+          to: './sections/${TM:PAGE_ROUTE}/${TM:COMPONENT_NAME}/${TM:COMPONENT_NAME}.js',
+        },
+        {
+          from: './templates/style-file.scss.tm',
+          to: './sections/${TM:PAGE_ROUTE}/${TM:COMPONENT_NAME}/style.module.scss',
+        },
+      ],
+    },
+    {
+      name: 'MobX State Tree Model',
       files: {
-        from: './templates/redux-duck.js.tm',
-        to: './store/modules/${TM:DUCK_NAME}.js',
+        from: './templates/mobx-state-tree-model.js.tm',
+        to: './store/models/${TM:MODEL_NAME}.js',
       },
     },
     {
@@ -94,13 +90,6 @@ module.exports = {
       name: 'React Component Class (partial)',
       files: {
         from: './templates/react-class.js.tm',
-        to: './components/${TM:PARENT_COMPONENT_NAME}/${TM:COMPONENT_NAME}.js',
-      },
-    },
-    {
-      name: 'React Component Connected Class (partial)',
-      files: {
-        from: './templates/react-connected-class.js.tm',
         to: './components/${TM:PARENT_COMPONENT_NAME}/${TM:COMPONENT_NAME}.js',
       },
     },

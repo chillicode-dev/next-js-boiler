@@ -1,7 +1,7 @@
-import colors from 'styles/config/colors.json';
+import '@/styles/base.scss';
+import '@/styles/storybook.scss';
 
-import 'styles/base.scss';
-import 'styles/storybook.scss';
+import colors from '@/styles/config/colors.json';
 
 export const parameters = {
   actions: {argTypesRegex: '^on[A-Z].*'},
@@ -10,7 +10,7 @@ export const parameters = {
     values: [
       {
         name: 'primary',
-        value: colors.bgColor,
+        value: colors.bgPrimaryColor,
       },
       {
         name: 'secondary',
