@@ -1,11 +1,10 @@
-// Vendor
 import NextApp from 'next/app';
 import PropTypes from 'prop-types';
 import {Provider} from 'mobx-react';
-// Internals
+
 import ExampleLayout from '@/components/ExampleLayout';
 import {withMobXStore} from '@/mobx';
-// Styles
+
 import '@/styles/base.scss';
 
 class App extends NextApp {

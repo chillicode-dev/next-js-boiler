@@ -1,8 +1,7 @@
-// Vendor
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import Link from 'next/link';
-// Internals
+
 import ExampleLogo from '@/public/assets/icons/example-logo.svg';
 import style from './style.module.scss';
 

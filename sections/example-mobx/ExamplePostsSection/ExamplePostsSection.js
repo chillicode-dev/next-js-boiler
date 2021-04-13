@@ -1,8 +1,7 @@
-// Vendor
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-// Internals
+
 import {connectMobX} from '@/mobx';
 import style from './style.module.scss';
 
