@@ -19,7 +19,7 @@ const ExamplePostsStore = types
   .views(self => ({
     foundPosts(searchText) {
       return self.posts.filter(({title}) => title.toLowerCase().includes(searchText.trim().toLowerCase()));
-    }
+    },
   }))
   .actions(self => ({
     startLoading() {
