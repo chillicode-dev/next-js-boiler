@@ -8,13 +8,15 @@
  ├─resources/
  ├─vendor/
  ├─base.scss
+ ├─fonts.scss
  └─storybook.scss
 ```
 
-- `/styles/resources/` - SCSS variables, mixins and functions used in SCSS. All of them are available globally in each component
+- `/styles/resources/` - variables, mixins and functions used in SCSS. All of them are available globally in each component
 - `/styles/config/` - variables, mixins and functions used both in SCSS and JS stored as JSON files. All of them are available globally in each component
 - `/styles/vendor/` - libraries vendor styles
 - `/styles/base.scss` - general styles for the whole application (i.e. `body`, `a` or `html`)
+- `/styles/fonts.scss` - font connections
 - `/styles/storybook.scss` - Storybook overrides
 
 #### Media queries
