@@ -1,6 +1,6 @@
 # Next.js boilerplate for big and scalable projects
 
-The cure for headaches in development projects on Next.js in [Chillicode Production Agency](https://chillicode.ru).
+The cure for headaches in development projects on Next.js in [Chillicode Production Agency](https://chillicode.ru?utm_source=mail&utm_medium=git&utm_campaign=next).
 
 ## <a name="inside">What’s Inside?</a>
 
